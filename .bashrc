@@ -157,4 +157,4 @@ complete -o default -F __start_kubectl k
 export NPM_TOKEN=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
 
 # zoxide
-eval "$(zoxide init bash)"
+# eval "$(zoxide init bash)"
