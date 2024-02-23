@@ -160,3 +160,7 @@ export NPM_TOKEN=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
 # eval "$(zoxide init bash)"
 
 export EDITOR=code
+
+# github cli because their alias system doesn't support shell expansion
+alias ghprv='gh pr view $(gh pr list | fzf | awk '\''{print $1}'\'')'
+alias ghissuev='gh issue view $(gh issue list | fzf | awk '\''{print $1}'\'')'
