@@ -158,3 +158,5 @@ export NPM_TOKEN=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
 
 # zoxide
 # eval "$(zoxide init bash)"
+
+export EDITOR=code
