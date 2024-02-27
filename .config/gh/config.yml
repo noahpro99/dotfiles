@@ -10,6 +10,8 @@ pager:
 aliases:
     co: pr checkout
     prl: pr list --json number,title,headRefName,author --template '{{range .}}{{tablerow (printf "#%v" .number | autocolor "green") .title (.headRefName | color "cyan") (.author.login | color "yellow") }}{{end}}'
+    nottaken: issue list -S "no:assignee" --json number,title,author --template '{{range .}}{{tablerow (printf "#%v" .number | autocolor "green") .title (printf "author:%s" .author.login | color "yellow") }}{{end}}'
+    taken: issue list -a "*"
 
 
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
