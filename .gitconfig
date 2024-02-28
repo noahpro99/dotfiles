@@ -25,7 +25,7 @@
   c = commit --verbose
   ca = commit -a --verbose
   cm = commit -m
-  cam = commit -a -m
+  camp = !sh -c 'git add -A && git commit -m \"$1\" && git push' -
   m = commit --amend --verbose
   
   d = difftool
