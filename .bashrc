@@ -152,7 +152,7 @@ complete -o default -F __start_kubectl k
 export NPM_TOKEN=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
 
 # zoxide
-# eval "$(zoxide init bash)"
+eval "$(zoxide init --cmd cd bash)"
 
 export EDITOR=code
 
@@ -160,3 +160,4 @@ export EDITOR=code
 alias ghprv='gh pr view $(gh pr list | fzf | awk '\''{print $1}'\'')'
 alias ghissuev='gh issue view $(gh issue list | fzf | awk '\''{print $1}'\'')'
 alias ls='pls'
+eval "$(starship init bash)"
