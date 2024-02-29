@@ -149,7 +149,7 @@ source <(kubectl.exe completion bash)
 alias k=kubectl.exe
 complete -o default -F __start_kubectl k
 
-export NPM_TOKEN=$(pass show codekids/npm-token)
+export NPM_TOKEN=$(pass show codekids/npm_token)
 
 # zoxide
 eval "$(zoxide init --cmd cd bash)"
