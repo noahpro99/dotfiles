@@ -98,7 +98,7 @@ fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -123,16 +123,11 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
 . "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-BROWSER=wslview
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/noahpro/google-cloud-sdk/path.bash.inc' ]; then . '/home/noahpro/google-cloud-sdk/path.bash.inc'; fi
@@ -148,8 +143,6 @@ export KUBECONFIG=~/secrets/.kubernetes/secrets/kubeconfig.yml
 source <(kubectl.exe completion bash)
 alias k=kubectl.exe
 complete -o default -F __start_kubectl k
-
-export NPM_TOKEN=$(pass show codekids/npm_token)
 
 # zoxide
 eval "$(zoxide init --cmd cd bash)"
