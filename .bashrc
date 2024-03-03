@@ -135,8 +135,6 @@ if [ -f '/home/noahpro/google-cloud-sdk/path.bash.inc' ]; then . '/home/noahpro/
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/noahpro/google-cloud-sdk/completion.bash.inc' ]; then . '/home/noahpro/google-cloud-sdk/completion.bash.inc'; fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 export BROWSER=wslview
 export KUBECONFIG=~/secrets/.kubernetes/secrets/kubeconfig.yml
 
@@ -154,3 +152,5 @@ alias ghprv='gh pr view $(gh pr list | fzf | awk '\''{print $1}'\'')'
 alias ghissuev='gh issue view $(gh issue list | fzf | awk '\''{print $1}'\'')'
 alias ls='pls'
 eval "$(starship init bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
