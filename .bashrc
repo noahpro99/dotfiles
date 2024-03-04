@@ -124,6 +124,7 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 . "$HOME/.cargo/env"
+export PATH=$PATH:$HOME/.cargo/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -142,8 +143,6 @@ source <(kubectl.exe completion bash)
 alias k=kubectl.exe
 complete -o default -F __start_kubectl k
 
-# zoxide
-eval "$(zoxide init --cmd cd bash)"
 
 export EDITOR=code
 
@@ -154,3 +153,11 @@ alias ls='pls'
 eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if command -v fzf-share >/dev/null; then
+  source "$(fzf-share)/key-bindings.bash"
+  source "$(fzf-share)/completion.bash"
+fi
+
+# zoxide
+eval "$(zoxide init --cmd cd bash)"
