@@ -125,6 +125,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 . "$HOME/.cargo/env"
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:/root/.local/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
