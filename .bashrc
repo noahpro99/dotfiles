@@ -162,6 +162,3 @@ fi
 
 # zoxide
 eval "$(zoxide init --cmd cd bash)"
-
-# Added by Radicle.
-export PATH="$PATH:/root/.radicle/bin"
