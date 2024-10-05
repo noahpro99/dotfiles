@@ -1,3 +1,4 @@
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -137,13 +138,8 @@ if [ -f '/home/noahpro/google-cloud-sdk/path.bash.inc' ]; then . '/home/noahpro/
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/noahpro/google-cloud-sdk/completion.bash.inc' ]; then . '/home/noahpro/google-cloud-sdk/completion.bash.inc'; fi
 
-export BROWSER=wslview
-export KUBECONFIG=~/secrets/.kubernetes/secrets/kubeconfig.yml
-
-source <(kubectl.exe completion bash)
-alias k=kubectl.exe
-complete -o default -F __start_kubectl k
-
+# for wsl
+# export BROWSER=wslview
 
 export EDITOR=code
 
