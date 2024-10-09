@@ -104,6 +104,7 @@ in
     htop
     uv
     python312
+    protobuf
 
     # hyprland
     kitty
