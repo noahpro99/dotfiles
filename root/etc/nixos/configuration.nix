@@ -96,7 +96,8 @@ in
     fzf
     gcc
     gh
-    bun
+    unstable.bun
+    nodejs_20
     nil
     nixpkgs-fmt
     starship
@@ -108,6 +109,7 @@ in
     unzip
 
     # hyprland
+    kitty
     kitty
     waybar
     swww
