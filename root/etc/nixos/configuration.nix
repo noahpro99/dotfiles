@@ -82,6 +82,7 @@ in
   };
 
   # List packages installed in system profile. To search, run:
+
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     google-chrome
@@ -107,6 +108,7 @@ in
     python312
     protobuf
     unzip
+    sea-orm-cli
 
     # hyprland
     kitty
@@ -131,7 +133,7 @@ in
     (nerdfonts.override { fonts = [ "JetBrainsMono" "CascadiaCode" ]; })
   ];
 
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   virtualisation.docker.enable = true;
 
