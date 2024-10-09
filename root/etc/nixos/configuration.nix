@@ -6,14 +6,15 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   # if you want grub instead
   # boot.loader.grub.enable = true;
   # boot.loader.grub.device = "nodev";
@@ -58,14 +59,14 @@
     isNormalUser = true;
     description = "Noah Provenzano";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs= {
-    hyprland={
+  programs = {
+    hyprland = {
       enable = true;
       xwayland.enable = true;
     };
@@ -76,9 +77,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vscode
     google-chrome
-    discord
+    zoom-us
+    vesktop
+
+    # code
+    vscode
     git
     pass
     stow
@@ -87,13 +91,16 @@
     gh
     bun
     nil
+    nixpkgs-fmt
     starship
-    tofi
     rustup
 
     # hyprland
     kitty
     waybar
+    swww
+    killall
+    tofi
     dolphin
     pipewire
     wireplumber
@@ -102,6 +109,7 @@
     dunst
     brightnessctl
     pamixer
+    wl-clipboard
     cliphist
   ];
 
@@ -123,7 +131,16 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
