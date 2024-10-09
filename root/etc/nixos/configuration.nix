@@ -105,6 +105,7 @@ in
     uv
     python312
     protobuf
+    unzip
 
     # hyprland
     kitty
