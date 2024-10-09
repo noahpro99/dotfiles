@@ -2,8 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
+{ _, pkgs, ... }:
+let
+  # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+  # sudo nix-channel --update
+  unstable = import <nixos-unstable> {
+    config = { allowUnfree = true; };
+  };
+in
 {
   imports =
     [
@@ -58,8 +64,9 @@
   users.users.noahpro = {
     isNormalUser = true;
     description = "Noah Provenzano";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    # for user only packages
+    # packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -78,7 +85,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     google-chrome
-    zoom-us
+    unstable.zoom-us
     vesktop
 
     # code
@@ -94,21 +101,24 @@
     nixpkgs-fmt
     starship
     rustup
+    htop
+    uv
+    python312
 
     # hyprland
     kitty
     waybar
     swww
     killall
-    tofi
-    dolphin
-    pipewire
+    tofi # app launcher
+    dolphin # file manager
+    pipewire # modern audio server
     wireplumber
     xdg-desktop-portal-hyprland
     polkit-kde-agent
-    dunst
+    dunst # notification daemon
     brightnessctl
-    pamixer
+    pamixer # for 
     wl-clipboard
     cliphist
   ];
@@ -119,6 +129,7 @@
 
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -5,14 +5,14 @@ outline-width = 0
 padding-left = 33%
 padding-top = 33%
 result-spacing = 25
-num-results = 5
+num-results = 8
 
 font = JetBrainsMono Nerd Font
 font-size = 24
 
 text-color = #4e4e5f
 
-prompt-text = " : "
+prompt-text = " : "
 
 background-color = #11111bd9
 selection-color = #83A4E7
