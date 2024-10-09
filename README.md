@@ -33,6 +33,14 @@ then use GNU stow to create symlinks
 $ stow .
 ```
 
+For the `/root` you have to manually copy after any change
+
+Nixos config for example
+
+```bash
+sudo cp ~/dotfiles/root/etc/nixos/configuration.nix /etc/nixos/configuration.nix
+```
+
 ## Video Tutorial
 
 [Dreams of Code Tutorial](https://www.youtube.com/watch?v=y6XCebnB9gs)

@@ -76,26 +76,39 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  kitty
-  vscode
-  google-chrome
-  discord
-  git
-  pass
-  stow
-  fzf
-  gcc
-  gh
-  bun
-  nil
-  starship
-  waybar
-  wofi
-  dolphin
-  tofi
+    vscode
+    google-chrome
+    discord
+    git
+    pass
+    stow
+    fzf
+    gcc
+    gh
+    bun
+    nil
+    starship
+    tofi
+    rustup
+
+    # hyprland
+    kitty
+    waybar
+    dolphin
+    pipewire
+    wireplumber
+    xdg-desktop-portal-hyprland
+    polkit-kde-agent
+    dunst
+    brightnessctl
+    pamixer
+    cliphist
   ];
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "CascadiaCode" ]; })
+  ];
+
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
