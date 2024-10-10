@@ -126,7 +126,8 @@ in
     polkit-kde-agent
     dunst # notification daemon
     brightnessctl
-    pamixer # for 
+    pamixer
+    wlsunset # screen temperature
     wl-clipboard
     cliphist
   ];
