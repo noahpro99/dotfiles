@@ -121,6 +121,7 @@ in
     pipewire # modern audio server
     wireplumber
     xdg-desktop-portal-hyprland
+    xdg-utils # this is needed to allow links to be opened in the browser
     polkit-kde-agent
     dunst # notification daemon
     brightnessctl
