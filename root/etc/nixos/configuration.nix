@@ -66,8 +66,11 @@ in
     description = "Noah Provenzano";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     # for user only packages
-    # packages = with pkgs; [ ];
+    packages = with pkgs; [
+      zoom-us
+    ];
   };
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -81,12 +84,8 @@ in
     xwayland.enable = true;
   };
 
-  # List packages installed in system profile. To search, run:
-
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     google-chrome
-    unstable.zoom-us
     vesktop
 
     # code
