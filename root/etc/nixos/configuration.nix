@@ -68,6 +68,9 @@ in
     # for user only packages
     packages = with pkgs; [
       zoom-us
+      vlc
+      vesktop
+      obs-studio
     ];
   };
 
@@ -86,7 +89,6 @@ in
 
   environment.systemPackages = with pkgs; [
     google-chrome
-    vesktop
 
     # code
     vscode
