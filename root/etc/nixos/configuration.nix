@@ -71,6 +71,7 @@ in
       vlc
       vesktop
       obs-studio
+      prisma-engines
     ];
   };
 
@@ -110,6 +111,7 @@ in
     protobuf
     unzip
     sea-orm-cli
+    openssl_3_3
 
     # hyprland
     kitty
