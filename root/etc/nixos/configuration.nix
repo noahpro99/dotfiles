@@ -106,8 +106,10 @@ in
     starship
     rustup
     htop
-    uv
     python312
+    python310
+    ffmpeg
+    unstable.uv
     protobuf
     unzip
     sea-orm-cli
