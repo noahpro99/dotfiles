@@ -72,6 +72,7 @@ in
       vesktop
       obs-studio
       prisma-engines
+      python310
     ];
   };
 
@@ -98,6 +99,7 @@ in
     stow
     fzf
     gcc
+    libgcc
     gh
     unstable.bun
     nodejs_20
@@ -107,7 +109,6 @@ in
     rustup
     htop
     python312
-    python310
     ffmpeg
     unstable.uv
     protobuf
@@ -134,6 +135,7 @@ in
     wlsunset # screen temperature
     wl-clipboard
     cliphist
+    grimblast # screenshot tool
   ];
 
   fonts.packages = with pkgs; [
