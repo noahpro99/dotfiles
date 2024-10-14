@@ -93,7 +93,7 @@ in
     google-chrome
 
     # code
-    vscode
+    unstable.vscode
     git
     pass
     stow
