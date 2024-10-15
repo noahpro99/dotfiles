@@ -75,6 +75,7 @@ in
       python310
       texliveTeTeX
       pandoc
+      jetbrains.pycharm-professional
     ];
   };
 
