@@ -73,6 +73,8 @@ in
       obs-studio
       prisma-engines
       python310
+      texliveTeTeX
+      pandoc
     ];
   };
 
