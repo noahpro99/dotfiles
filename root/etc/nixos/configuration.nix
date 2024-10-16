@@ -77,6 +77,7 @@ in
       pandoc
       jetbrains.pycharm-professional
       gnupg
+      unstable.deno
     ];
   };
 
