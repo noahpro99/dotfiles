@@ -76,6 +76,7 @@ in
       texliveTeTeX
       pandoc
       jetbrains.pycharm-professional
+      gnupg
     ];
   };
 
