@@ -77,6 +77,7 @@ in
       pandoc
       jetbrains.pycharm-professional
       gnupg
+      pinentry-tty # for gpg
       unstable.deno
     ];
   };
@@ -92,6 +93,10 @@ in
     };
     waybar.enable = true;
     xwayland.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -171,6 +176,7 @@ in
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    pcscd.enable = true;
   };
 
   # Open ports in the firewall.
