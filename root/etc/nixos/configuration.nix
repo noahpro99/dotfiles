@@ -121,7 +121,6 @@ in
     python312
     ffmpeg
     unstable.uv
-    protobuf
     unzip
     sea-orm-cli
     openssl_3_3
