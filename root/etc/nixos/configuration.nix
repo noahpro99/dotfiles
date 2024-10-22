@@ -70,6 +70,7 @@ in
       zoom-us
       vlc
       vesktop
+      prismlauncher # minecraft
       obs-studio
       prisma-engines
       python310
@@ -147,6 +148,7 @@ in
     wl-clipboard
     cliphist
     grimblast # screenshot tool
+    playerctl # media keys
   ];
 
   fonts.packages = with pkgs; [
