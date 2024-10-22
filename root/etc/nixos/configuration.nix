@@ -125,6 +125,7 @@ in
     unzip
     sea-orm-cli
     openssl_3_3
+    pkg-config
 
     # hyprland
     kitty
