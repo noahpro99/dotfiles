@@ -8,16 +8,15 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "clock",
+        "memory",
+        "cpu",
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock"
     ],
     "modules-right": [
         "tray",
-        "memory",
-        "cpu",
         "network",
         "battery",
         "backlight",
@@ -25,7 +24,7 @@
         "pulseaudio#microphone"
     ],
     "hyprland/window": {
-        "format": "󰣇 {}"
+        "format": " {}"
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -38,8 +37,8 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%A    %B-%d-%Y    %I:%M:%S %p}",
-        "interval": 1,
+        "format": "{:%A %Y-%m-%d %I:%M}",
+        "interval": 60,
         "rotate": 0,
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
