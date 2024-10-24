@@ -72,6 +72,8 @@ in
       vesktop
       prismlauncher # minecraft
       obs-studio
+      heroic # epic games
+      steam
       prisma-engines
       python310
       texliveTeTeX
@@ -98,6 +100,12 @@ in
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
+    };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
   };
 
