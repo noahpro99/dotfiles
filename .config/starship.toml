@@ -19,6 +19,7 @@ $python\
 $nim\
 $rust\
 $scala\
+$nix_shell\
 [](fg:#86BBD8 bg:#06969A)\
 $docker_context\
 [ ](fg:#06969A)\
@@ -143,8 +144,13 @@ symbol = " "
 style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 
+[nix_shell]
+symbol = "󱄅"
+style = "bg:#86BBD8"
+format = '[$symbol $name ]($style)'
+
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
+time_format = "%R"           # Hour:Minute Format
 style = "bg:#33658A"
 format = '[ $time ]($style)'
