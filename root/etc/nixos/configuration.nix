@@ -18,6 +18,7 @@ in
     ];
 
   # Bootloader.
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -89,6 +90,7 @@ in
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.rocmSupport = true;
 
   programs = {
     hyprland = {
@@ -107,6 +109,7 @@ in
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
+    nix-ld.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -165,6 +168,7 @@ in
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.stub-ld.enable = true;
   virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
