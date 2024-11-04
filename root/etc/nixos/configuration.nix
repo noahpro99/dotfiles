@@ -84,6 +84,7 @@ in
       pinentry-tty # for gpg
       unstable.deno
       protobuf
+      btop
     ];
   };
 
