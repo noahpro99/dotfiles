@@ -85,6 +85,7 @@ in
       unstable.deno
       protobuf
       btop
+      rpi-imager
     ];
   };
 
@@ -112,6 +113,8 @@ in
     };
     nix-ld.enable = true;
   };
+
+  security.polkit.enable = true;
 
   environment.systemPackages = with pkgs; [
     google-chrome
@@ -152,7 +155,7 @@ in
     wireplumber
     xdg-desktop-portal-hyprland
     xdg-utils # this is needed to allow links to be opened in the browser
-    polkit-kde-agent
+    lxqt.lxqt-policykit # needed for polkit for sudo in gui apps
     dunst # notification daemon
     brightnessctl
     pamixer
