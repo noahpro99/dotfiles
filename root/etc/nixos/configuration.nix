@@ -19,6 +19,9 @@ in
       ./hardware-configuration.nix
     ];
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Bootloader.
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.loader.systemd-boot.enable = true;
@@ -73,7 +76,7 @@ in
       zoom-us
       vlc
       vesktop
-      prismlauncher # minecraft
+      lunar-client
       obs-studio
       heroic # epic games
       steam
@@ -196,8 +199,18 @@ in
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      # bluetooth
+      wireplumber.extraConfig.bluetoothEnhancements = {
+        "monitor.bluez.properties" = {
+          "bluez5.enable-sbc-xq" = true;
+          "bluez5.enable-msbc" = true;
+          "bluez5.enable-hw-volume" = true;
+          "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+        };
+      };
     };
     pcscd.enable = true;
+    blueman.enable = true;
   };
 
   # Open ports in the firewall.
