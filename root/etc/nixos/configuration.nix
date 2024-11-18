@@ -20,7 +20,6 @@ in
     ];
 
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.hsphfpd.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
   # Bootloader.
@@ -171,6 +170,7 @@ in
     cliphist
     grimblast # screenshot tool
     playerctl # media keys
+    networkmanagerapplet
   ];
 
   fonts.packages = with pkgs; [
