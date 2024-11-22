@@ -146,7 +146,7 @@ export EDITOR=code
 alias ghprv='gh pr view $(gh pr list | fzf | awk '\''{print $1}'\'')'
 alias ghissuev='gh issue view $(gh issue list | fzf | awk '\''{print $1}'\'')'
 alias ls='pls'
-t() { mkdir -p "$(dirname "$1")" && touch "$1" ;  }
+t() { mkdir -p "$(dirname "$1")" && touch "$1" && code "$1"; }
 eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
