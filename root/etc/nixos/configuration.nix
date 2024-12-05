@@ -152,13 +152,13 @@ in
     sea-orm-cli
     openssl_3_3
     pkg-config
-    unstable.quickemu
 
     # hyprland
     kitty
     kitty
     waybar
-    swww
+    unstable.hyprpaper # wallpaper manager
+    unstable.hyprwall # wallpaper gui
     killall
     tofi # app launcher
     dolphin # file manager
