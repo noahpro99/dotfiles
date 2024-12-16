@@ -80,7 +80,7 @@ in
       zoom-us
       vlc
       vesktop
-      lunar-client
+      unstable.lunar-client
       obs-studio
       heroic # epic games
       steam
@@ -154,7 +154,6 @@ in
     pkg-config
 
     # hyprland
-    kitty
     kitty
     waybar
     unstable.hyprpaper # wallpaper manager
