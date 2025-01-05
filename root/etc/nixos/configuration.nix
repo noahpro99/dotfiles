@@ -150,14 +150,14 @@ in
     unstable.uv
     unzip
     sea-orm-cli
-    openssl_3_3
+    openssl
     pkg-config
 
     # hyprland
     kitty
     waybar
     unstable.hyprpaper # wallpaper manager
-    unstable.hyprwall # wallpaper gui
+    hyprwall # wallpaper gui
     killall
     tofi # app launcher
     dolphin # file manager
