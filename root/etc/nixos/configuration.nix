@@ -1,3 +1,4 @@
+# sudo cp ~/dotfiles/root/etc/nixos/configuration.nix /etc/nixos/configuration.nix
 # sudo nixos-rebuild switch --upgrade-all
 # sudo nix-collect-garbage -d
 
@@ -131,6 +132,7 @@ in
 
     # code
     unstable.vscode
+    unstable.zed-editor
     git
     pass
     stow
