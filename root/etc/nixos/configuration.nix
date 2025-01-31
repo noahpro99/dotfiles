@@ -177,6 +177,7 @@ in
     grimblast # screenshot tool
     playerctl # media keys
     networkmanagerapplet
+    dotool # automate typing in wayland for nerd-dictation
   ];
 
   fonts.packages = with pkgs; [
