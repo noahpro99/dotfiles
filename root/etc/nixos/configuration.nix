@@ -150,6 +150,7 @@ in
     python312
     ffmpeg
     unstable.uv
+    zip
     unzip
     sea-orm-cli
     openssl
