@@ -89,7 +89,6 @@ in
       python310
       texliveTeTeX
       pandoc
-      jetbrains.pycharm-professional
       gnupg
       pinentry-tty # for gpg
       unstable.deno
