@@ -94,7 +94,7 @@ in
       unstable.deno
       protobuf
       btop
-      rpi-imager
+      ghostty
     ];
   };
 
