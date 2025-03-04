@@ -160,6 +160,8 @@ in
     waybar
     unstable.hyprpaper # wallpaper manager
     hyprwall # wallpaper gui
+    hypridle
+    unstable.hyprlock
     killall
     tofi # app launcher
     dolphin # file manager
