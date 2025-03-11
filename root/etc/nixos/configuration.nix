@@ -136,6 +136,7 @@ in
     pass
     stow
     fzf
+    unstable.oxide
     gcc
     libgcc
     gh
