@@ -95,6 +95,7 @@ in
       protobuf
       btop
       ghostty
+      r2modman
     ];
   };
 
@@ -136,7 +137,7 @@ in
     pass
     stow
     fzf
-    unstable.oxide
+    unstable.zoxide
     gcc
     libgcc
     gh
