@@ -123,7 +123,7 @@ in
     };
     nix-ld = {
       enable = true;
-      libraries = with pkgs; [ libuuid.lib alsa-lib ];
+      libraries = with pkgs; [ libuuid.lib alsa-lib glibc libgcc.lib ];
     };
   };
 
