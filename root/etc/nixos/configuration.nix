@@ -82,6 +82,7 @@ in
       vlc
       vesktop
       unstable.lunar-client
+      unstable.windsurf
       obs-studio
       heroic # epic games
       steam
