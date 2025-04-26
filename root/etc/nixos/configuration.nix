@@ -86,6 +86,8 @@ in
       obs-studio
       heroic # epic games
       steam
+      protonup-qt # adds proton-ge to fix some games
+      protontricks
       prisma-engines
       python310
       texliveTeTeX
