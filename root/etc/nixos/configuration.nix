@@ -1,5 +1,4 @@
-# sudo cp ~/dotfiles/root/etc/nixos/configuration.nix /etc/nixos/configuration.nix
-# sudo nixos-rebuild switch --upgrade-all
+# sudo cp ~/dotfiles/root/etc/nixos/* /etc/nixos -r && sudo nixos-rebuild switch --upgrade-all
 # sudo nix-collect-garbage -d
 
 
@@ -7,12 +6,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ _, pkgs, ... }:
+{ inputs, ... }:
 let
   # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   # sudo nix-channel --update
-  unstable = import <nixos-unstable> {
+  pkgs = import inputs.nixpkgs {
+    system = "x86_64-linux";
     config = { allowUnfree = true; };
+    overlays = [ inputs.hyprpanel.overlay ];
+  };
+  unstable = import inputs.nixos-unstable {
+    system = "x86_64-linux";
+    config = { allowUnfree = true; };
+    overlays = [ inputs.hyprpanel.overlay ];
   };
 in
 {
@@ -112,7 +118,6 @@ in
       enable = true;
       xwayland.enable = true;
     };
-    waybar.enable = true;
     xwayland.enable = true;
     gnupg.agent = {
       enable = true;
@@ -165,7 +170,7 @@ in
 
     # hyprland
     kitty
-    waybar
+    hyprpanel
     unstable.hyprpaper # wallpaper manager
     hyprwall # wallpaper gui
     hypridle
