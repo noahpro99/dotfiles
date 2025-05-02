@@ -30,9 +30,12 @@ in
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
-  # Bootloader.
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -102,7 +105,7 @@ in
       pinentry-tty # for gpg
       unstable.deno
       protobuf
-      btop
+      btop-rocm
       ghostty
       r2modman
     ];
@@ -180,7 +183,6 @@ in
     dolphin # file manager
     pipewire # modern audio server
     wireplumber
-    xdg-desktop-portal-hyprland
     xdg-utils # this is needed to allow links to be opened in the browser
     lxqt.lxqt-policykit # needed for polkit for sudo in gui apps
     dunst # notification daemon
@@ -227,6 +229,7 @@ in
     };
     pcscd.enable = true;
     blueman.enable = true;
+    upower.enable = true;
   };
 
   # Open ports in the firewall.
