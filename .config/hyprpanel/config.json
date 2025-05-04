@@ -486,7 +486,7 @@
   "theme.bar.buttons.modules.cpuTemp.text": "#fab387",
   "theme.bar.buttons.modules.cpuTemp.border": "#fab387",
   "theme.osd.border.color": "#8ff0a4",
-  "bar.customModules.cpuTemp.sensor": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon5/temp1_input",
+  "bar.customModules.cpuTemp.sensor": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input",
   "bar.customModules.cpuTemp.unit": "metric",
   "bar.customModules.netstat.dynamicIcon": true,
   "bar.customModules.netstat.networkInterface": "wlo1",
