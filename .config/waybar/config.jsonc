@@ -1,6 +1,5 @@
 {
     "layer": "top",
-    "output": "eDP-1",
     "position": "top",
     "mode": "dock",
     "exclusive": true,
@@ -9,6 +8,7 @@
     "height": 0,
     "modules-left": [
         "memory",
+        "temperature",
         "cpu",
         "hyprland/workspaces"
     ],
@@ -16,28 +16,98 @@
         "clock"
     ],
     "modules-right": [
-        "tray",
-        "network",
-        "battery",
-        "backlight",
+        "cava",
         "pulseaudio",
-        "pulseaudio#microphone"
+        "pulseaudio#microphone",
+        "tray",
+        "backlight",
+        "battery"
     ],
     "hyprland/window": {
         "format": " {}"
     },
+    "mpris": {
+        "format": "DEFAULT: {player_icon} {dynamic}",
+        "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        }
+    },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "on-click": "activate"
-        //"format": "{icon}",
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "󰨞",
+            "3": "",
+            "10": "",
+            "default": ""
+        }
+    },
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+    "cava": {
+        //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 30,
+        "autosens": 1,
+        "bars": 14,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": false,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "actions": {
+            "on-click-right": "mode"
+        }
     },
     "tray": {
         "icon-size": 13,
         "spacing": 10
     },
     "clock": {
-        "format": "{:%A %Y-%m-%d %I:%M}",
+        "format": "{:%a %Y-%m-%d %I:%M}",
         "interval": 60,
         "rotate": 0,
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -62,8 +132,8 @@
             "󰃟",
             "󰃠"
         ],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
         "min-length": 6
     },
     "battery": {
@@ -91,20 +161,14 @@
         ]
     },
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%",
         "tooltip": false,
-        "format-muted": "  Muted",
+        "format-muted": " Muted",
         "on-click": "pamixer -t",
-        "on-scroll-up": "pamixer -i 1",
-        "on-scroll-down": "pamixer -d 1",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
         "scroll-step": 5,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": [
                 "",
                 "",
@@ -129,10 +193,10 @@
             "m": 30 // medium
         },
         "interval": 10,
-        "format": "󰾆 {used}GB",
-        "format-m": "󰾅 {used}GB",
-        "format-h": "󰓅 {used}GB",
-        "format-c": " {used}GB",
+        "format": "󰾆 {used:0.1f}GB",
+        "format-m": "󰾅 {used:0.1f}GB",
+        "format-h": "󰓅 {used:0.1f}GB",
+        "format-c": " {used:0.1f}GB",
         "format-alt": "󰾆 {percentage}%",
         "max-length": 10,
         "tooltip": true,
@@ -153,15 +217,35 @@
             "█"
         ]
     },
+    "temperature": {
+        "critical-threshold": 90,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
     "network": {
         "tooltip": true,
         "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀 ",
+        "format-ethernet": "󰈀",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": "󰖪 ",
+        "format-disconnected": "󰖪",
         "tooltip-format-disconnected": "Disconnected",
         "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     }
 }

@@ -13,12 +13,12 @@ let
   pkgs = import inputs.nixpkgs {
     system = "x86_64-linux";
     config = { allowUnfree = true; };
-    overlays = [ inputs.hyprpanel.overlay ];
+    overlays = [ ];
   };
   unstable = import inputs.nixos-unstable {
     system = "x86_64-linux";
     config = { allowUnfree = true; };
-    overlays = [ inputs.hyprpanel.overlay ];
+    overlays = [ ];
   };
 in
 {
@@ -121,6 +121,7 @@ in
       enable = true;
       xwayland.enable = true;
     };
+    waybar.enable = true;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
@@ -172,7 +173,6 @@ in
 
     # hyprland
     kitty
-    hyprpanel
     unstable.hyprpaper # wallpaper manager
     hyprwall # wallpaper gui
     hypridle
@@ -205,33 +205,38 @@ in
   environment.stub-ld.enable = true;
   virtualisation.docker.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services = {
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-    };
-    pcscd.enable = true;
-    blueman.enable = true;
-    upower.enable = true;
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
   };
 
-  # Open ports in the firewall.
+  services =
+    {
+      openssh.enable = true;
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        wireplumber.enable = true;
+      };
+      pcscd.enable = true;
+      blueman.enable = true;
+      upower.enable = true;
+
+      auto-cpufreq.enable = true;
+      auto-cpufreq.settings = {
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+        };
+        charger = {
+          governor = "performance";
+          turbo = "auto";
+        };
+      };
+    };
+
   networking.firewall.allowedTCPPorts = [ 25565 3000 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
