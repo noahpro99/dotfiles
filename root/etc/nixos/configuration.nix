@@ -177,13 +177,11 @@ in
     hyprwall # wallpaper gui
     hypridle
     unstable.hyprlock
+    hyprpolkitagent
     killall
     tofi # app launcher
     dolphin # file manager
-    pipewire # modern audio server
-    wireplumber
     xdg-utils # this is needed to allow links to be opened in the browser
-    lxqt.lxqt-policykit # needed for polkit for sudo in gui apps
     dunst # notification daemon
     brightnessctl
     pamixer
@@ -194,6 +192,7 @@ in
     playerctl # media keys
     networkmanagerapplet
     dotool # automate typing in wayland for nerd-dictation
+    bibata-cursors # only for xcursors as fallback for hyprcursor on apps like gtk
   ];
 
   fonts.packages = with pkgs; [
