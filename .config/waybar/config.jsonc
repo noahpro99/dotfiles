@@ -41,7 +41,14 @@
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
-        "format": "{icon}",
+        "format": "{windows}",
+        "window-rewrite-default": "󰈙",
+        "window-rewrite": {
+            "ghostty": "󰊠",
+            "code": "󰨞",
+            "vesktop": "",
+            "chrome": ""
+        },
         "format-icons": {
             "1": "",
             "2": "󰨞",

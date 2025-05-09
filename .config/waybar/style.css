@@ -8,115 +8,108 @@
 }
 
 window#waybar {
-  background: rgba(21, 18, 27, 0);
+  background: transparent;
+  color: #cdd6f4;
+  padding: 0;
+  margin: 0;
+}
+
+/* === Universal Module Style === */
+#memory,
+#temperature,
+#cpu,
+#cava,
+#pulseaudio,
+#pulseaudio.microphone,
+#backlight,
+#battery,
+#window,
+#clock,
+#network,
+#tray,
+#workspaces {
+  background: #313244;
+  color: #cba6f7;
+  padding: 0px 6px;
+  border-radius: 999px;
+}
+
+/* === Workspace Buttons === */
+#workspaces button {
+  padding: 0 4px;
+  margin: 0 2px;
+  color: #555869;
+  border-radius: 999px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+#workspaces button.active {
   color: #cdd6f4;
 }
-
-#workspaces button {
-  padding: 5px;
-  color: #555869;
-  margin-right: 5px;
-}
-
-#workspaces button.active {
-  color: #a6adc8;
-}
-
 #workspaces button.focused {
-  color: #a6adc8;
   background: #eba0ac;
-  border-radius: 10px;
+  color: #1e1e2e;
 }
-
 #workspaces button.urgent {
-  color: #11111b;
   background: #a6e3a1;
-  border-radius: 10px;
+  color: #11111b;
 }
-
 #workspaces button:hover {
   background: #cdd6f4;
   color: #11111b;
-  border-radius: 10px;
 }
 
+/* === Connected Group: Memory + Temp + CPU === */
+#memory {
+  border-radius: 999px 0 0 999px;
+  margin-left: 2px;
+  margin-right: 0;
+}
+#temperature {
+  border-radius: 0;
+  margin: 0;
+}
+#temperature.critical {
+  background: #211200;
+  color: #ff6600;
+}
+#cpu {
+  border-radius: 0 999px 999px 0;
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+/* === Connected Group: Cava + Pulse + Mic === */
+#cava {
+  border-radius: 999px 0 0 999px;
+  margin-left: 2px;
+  margin-right: 0;
+}
+#pulseaudio {
+  border-radius: 0;
+  margin: 0;
+}
+#pulseaudio.microphone {
+  border-radius: 0 999px 999px 0;
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+/* === Connected Group: Backlight + Battery === */
+#backlight {
+  border-radius: 999px 0 0 999px;
+  margin-left: 2px;
+  margin-right: 0;
+}
+#battery {
+  border-radius: 0 999px 999px 0;
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+/* === Standalone Modules === */
 #window,
 #clock,
-#battery,
-#pulseaudio,
 #network,
-#cpu,
-#memory,
-#workspaces,
-#tray,
-#backlight {
-  background: #1e1e2e;
-  padding: 0px 10px;
-  margin: 3px 0px;
-  margin-top: 5px;
-  /* border: 1px solid #181825; */
-}
-
-#backlight {
-  border-radius: 10px 0px 0px 10px;
-}
-
 #tray {
-  border-radius: 10px;
-  margin-right: 10px;
-}
-
-#workspaces {
-  background: #1e1e2e;
-  border-radius: 20px;
-  margin-left: 10px;
-  padding-right: 0px;
-  padding-left: 5px;
-}
-
-#cpu {
-  border-radius: 0px 20px 20px 0px;
-  margin-right: 10px;
-}
-
-#memory {
-  border-radius: 20px 0px 0px 20px;
-}
-
-#window {
-  border-radius: 20px;
-  margin-left: 60px;
-  margin-right: 60px;
-}
-
-#clock {
-  color: #a6adc8;
-  border-radius: 20px;
-  margin-left: 5px;
-  border-right: 0px;
-}
-
-#network {
-  color: #a6adc8;
-  border-radius: 20px 0px 0px 20px;
-}
-
-#pulseaudio {
-  color: #a6adc8;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#pulseaudio.microphone {
-  color: #a6adc8;
-  border-radius: 0px 20px 20px 0px;
-  border-left: 0px;
-  border-right: 0px;
-  margin-right: 5px;
-}
-
-#battery {
-  color: #a6adc8;
-  border-radius: 0px 20px 20px 0px;
-  margin-right: 10px;
+  margin: 0 2px;
 }
