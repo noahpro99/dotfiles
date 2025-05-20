@@ -179,7 +179,7 @@ in
     unstable.hyprlock
     hyprpolkitagent
     killall
-    tofi # app launcher
+    unstable.walker # app launcher
     dolphin # file manager
     xdg-utils # this is needed to allow links to be opened in the browser
     dunst # notification daemon
