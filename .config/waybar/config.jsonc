@@ -16,7 +16,6 @@
         "clock"
     ],
     "modules-right": [
-        "cava",
         "pulseaudio",
         "pulseaudio#microphone",
         "tray",
