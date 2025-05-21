@@ -79,14 +79,10 @@ window#waybar {
 }
 
 /* === Connected Group: Cava + Pulse + Mic === */
-#cava {
+#pulseaudio {
   border-radius: 999px 0 0 999px;
   margin-left: 2px;
   margin-right: 0;
-}
-#pulseaudio {
-  border-radius: 0;
-  margin: 0;
 }
 #pulseaudio.microphone {
   border-radius: 0 999px 999px 0;
