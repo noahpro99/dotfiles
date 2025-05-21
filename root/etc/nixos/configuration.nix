@@ -1,4 +1,4 @@
-# sudo cp ~/dotfiles/root/etc/nixos/* /etc/nixos -r && sudo nixos-rebuild switch --upgrade-all
+# sudo cp ~/dotfiles/root/etc/nixos/* /etc/nixos -r && cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --upgrade-all
 # sudo nix-collect-garbage -d
 
 
@@ -12,12 +12,12 @@ let
   # sudo nix-channel --update
   pkgs = import inputs.nixpkgs {
     system = "x86_64-linux";
-    config = { allowUnfree = true; };
+    config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
     overlays = [ ];
   };
   unstable = import inputs.nixos-unstable {
     system = "x86_64-linux";
-    config = { allowUnfree = true; };
+    config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
     overlays = [ ];
   };
 in
