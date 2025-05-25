@@ -94,7 +94,7 @@ in
   users.users.noahpro = {
     isNormalUser = true;
     description = "Noah Provenzano";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "input" ];
     # for user only packages
     packages = with pkgs; [
       zoom-us
@@ -245,6 +245,28 @@ in
         };
       };
     };
+
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          main = {
+            capslock = "overload(control, esc)";
+            esc = "capslock";
+          };
+          meta = {
+            up = "pageup";
+            down = "pagedown";
+            left = "home";
+            right = "end";
+          };
+        };
+      };
+    };
+  };
+
 
   networking.firewall.allowedTCPPorts = [ 25565 3000 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
