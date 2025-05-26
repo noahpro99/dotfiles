@@ -10,7 +10,7 @@
 let
   # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   # sudo nix-channel --update
-  pkgs = import inputs.nixpkgs {
+  pkgs = import inputs.nixos-stable {
     system = "x86_64-linux";
     config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
     overlays = [ ];
@@ -106,8 +106,8 @@ in
       zoom-us
       vlc
       vesktop
-      unstable.lunar-client
-      unstable.windsurf
+      lunar-client
+      windsurf
       obs-studio
       heroic # epic games
       steam
@@ -119,7 +119,7 @@ in
       pandoc
       gnupg
       pinentry-tty # for gpg
-      unstable.deno
+      deno
       protobuf
       btop-rocm
       ghostty
@@ -161,17 +161,17 @@ in
     google-chrome
 
     # code
-    unstable.vscode
-    unstable.zed-editor
+    vscode
+    zed-editor
     git
     pass
     stow
     fzf
-    unstable.zoxide
+    zoxide
     gcc
     libgcc
     gh
-    unstable.bun
+    bun
     nodejs_20
     nil
     nixpkgs-fmt
@@ -180,7 +180,7 @@ in
     htop
     python312
     ffmpeg
-    unstable.uv
+    uv
     zip
     unzip
     sea-orm-cli
@@ -189,14 +189,13 @@ in
 
     # hyprland
     kitty
-    unstable.hyprpaper # wallpaper manager
-    hyprwall # wallpaper gui
+    hyprpaper # wallpaper manager
     hypridle
-    unstable.hyprlock
+    hyprlock
     hyprpolkitagent
     killall
-    unstable.walker # app launcher
-    dolphin # file manager
+    walker # app launcher
+    kdePackages.dolphin
     xdg-utils # this is needed to allow links to be opened in the browser
     dunst # notification daemon
     brightnessctl
@@ -212,7 +211,8 @@ in
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "CascadiaCode" ]; })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-mono
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
