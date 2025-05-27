@@ -44,8 +44,12 @@ in
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
     prime = {
-      sync.enable = true;
-      allowExternalGpu = false;
+      reverseSync.enable = true;
+      offload = {
+        enable = false;
+        enableOffloadCmd = true;
+      };
+      sync.enable = false;
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
@@ -235,6 +239,10 @@ in
     NIXOS_OZONE_WL = "1"; # Enable Wayland for Hyprland
     LIBVA_DRIVER_NAME = "nvidia"; # Use NVIDIA for hardware acceleration
     __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # Force NVIDIA GLX
+    WLR_NO_HARDWARE_CURSORS = "1";
+    __VK_LAYER_NV_optimus = "NVIDIA_only";
+    __NV_PRIME_RENDER_OFFLOAD = "1";
+    __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
   };
   environment.stub-ld.enable = true;
   virtualisation.docker.enable = true;
@@ -246,6 +254,8 @@ in
 
   services =
     {
+      displayManager.sddm.enable = true;
+      displayManager.sddm.wayland.enable = true;
       openssh.enable = true;
       pipewire = {
         enable = true;
