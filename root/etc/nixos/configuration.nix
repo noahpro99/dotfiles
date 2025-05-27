@@ -15,45 +15,60 @@ let
     config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
     overlays = [ ];
   };
-  unstable = import inputs.nixos-unstable {
+  _unstable = import inputs.nixos-unstable {
     system = "x86_64-linux";
     config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
     overlays = [ ];
   };
 in
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      nvidia-vaapi-driver
+      libva-utils
+    ];
   };
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = false;
     open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
-  };
-  hardware.nvidia.prime = {
-    reverseSync.enable = true;
-    allowExternalGpu = false;
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
+    prime = {
+      sync.enable = true;
+      allowExternalGpu = false;
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
   };
 
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_14;
+    extraModulePackages = with pkgs; [ linuxKernel.packages.linux_6_14.v4l2loopback.out ];
+    kernelModules = [
+      "v4l2loopback"
+      "snd-aloop"
+    ];
+    extraModprobeConfig = ''
+      options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+    '';
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernel.sysctl = {
+      "vm.swappiness" = 1;
+    };
+  };
 
   # if you want grub instead
   # boot.loader.grub.enable = true;
@@ -216,7 +231,11 @@ in
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Enable Wayland for Hyprland
+    LIBVA_DRIVER_NAME = "nvidia"; # Use NVIDIA for hardware acceleration
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # Force NVIDIA GLX
+  };
   environment.stub-ld.enable = true;
   virtualisation.docker.enable = true;
 
@@ -250,28 +269,28 @@ in
           turbo = "auto";
         };
       };
-    };
-
-  services.keyd = {
-    enable = true;
-    keyboards = {
-      default = {
-        ids = [ "*" ];
-        settings = {
-          main = {
-            capslock = "overload(control, esc)";
-            esc = "capslock";
-          };
-          meta = {
-            up = "pageup";
-            down = "pagedown";
-            left = "home";
-            right = "end";
+      keyd = {
+        enable = true;
+        keyboards = {
+          default = {
+            ids = [ "*" ];
+            settings = {
+              main = {
+                capslock = "overload(control, esc)";
+                esc = "capslock";
+              };
+              meta = {
+                up = "pageup";
+                down = "pagedown";
+                left = "home";
+                right = "end";
+              };
+            };
           };
         };
       };
     };
-  };
+
 
 
   networking.firewall.allowedTCPPorts = [ 25565 3000 ];
@@ -286,5 +305,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
