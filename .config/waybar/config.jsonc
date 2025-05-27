@@ -224,6 +224,7 @@
         ]
     },
     "temperature": {
+        "thermal-zone": 5,
         "critical-threshold": 90,
         "format": "{icon} {temperatureC}°C",
         "format-icons": [
