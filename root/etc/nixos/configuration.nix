@@ -56,21 +56,9 @@ in
   };
 
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_14;
-    extraModulePackages = with pkgs; [ linuxKernel.packages.linux_6_14.v4l2loopback.out ];
-    kernelModules = [
-      "v4l2loopback"
-      "snd-aloop"
-    ];
-    extraModprobeConfig = ''
-      options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
-    '';
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-    };
-    kernel.sysctl = {
-      "vm.swappiness" = 1;
     };
   };
 
@@ -314,5 +302,5 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
