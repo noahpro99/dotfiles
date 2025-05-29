@@ -23,24 +23,21 @@ sudo apt install stow
 First, check out the dotfiles repo in your $HOME directory using git
 
 ```bash
-$ git clone git@github.com/noahpro99/dotfiles.git
-$ cd dotfiles
+git clone git@github.com/noahpro99/dotfiles.git
+cd dotfiles
 ```
 
 then use GNU stow to create symlinks
 
 ```bash
-$ stow .
+stow . --no-folding
 ```
 
-For the `/root` you have to manually copy after any change
+no folding makes it so that the entire folders aren't symlinked only the specific files in the dotfiles
 
-Nixos config for example
+## Nixos
 
 ```bash
-sudo cp ~/dotfiles/root/etc/nixos/configuration.nix /etc/nixos/configuration.nix
+chmod u+x switch.sh
+./switch.sh
 ```
-
-## Video Tutorial
-
-[Dreams of Code Tutorial](https://www.youtube.com/watch?v=y6XCebnB9gs)
