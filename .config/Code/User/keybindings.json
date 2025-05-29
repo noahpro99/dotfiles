@@ -1,0 +1,92 @@
+[
+    {
+        "key": "pagedown",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "cursorDown",
+                "cursorDown",
+                "cursorDown",
+                "cursorDown",
+                "cursorDown",
+                "cursorDown"
+            ]
+        }
+    },
+    {
+        "key": "shift+pagedown",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "cursorDownSelect",
+                "cursorDownSelect",
+                "cursorDownSelect",
+                "cursorDownSelect",
+                "cursorDownSelect",
+                "cursorDownSelect",
+                "cursorDownSelect",
+                "cursorDownSelect"
+            ]
+        }
+    },
+    {
+        "key": "pageup",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "cursorUp",
+                "cursorUp",
+                "cursorUp",
+                "cursorUp",
+                "cursorUp",
+                "cursorUp"
+            ]
+        }
+    },
+    {
+        "key": "shift+pageup",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "cursorUpSelect",
+                "cursorUpSelect",
+                "cursorUpSelect",
+                "cursorUpSelect",
+                "cursorUpSelect",
+                "cursorUpSelect",
+                "cursorUpSelect",
+                "cursorUpSelect"
+            ]
+        }
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+backspace",
+        "command": "-inlineChat2.undo",
+        "when": "inlineChatHasEditsAgent && inlineChatVisible && !chatEdits.isRequestInProgress"
+    },
+    {
+        "key": "ctrl+backspace",
+        "command": "-chatEditor.action.reject",
+        "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.previousEditor"
+    }
+]
