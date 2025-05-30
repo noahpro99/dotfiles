@@ -629,7 +629,6 @@
   "python.defaultInterpreterPath": "C:\\Users\\noahp\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.cursorSmoothCaretAnimation": "off",
-  "editor.smoothScrolling": true,
   "zenMode.showTabs": "none",
   "zenMode.fullScreen": false,
   "remote.autoForwardPortsSource": "hybrid",
@@ -699,7 +698,7 @@
     "/tmp/**": true,
     "/tmp/git-blob**": true
   },
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "rust-analyzer.cargo.buildScripts.enable": true,
   "rust-analyzer.procMacro.enable": true,
   "rust-analyzer.lru.capacity": 1024,
@@ -835,4 +834,7 @@
   "gitlens.currentLine.enabled": false,
   "inlineChat.enableV2": true,
   "window.commandCenter": false,
+  "python.analysis.typeCheckingMode": "standard",
+  "terminal.integrated.smoothScrolling": true,
+  "editor.smoothScrolling": true,
 }

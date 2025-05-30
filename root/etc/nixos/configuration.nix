@@ -242,8 +242,11 @@ in
 
   services =
     {
-      displayManager.sddm.enable = true;
-      displayManager.sddm.wayland.enable = true;
+      displayManager.sddm = {
+        enable = true;
+        wayland.enable = true;
+        autoNumlock = true;
+      };
       openssh.enable = true;
       pipewire = {
         enable = true;
