@@ -9,7 +9,11 @@
                 "cursorDown",
                 "cursorDown",
                 "cursorDown",
-                "cursorDown"
+                "cursorDown",
+                "cursorDown",
+                "cursorDown",
+                "cursorDown",
+                "cursorDown",
             ]
         }
     },
@@ -25,7 +29,9 @@
                 "cursorDownSelect",
                 "cursorDownSelect",
                 "cursorDownSelect",
-                "cursorDownSelect"
+                "cursorDownSelect",
+                "cursorDownSelect",
+                "cursorDownSelect",
             ]
         }
     },
@@ -39,7 +45,11 @@
                 "cursorUp",
                 "cursorUp",
                 "cursorUp",
-                "cursorUp"
+                "cursorUp",
+                "cursorUp",
+                "cursorUp",
+                "cursorUp",
+                "cursorUp",
             ]
         }
     },
@@ -55,7 +65,9 @@
                 "cursorUpSelect",
                 "cursorUpSelect",
                 "cursorUpSelect",
-                "cursorUpSelect"
+                "cursorUpSelect",
+                "cursorUpSelect",
+                "cursorUpSelect",
             ]
         }
     },

@@ -834,7 +834,6 @@
   "inlineChat.enableV2": true,
   "python.analysis.typeCheckingMode": "standard",
   "terminal.integrated.smoothScrolling": true,
-  "editor.smoothScrolling": true,
   "workbench.layoutControl.enabled": false,
   "chat.commandCenter.enabled": false,
   "window.commandCenter": false,
