@@ -373,6 +373,10 @@
   },
   "githubPullRequests.queries": [
     {
+      "label": "Local Pull Request Branches",
+      "query": "default"
+    },
+    {
       "label": "Waiting For My Review",
       "query": "repo:${owner}/${repository} is:open review-requested:${user}"
     },
@@ -383,6 +387,10 @@
     {
       "label": "Created By Me",
       "query": "repo:${owner}/${repository} is:open author:${user}"
+    },
+    {
+      "label": "All Open",
+      "query": "default"
     }
   ],
   "git.enableSmartCommit": true,
@@ -838,4 +846,6 @@
   "chat.commandCenter.enabled": false,
   "window.commandCenter": false,
   "window.menuBarVisibility": "compact",
+  "editor.smoothScrolling": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
 }
