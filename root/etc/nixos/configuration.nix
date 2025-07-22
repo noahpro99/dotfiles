@@ -54,7 +54,12 @@ in
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  hardware.fancontrol.enable = true;
+  hardware.fancontrol = {
+    enable = true;
+    config = ''
+    '';
+  };
+
 
   boot = {
     loader = {
@@ -115,7 +120,6 @@ in
       vlc
       vesktop
       lunar-client
-      windsurf
       obs-studio
       heroic # epic games
       steam
@@ -127,7 +131,6 @@ in
       pandoc
       gnupg
       pinentry-tty # for gpg
-      deno
       protobuf
       btop-rocm
       ghostty
@@ -170,7 +173,6 @@ in
 
     # code
     vscode
-    zed-editor
     git
     pass
     stow
