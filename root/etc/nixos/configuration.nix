@@ -54,6 +54,7 @@ in
       nvidiaBusId = "PCI:1:0:0";
     };
   };
+  hardware.fancontrol.enable = true;
 
   boot = {
     loader = {
