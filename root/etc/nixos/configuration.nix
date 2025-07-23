@@ -180,6 +180,7 @@ in
     zoxide
     gcc
     libgcc
+    eza
     gh
     bun
     nodejs_20
@@ -210,7 +211,7 @@ in
     dunst # notification daemon
     brightnessctl
     pamixer
-    wlsunset # screen temperature
+    hyprsunset
     wl-clipboard
     cliphist
     grimblast # screenshot tool
