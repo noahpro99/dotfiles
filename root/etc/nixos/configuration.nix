@@ -54,18 +54,13 @@ in
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  hardware.fancontrol = {
-    enable = true;
-    config = ''
-    '';
-  };
-
 
   boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   # if you want grub instead
