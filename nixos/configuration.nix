@@ -1,4 +1,4 @@
-# sudo cp ~/dotfiles/root/etc/nixos/* /etc/nixos -r && cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --upgrade-all
+# cd nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .#nixos --upgrade-all
 # sudo nix-collect-garbage -d
 
 
@@ -10,12 +10,12 @@
 let
   # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   # sudo nix-channel --update
-  pkgs = import inputs.nixos-stable {
+  _stable = import inputs.nixos-stable {
     system = "x86_64-linux";
     config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
     overlays = [ ];
   };
-  _unstable = import inputs.nixos-unstable {
+  pkgs = import inputs.nixos-unstable {
     system = "x86_64-linux";
     config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
     overlays = [ ];
@@ -60,7 +60,7 @@ in
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_testing;
     kernelModules = [ "hp_wmi" ];
   };
 
