@@ -1,4 +1,4 @@
-# cd nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .#nixos --upgrade-all
+# cd ~/dotfiles/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .#nixos --upgrade-all
 # sudo nix-collect-garbage -d
 
 
