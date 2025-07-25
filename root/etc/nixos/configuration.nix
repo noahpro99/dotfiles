@@ -61,6 +61,7 @@ in
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelModules = [ "hp_wmi" ];
   };
 
   # if you want grub instead
