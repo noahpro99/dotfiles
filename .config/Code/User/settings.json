@@ -200,6 +200,7 @@
     "mydatabase",
     "mydb",
     "ndarray",
+    "nixos",
     "noahp",
     "noahpro",
     "Normalising",
@@ -541,10 +542,6 @@
     "ts(6133)",
     "cSpell",
     "rustc(unused_variables)"
-  ],
-  "errorLens.exclude": [
-    "not accessed",
-    "unused variable"
   ],
   "workbench.colorCustomizations": {
     "window.activeBorder": "#ff0000",

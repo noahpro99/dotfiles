@@ -130,6 +130,7 @@ in
       btop-rocm
       ghostty
       r2modman
+      godot
     ];
   };
 
