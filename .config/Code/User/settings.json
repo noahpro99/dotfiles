@@ -849,6 +849,6 @@
   "editor.smoothScrolling": true,
   "github.copilot.nextEditSuggestions.fixes": true,
   "terminal.integrated.suggest.enabled": true,
-  "godotTools.editorPath.godot4": "\"C:\\Users\\noahpro\\Downloads\\Godot_v4.4.1-stable_win64.exe\\Godot_v4.4.1-stable_win64.exe\"",
+  "godotTools.editorPath.godot4": "godot",
   "workbench.editor.editorActionsLocation": "titleBar",
 }
