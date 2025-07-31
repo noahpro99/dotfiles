@@ -4,6 +4,11 @@
 [user]
 	email = noahpro@gmail.com
 	name = noahpro
+[sendemail]
+  smtpServer = smtp.gmail.com
+  smtpServerPort = 587
+  smtpEncryption = tls
+  smtpUser = noahpro@gmail.com
 [core]
   editor = code --wait
 [diff]
