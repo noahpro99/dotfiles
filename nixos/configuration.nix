@@ -42,6 +42,7 @@ in
     open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
+    dynamicBoost.enable = true;
     prime = {
       reverseSync.enable = true;
       offload = {

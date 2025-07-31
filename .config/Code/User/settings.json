@@ -382,6 +382,10 @@
       "query": "default"
     },
     {
+      "label": "Local Pull Request Branches",
+      "query": "repo:${owner}/${repository} default"
+    },
+    {
       "label": "Waiting For My Review",
       "query": "repo:${owner}/${repository} is:open review-requested:${user}"
     },
@@ -392,6 +396,10 @@
     {
       "label": "Created By Me",
       "query": "repo:${owner}/${repository} is:open author:${user}"
+    },
+    {
+      "label": "All Open",
+      "query": "repo:${owner}/${repository} default"
     },
     {
       "label": "All Open",
@@ -836,7 +844,6 @@
     "launchpad": false
   },
   "excalidraw.theme": "dark",
-  "terminal.integrated.gpuAcceleration": "on",
   "github.copilot.chat.search.keywordSuggestions": true,
   "gitlens.currentLine.enabled": false,
   "inlineChat.enableV2": true,
@@ -851,4 +858,6 @@
   "terminal.integrated.suggest.enabled": true,
   "godotTools.editorPath.godot4": "godot",
   "workbench.editor.editorActionsLocation": "titleBar",
+  "remoteHub.commitDirectlyWarning": "off",
+  "makefile.configureOnOpen": true,
 }
