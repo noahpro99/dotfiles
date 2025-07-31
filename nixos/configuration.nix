@@ -20,7 +20,7 @@ let
     config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
     overlays = [ ];
   };
-  hp-wmi-module = pkgs.callPackage ./hp-wmi-module.nix {
+  hp-wmi-module = pkgs.callPackage /home/noahpro/repos/kernel-dev/source/hp-wmi-module.nix {
     kernel = config.boot.kernelPackages.kernel;
   };
 in
@@ -66,7 +66,7 @@ in
     kernelPackages = pkgs.linuxPackages_testing;
     extraModulePackages = [
       (hp-wmi-module.overrideAttrs (_: {
-        patches = [ ./hp-wmi-omen-16wf-patch1.patch ];
+        patches = [ /home/noahpro/repos/kernel-dev/patches/hp-wmi-omen-16wf-patch1.patch ];
       }))
     ];
   };
