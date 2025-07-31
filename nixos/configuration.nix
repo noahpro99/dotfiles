@@ -20,6 +20,9 @@ let
     config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
     overlays = [ ];
   };
+  hp-wmi-module = pkgs.callPackage ./hp-wmi-module.nix {
+    kernel = config.boot.kernelPackages.kernel;
+  };
 in
 {
   imports = [ ./hardware-configuration.nix ];
@@ -39,7 +42,7 @@ in
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
-    open = true;
+    open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
     dynamicBoost.enable = true;
@@ -61,7 +64,11 @@ in
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_testing;
-    kernelModules = [ "hp_wmi" ];
+    extraModulePackages = [
+      (hp-wmi-module.overrideAttrs (_: {
+        patches = [ ./hp-wmi-omen-16wf-patch1.patch ];
+      }))
+    ];
   };
 
   # if you want grub instead
@@ -115,6 +122,7 @@ in
       zoom-us
       vlc
       vesktop
+      discord
       lunar-client
       obs-studio
       heroic # epic games
@@ -260,17 +268,7 @@ in
       blueman.enable = true;
       upower.enable = true;
 
-      auto-cpufreq.enable = true;
-      auto-cpufreq.settings = {
-        battery = {
-          governor = "powersave";
-          turbo = "never";
-        };
-        charger = {
-          governor = "performance";
-          turbo = "auto";
-        };
-      };
+      power-profiles-daemon.enable = true;
       keyd = {
         enable = true;
         keyboards = {
