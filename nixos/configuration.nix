@@ -1,11 +1,6 @@
 # cd ~/dotfiles/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .#nixos --upgrade-all
 # sudo nix-collect-garbage -d
 
-
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { inputs, config, ... }:
 let
   # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
@@ -33,7 +28,14 @@ in
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
-      libva-utils
+      intel-compute-runtime
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiVdpau
+      libvdpau-va-gl
+      mesa
+      nvidia-vaapi-driver
+      nv-codec-headers-12
     ];
   };
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -42,9 +44,9 @@ in
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
     dynamicBoost.enable = true;
     prime = {
       reverseSync.enable = true;
@@ -71,11 +73,6 @@ in
     ];
   };
 
-  # if you want grub instead
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.device = "nodev";
-  # boot.loader.grub.useOSProber = true;
-
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -83,15 +80,10 @@ in
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/New_York";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -102,14 +94,6 @@ in
     LC_PAPER = "en_US.UTF-8";
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
-  };
-
-  # Configure keymap in X11
-  services.xserver = {
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -216,6 +200,8 @@ in
     hyprsunset
     wl-clipboard
     cliphist
+    grim # recommended for xdg-desktop-portal-hyprland
+    slurp # recommended for xdg-desktop-portal-hyprland
     grimblast # screenshot tool
     playerctl # media keys
     networkmanagerapplet
@@ -231,7 +217,6 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Enable Wayland for Hyprland
-    LIBVA_DRIVER_NAME = "nvidia"; # Use NVIDIA for hardware acceleration
     __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # Force NVIDIA GLX
     WLR_NO_HARDWARE_CURSORS = "1";
     __VK_LAYER_NV_optimus = "NVIDIA_only";
@@ -260,8 +245,6 @@ in
         alsa.support32Bit = true;
         pulse.enable = true;
         wireplumber.enable = true;
-        package = _stable.pipewire;
-        wireplumber.package = _stable.wireplumber;
       };
       hypridle.enable = true;
       pcscd.enable = true;
@@ -269,6 +252,7 @@ in
       upower.enable = true;
 
       power-profiles-daemon.enable = true;
+
       keyd = {
         enable = true;
         keyboards = {
@@ -287,6 +271,13 @@ in
               };
             };
           };
+        };
+      };
+
+      xserver = {
+        xkb = {
+          layout = "us";
+          variant = "";
         };
       };
     };
