@@ -133,6 +133,11 @@ in
   nixpkgs.config.rocmSupport = true;
 
   programs = {
+    bash = {
+      interactiveShellInit = ''
+        eval "$(direnv hook bash)"
+      '';
+    };
     hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -169,6 +174,7 @@ in
     fzf
     zoxide
     gcc
+    direnv
     libgcc
     eza
     gh
