@@ -12,12 +12,12 @@ let
   # sudo nix-channel --update
   _stable = import inputs.nixos-stable {
     system = "x86_64-linux";
-    config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
+    config = { allowUnfree = true; };
     overlays = [ ];
   };
   pkgs = import inputs.nixos-unstable {
     system = "x86_64-linux";
-    config = { allowUnfree = true; permittedInsecurePackages = [ "electron-33.4.11" ]; };
+    config = { allowUnfree = true; };
     overlays = [ ];
   };
   hp-wmi-module = pkgs.callPackage /home/noahpro/repos/kernel-dev/source/hp-wmi-module.nix {
@@ -153,6 +153,7 @@ in
       enable = true;
       xwayland.enable = true;
     };
+    hyprlock.enable = true;
     waybar.enable = true;
     gnupg.agent = {
       enable = true;
@@ -204,13 +205,9 @@ in
     pkg-config
 
     # hyprland
-    kitty
     hyprpaper # wallpaper manager
-    hypridle
-    hyprlock
-    hyprpolkitagent
     killall
-    walker # app launcher
+    tofi # app launcher
     kdePackages.dolphin
     xdg-utils # this is needed to allow links to be opened in the browser
     dunst # notification daemon
@@ -263,7 +260,10 @@ in
         alsa.support32Bit = true;
         pulse.enable = true;
         wireplumber.enable = true;
+        package = _stable.pipewire;
+        wireplumber.package = _stable.wireplumber;
       };
+      hypridle.enable = true;
       pcscd.enable = true;
       blueman.enable = true;
       upower.enable = true;
