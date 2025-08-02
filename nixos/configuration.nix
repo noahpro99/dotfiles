@@ -198,6 +198,7 @@ in
     hyprpaper # wallpaper manager
     killall
     tofi # app launcher
+    hypridle
     kdePackages.dolphin
     xdg-utils # this is needed to allow links to be opened in the browser
     dunst # notification daemon
@@ -224,7 +225,6 @@ in
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Enable Wayland for Hyprland
     __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # Force NVIDIA GLX
-    WLR_NO_HARDWARE_CURSORS = "1";
     __VK_LAYER_NV_optimus = "NVIDIA_only";
     __NV_PRIME_RENDER_OFFLOAD = "1";
     __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
@@ -239,11 +239,6 @@ in
 
   services =
     {
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        autoNumlock = true;
-      };
       openssh.enable = true;
       pipewire = {
         enable = true;
@@ -252,7 +247,6 @@ in
         pulse.enable = true;
         wireplumber.enable = true;
       };
-      hypridle.enable = true;
       pcscd.enable = true;
       blueman.enable = true;
       upower.enable = true;
