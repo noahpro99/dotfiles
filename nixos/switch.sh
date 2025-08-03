@@ -1,3 +1,5 @@
+rm ~/dotfiles/nixos/hardware-configuration.nix
+nixos-generate-config --dir ~/dotfiles/nixos
 cd ~/dotfiles/nixos
 sudo nix flake update --extra-experimental-features nix-command --extra-experimental-features flakes
-sudo nixos-rebuild switch --upgrade-all
+sudo nixos-rebuild switch --flake .#nixos --upgrade-all
