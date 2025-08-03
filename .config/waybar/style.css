@@ -28,8 +28,8 @@ window#waybar {
 #network,
 #tray,
 #workspaces {
-  background: #313244;
-  color: #cba6f7;
+  background: #34343d;
+  color: #fa824c;
   padding: 0px 6px;
   border-radius: 999px;
 }
