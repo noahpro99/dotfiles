@@ -28,7 +28,7 @@ window#waybar {
 #network,
 #tray,
 #workspaces {
-  background: #34343d;
+  background: #4e4643;
   color: #fa824c;
   padding: 0px 6px;
   border-radius: 999px;
@@ -38,12 +38,12 @@ window#waybar {
 #workspaces button {
   padding: 0 4px;
   margin: 0 2px;
-  color: #555869;
+  color: #8b827a;
   border-radius: 999px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 #workspaces button.active {
-  color: #cdd6f4;
+  color: #fa824c;
 }
 #workspaces button.focused {
   background: #eba0ac;
