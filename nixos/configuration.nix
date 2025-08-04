@@ -198,6 +198,7 @@ in
     hyprpaper # wallpaper manager
     killall
     tofi # app launcher
+    hyprpolkitagent # polkit agent
     hypridle
     kdePackages.dolphin
     xdg-utils # this is needed to allow links to be opened in the browser

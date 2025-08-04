@@ -861,4 +861,5 @@
   "remoteHub.commitDirectlyWarning": "off",
   "makefile.configureOnOpen": true,
   "terminal.integrated.gpuAcceleration": "on",
+  "rust-analyzer.server.path": "rust-analyzer",
 }
