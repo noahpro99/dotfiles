@@ -20,7 +20,7 @@ let
   };
 in
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix inputs.omenix.nixosModules.default ];
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -241,7 +241,7 @@ in
 
   services =
     {
-      openssh.enable = true;
+      omenix.enable = true;
       pipewire = {
         enable = true;
         alsa.enable = true;

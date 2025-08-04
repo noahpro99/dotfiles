@@ -32,10 +32,45 @@
         "type": "github"
       }
     },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1754028485,
+        "narHash": "sha256-IiiXB3BDTi6UqzAZcf2S797hWEPCRZOwyNThJIYhUfk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "59e69648d345d6e8fef86158c555730fa12af9de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "omenix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1754292310,
+        "narHash": "sha256-5mCHlpc2CaoOCjK+JhWrb49yawshsbLCvyVXel/NSDs=",
+        "owner": "noahpro99",
+        "repo": "omenix",
+        "rev": "8e6aa783e6f98ace84c52bd833c69b2b81894fd2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noahpro99",
+        "repo": "omenix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "nixos-stable": "nixos-stable",
-        "nixos-unstable": "nixos-unstable"
+        "nixos-unstable": "nixos-unstable",
+        "omenix": "omenix"
       }
     }
   },
