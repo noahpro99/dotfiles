@@ -53,11 +53,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1754448277,
-        "narHash": "sha256-fGyKQh3tRreJmN03wKttR4CG7gd1dUf78Cwiy9qJrI8=",
+        "lastModified": 1754454651,
+        "narHash": "sha256-pMRHuKx6RMvi6iB3NO0eNeccV2MqxlWtR5nijWaRQ+M=",
         "owner": "noahpro99",
         "repo": "omenix",
-        "rev": "9b4e63b76abdc8c9cf33a206508f06f202342cfd",
+        "rev": "8316371ecbcfd256847b055a2c946062407bc630",
         "type": "github"
       },
       "original": {

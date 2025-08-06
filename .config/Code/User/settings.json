@@ -862,4 +862,7 @@
   "makefile.configureOnOpen": true,
   "terminal.integrated.gpuAcceleration": "on",
   "rust-analyzer.server.path": "rust-analyzer",
+  "workbench.editor.tabActionCloseVisibility": false,
+  "workbench.editor.showTabs": "none",
+  "workbench.statusBar.visible": false,
 }

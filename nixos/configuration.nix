@@ -65,7 +65,7 @@ in
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_15;
     extraModulePackages = [
       (hp-wmi-module.overrideAttrs (_: {
         patches = [ ./hp-wmi-omen-16wf-patch1.patch ];
