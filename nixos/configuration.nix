@@ -208,8 +208,6 @@ in
     hyprsunset
     wl-clipboard
     cliphist
-    grim # recommended for xdg-desktop-portal-hyprland
-    slurp # recommended for xdg-desktop-portal-hyprland
     grimblast # screenshot tool
     playerctl # media keys
     networkmanagerapplet
