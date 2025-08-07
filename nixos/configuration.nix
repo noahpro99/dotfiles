@@ -234,7 +234,7 @@ in
 
   powerManagement = {
     enable = true;
-    powertop.enable = true;
+    powertop.enable = false; # disable since we use power-profiles-daemon
   };
 
   services =
