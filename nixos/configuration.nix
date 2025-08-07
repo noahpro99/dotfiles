@@ -130,7 +130,7 @@ in
       gnupg
       pinentry-tty # for gpg
       protobuf
-      btop
+      btop-cuda
       ghostty
       r2modman
       godot
