@@ -679,7 +679,6 @@
     "workbench.action.toggleSidebarVisibility",
   ],
   "workbench.editor.enablePreview": false,
-  "explorer.openEditors.visible": 1,
   "editor.cursorSurroundingLines": 20,
   "editor.fontFamily": "Consolas, 'Courier New', monospace, 'CaskaydiaMono Nerd Font Mono'",
   "terminal.integrated.profiles.windows": {
@@ -725,19 +724,8 @@
   ],
   "rust-analyzer.checkOnSave": true,
   "nix.enableLanguageServer": true,
-  "nix.serverPath": "nil",
-  "nix.formatterPath": "nixpkgs-fmt",
   "[nix]": {
     "editor.defaultFormatter": "jnoortheen.nix-ide"
-  },
-  "nix.serverSettings": {
-    "nil": {
-      "formatting": {
-        "command": [
-          "nixpkgs-fmt"
-        ]
-      }
-    }
   },
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
@@ -863,4 +851,8 @@
   "rust-analyzer.server.path": "rust-analyzer",
   "workbench.editor.tabActionCloseVisibility": false,
   "glassit-linux.opacity": 80,
+  "workbench.editor.showTabs": "none",
+  "editor.lineNumbers": "off",
+  "workbench.statusBar.visible": false,
+  "nix.formatterPath": "nixfmt"
 }

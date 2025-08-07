@@ -1,18 +1,20 @@
 # cd ~/dotfiles/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .#nixos --upgrade-all
 # sudo nix-collect-garbage -d
 
-{ inputs, config, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 let
   # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   # sudo nix-channel --update
   _stable = import inputs.nixos-stable {
     system = "x86_64-linux";
-    config = { allowUnfree = true; };
-    overlays = [ ];
-  };
-  pkgs = import inputs.nixos-unstable {
-    system = "x86_64-linux";
-    config = { allowUnfree = true; };
+    config = {
+      allowUnfree = true;
+    };
     overlays = [ ];
   };
   hp-wmi-module = pkgs.callPackage ./hp-wmi-module.nix {
@@ -20,7 +22,10 @@ let
   };
 in
 {
-  imports = [ ./hardware-configuration.nix inputs.omenix.nixosModules.default ];
+  imports = [
+    ./hardware-configuration.nix
+    inputs.omenix.nixosModules.default
+  ];
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -100,7 +105,12 @@ in
   users.users.noahpro = {
     isNormalUser = true;
     description = "Noah Provenzano";
-    extraGroups = [ "networkmanager" "wheel" "docker" "input" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "input"
+    ];
     # for user only packages
     packages = with pkgs; [
       zoom-us
@@ -126,7 +136,6 @@ in
       godot
     ];
   };
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -156,7 +165,12 @@ in
     };
     nix-ld = {
       enable = true;
-      libraries = with pkgs; [ libuuid.lib alsa-lib glibc libgcc.lib ];
+      libraries = with pkgs; [
+        libuuid.lib
+        alsa-lib
+        glibc
+        libgcc.lib
+      ];
     };
   };
 
@@ -180,7 +194,7 @@ in
     bun
     nodejs_20
     nil
-    nixpkgs-fmt
+    nixfmt
     starship
     rustup
     htop
@@ -220,7 +234,10 @@ in
     nerd-fonts.caskaydia-mono
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Enable Wayland for Hyprland
     __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # Force NVIDIA GLX
@@ -236,54 +253,54 @@ in
     powertop.enable = false; # disable since we use power-profiles-daemon
   };
 
-  services =
-    {
-      omenix.enable = true;
-      pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        wireplumber.enable = true;
-      };
-      pcscd.enable = true;
-      blueman.enable = true;
-      upower.enable = true;
+  services = {
+    omenix.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+    pcscd.enable = true;
+    blueman.enable = true;
+    upower.enable = true;
 
-      power-profiles-daemon.enable = true;
+    power-profiles-daemon.enable = true;
 
-      keyd = {
-        enable = true;
-        keyboards = {
-          default = {
-            ids = [ "*" ];
-            settings = {
-              main = {
-                capslock = "overload(control, esc)";
-                esc = "capslock";
-              };
-              meta = {
-                up = "pageup";
-                down = "pagedown";
-                left = "home";
-                right = "end";
-              };
+    keyd = {
+      enable = true;
+      keyboards = {
+        default = {
+          ids = [ "*" ];
+          settings = {
+            main = {
+              capslock = "overload(control, esc)";
+              esc = "capslock";
+            };
+            meta = {
+              up = "pageup";
+              down = "pagedown";
+              left = "home";
+              right = "end";
             };
           };
         };
       };
-
-      xserver = {
-        xkb = {
-          layout = "us";
-          variant = "";
-        };
-      };
     };
 
+    xserver = {
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+    };
+  };
 
-
-  networking.firewall.allowedTCPPorts = [ 25565 3000 ];
+  networking.firewall.allowedTCPPorts = [
+    25565
+    3000
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
