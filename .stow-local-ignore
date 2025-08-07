@@ -1,0 +1,6 @@
+^/README.*
+\.git
+\.gitignore
+
+^/nixos$
+^/.vscode$

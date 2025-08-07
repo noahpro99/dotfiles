@@ -467,10 +467,10 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "files.associations": {
     "*.py": "python",
-    "GitHub Copilot": "plaintext",
     "*.pl": "prolog",
     "*.rmd": "markdown",
-    ".env*": "dotenv"
+    ".env*": "dotenv",
+    ".stow-local-ignore": "plaintext"
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -853,6 +853,6 @@
   "glassit-linux.opacity": 80,
   "workbench.editor.showTabs": "none",
   "editor.lineNumbers": "off",
-  "workbench.statusBar.visible": false,
-  "nix.formatterPath": "nixfmt"
+  "nix.formatterPath": "nixfmt",
+  "workbench.statusBar.visible": false
 }
