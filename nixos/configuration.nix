@@ -120,7 +120,7 @@ in
       gnupg
       pinentry-tty # for gpg
       protobuf
-      btop-rocm
+      btop
       ghostty
       r2modman
       godot
@@ -133,10 +133,10 @@ in
   nixpkgs.config.rocmSupport = true;
 
   programs = {
-    bash = {
-      interactiveShellInit = ''
-        eval "$(direnv hook bash)"
-      '';
+    direnv = {
+      enable = true;
+      silent = true;
+      enableBashIntegration = true;
     };
     hyprland = {
       enable = true;
@@ -174,7 +174,6 @@ in
     fzf
     zoxide
     gcc
-    direnv
     libgcc
     eza
     gh
