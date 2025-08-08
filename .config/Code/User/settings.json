@@ -376,36 +376,6 @@
   "workbench.editorAssociations": {
     "*.html": "default"
   },
-  "githubPullRequests.queries": [
-    {
-      "label": "Local Pull Request Branches",
-      "query": "default"
-    },
-    {
-      "label": "Local Pull Request Branches",
-      "query": "repo:${owner}/${repository} default"
-    },
-    {
-      "label": "Waiting For My Review",
-      "query": "repo:${owner}/${repository} is:open review-requested:${user}"
-    },
-    {
-      "label": "Assigned To Me",
-      "query": "repo:${owner}/${repository} is:open assignee:${user}"
-    },
-    {
-      "label": "Created By Me",
-      "query": "repo:${owner}/${repository} is:open author:${user}"
-    },
-    {
-      "label": "All Open",
-      "query": "repo:${owner}/${repository} default"
-    },
-    {
-      "label": "All Open",
-      "query": "default"
-    }
-  ],
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "[html]": {
