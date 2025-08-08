@@ -374,7 +374,7 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.bracketPairColorization.enabled": true,
   "workbench.editorAssociations": {
-    "*.html": "default",
+    "*.html": "default"
   },
   "githubPullRequests.queries": [
     {
@@ -410,7 +410,7 @@
   "git.confirmSync": false,
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features",
-    "editor.indentSize": 2,
+    "editor.indentSize": 2
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -419,9 +419,7 @@
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
@@ -476,7 +474,7 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.accessibilitySupport": "off",
   "editor.minimap.renderCharacters": false,
@@ -540,12 +538,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "errorLens.enabledDiagnosticLevels": [
-    "error",
-    "warning",
-    "hint",
-    "info"
-  ],
+  "errorLens.enabledDiagnosticLevels": ["error", "warning", "hint", "info"],
   "errorLens.excludeBySource": [
     "ts(6133)",
     "cSpell",
@@ -558,12 +551,9 @@
     // for notebooks
     "notebook.focusedCellBorder": "#42b883",
     "notebook.focusedEditorBorder": "#42b883",
-    "notebookEditorOverviewRuler.runningCellForeground": "#42b883",
+    "notebookEditorOverviewRuler.runningCellForeground": "#42b883"
   },
-  "jupyter.widgetScriptSources": [
-    "jsdelivr.com",
-    "unpkg.com"
-  ],
+  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
   "gitlens.views.branches.showBranchComparison": false,
   "githubPullRequests.pushBranch": "always",
   "docker.images.sortBy": "CreatedTime",
@@ -577,9 +567,7 @@
   "liveshare.notebooks.allowGuestExecuteCells": true,
   "diffEditor.experimental.showMoves": true,
   "obsidianmd.vaultPath": "C://Users//noahp//OneDrive//Documents//noah-vault",
-  "foam.files.ignore": [
-    ".trash/**/*",
-  ],
+  "foam.files.ignore": [".trash/**/*"],
   "MATLAB.installPath": "C://Program Files//MATLAB//R2023b",
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -598,10 +586,7 @@
   },
   "editor.unicodeHighlight.invisibleCharacters": false,
   "diffEditor.hideUnchangedRegions.enabled": true,
-  "rust-analyzer.diagnostics.warningsAsHint": [
-    "dead_code",
-    "unused_variables"
-  ],
+  "rust-analyzer.diagnostics.warningsAsHint": ["dead_code", "unused_variables"],
   "editor.minimap.showSlider": "always",
   "debug.allowBreakpointsEverywhere": true,
   "svelte.enable-ts-plugin": true,
@@ -611,7 +596,7 @@
     "images": [
       // "file:///home/noahpro/repos/wallpapers/Final Interior Render.png",
       // "file:///home/noahpro/repos/wallpapers/Lightbulbs Final (1).jpg",
-      "file:///home/noahpro/repos/wallpapers/NOUNS-saturn.jpg",
+      "file:///home/noahpro/repos/wallpapers/NOUNS-saturn.jpg"
       // "file:///home/noahpro/repos/wallpapers/wp3082255-github-wallpapers.jpg",
       // "file:///home/noahpro/repos/wallpapers/peakpx (2).jpg",
       // "file:///home/noahpro/repos/wallpapers/1561220866441.jpg",
@@ -628,7 +613,7 @@
     "opacity": 0.91,
     "size": "cover",
     "position": "center",
-    "interval": 0,
+    "interval": 0
   },
   "vs-kubernetes": {
     "vscode-kubernetes.kubectl-path-linux": "/home/noahpro/.local/state/vs-kubernetes/tools/kubectl/kubectl",
@@ -676,7 +661,7 @@
   "redhat.telemetry.enabled": true,
   // let cntrl + b toggle the sidebar visibility even in the terminal
   "terminal.integrated.commandsToSkipShell": [
-    "workbench.action.toggleSidebarVisibility",
+    "workbench.action.toggleSidebarVisibility"
   ],
   "workbench.editor.enablePreview": false,
   "editor.cursorSurroundingLines": 20,
@@ -719,9 +704,7 @@
   "rust-analyzer.lru.capacity": 1024,
   "explorer.confirmPasteNative": false,
   "rust-analyzer.check.command": "clippy",
-  "rust-analyzer.check.extraArgs": [
-    "--all",
-  ],
+  "rust-analyzer.check.extraArgs": ["--all"],
   "rust-analyzer.checkOnSave": true,
   "nix.enableLanguageServer": true,
   "[nix]": {
@@ -809,7 +792,7 @@
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Use conventional commit message format with an emoji that is hyper spesfic and perfectly represents the change. ex: 'build: 🏗️ added rust to nix flake build'",
+      "text": "Use conventional commit message format with an emoji that is hyper spesfic and perfectly represents the change. ex: 'build: 🏗️ added rust to nix flake build'"
     }
   ],
   "gitlens.ai.model": "vscode",
@@ -853,6 +836,5 @@
   "glassit-linux.opacity": 80,
   "workbench.editor.showTabs": "none",
   "editor.lineNumbers": "off",
-  "nix.formatterPath": "nixfmt",
-  "workbench.statusBar.visible": false
+  "nix.formatterPath": "nixfmt"
 }
