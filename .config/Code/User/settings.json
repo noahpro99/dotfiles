@@ -836,5 +836,6 @@
   "glassit-linux.opacity": 80,
   "workbench.editor.showTabs": "none",
   "editor.lineNumbers": "off",
-  "nix.formatterPath": "nixfmt"
+  "nix.formatterPath": "nixfmt",
+  "nix.serverPath": "nixd"
 }

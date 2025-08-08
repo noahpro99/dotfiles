@@ -10,13 +10,13 @@
 let
   # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   # sudo nix-channel --update
-  _stable = import inputs.nixos-stable {
-    system = "x86_64-linux";
-    config = {
-      allowUnfree = true;
-    };
-    overlays = [ ];
-  };
+  # stable = import inputs.nixos-stable {
+  #   system = "x86_64-linux";
+  #   config = {
+  #     allowUnfree = true;
+  #   };
+  #   overlays = [ ];
+  # };
   hp-wmi-module = pkgs.callPackage ./hp-wmi-module.nix {
     kernel = config.boot.kernelPackages.kernel;
   };
@@ -43,7 +43,13 @@ in
       nv-codec-headers-12
     ];
   };
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver = {
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+    videoDrivers = [ "nvidia" ];
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -179,7 +185,6 @@ in
 
   environment.systemPackages = with pkgs; [
     google-chrome
-
     # code
     vscode
     git
@@ -193,7 +198,7 @@ in
     gh
     bun
     nodejs_20
-    nil
+    nixd
     nixfmt
     starship
     rustup
@@ -286,13 +291,6 @@ in
             };
           };
         };
-      };
-    };
-
-    xserver = {
-      xkb = {
-        layout = "us";
-        variant = "";
       };
     };
   };
