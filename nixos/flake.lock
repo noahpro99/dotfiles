@@ -53,15 +53,15 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1754645120,
-        "narHash": "sha256-tRNwfGeS1ZU6qaalJANBGIxmOh6P2jC8ejgjIif4Qos=",
-        "owner": "Hiten-Tandon",
+        "lastModified": 1754647236,
+        "narHash": "sha256-StVJzKbyuCtgVTe6gFC7S5dZHBUiSjbONqtaGViXA+w=",
+        "owner": "noahpro99",
         "repo": "omenix",
-        "rev": "b3c81d06f1c10643dadeaf4fb77a3e1bc1c205c2",
+        "rev": "fe0c2c75f100af17f38cf4c4e3614e6bd89a9622",
         "type": "github"
       },
       "original": {
-        "owner": "Hiten-Tandon",
+        "owner": "noahpro99",
         "repo": "omenix",
         "type": "github"
       }

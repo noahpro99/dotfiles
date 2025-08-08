@@ -807,6 +807,5 @@
   "workbench.editor.showTabs": "none",
   "editor.lineNumbers": "off",
   "nix.formatterPath": "nixfmt",
-  "nix.serverPath": "nixd",
-  "workbench.statusBar.visible": false
+  "nix.serverPath": "nixd"
 }
