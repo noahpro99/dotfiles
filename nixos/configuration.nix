@@ -153,6 +153,7 @@ in
       silent = true;
       enableBashIntegration = true;
     };
+    omenix.enable = true;
     hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -259,7 +260,6 @@ in
   };
 
   services = {
-    omenix.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
