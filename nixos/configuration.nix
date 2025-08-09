@@ -10,13 +10,13 @@
 let
   # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
   # sudo nix-channel --update
-  # stable = import inputs.nixos-stable {
-  #   system = "x86_64-linux";
-  #   config = {
-  #     allowUnfree = true;
-  #   };
-  #   overlays = [ ];
-  # };
+  stable = import inputs.nixos-stable {
+    system = "x86_64-linux";
+    config = {
+      allowUnfree = true;
+    };
+    overlays = [ ];
+  };
   hp-wmi-module = pkgs.callPackage ./hp-wmi-module.nix {
     kernel = config.boot.kernelPackages.kernel;
   };
@@ -125,7 +125,7 @@ in
       vlc
       vesktop
       discord
-      lunar-client
+      stable.lunar-client
       obs-studio
       heroic # epic games
       steam
