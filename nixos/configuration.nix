@@ -41,6 +41,8 @@ in
       mesa
       nvidia-vaapi-driver
       nv-codec-headers-12
+      vulkan-loader
+      vulkan-validation-layers
     ];
   };
   services.xserver = {
@@ -55,7 +57,7 @@ in
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
-    open = true;
+    open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.production;
     dynamicBoost.enable = true;
