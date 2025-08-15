@@ -813,5 +813,10 @@
     "\"bun \\.*\"": true,
     "\"nix \\.*\"": true,
     "\"nixfmt \\.*\"": true
-  }
+  },
+  "chat.todoListTool.enabled": true,
+  "inlineChat.notebookAgent": true,
+  "githubPullRequests.codingAgent.uiIntegration": true,
+  "chat.agentSessionsViewLocation": "view",
+  "workbench.secondarySideBar.defaultVisibility": "visible"
 }
