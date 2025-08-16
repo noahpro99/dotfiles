@@ -280,7 +280,7 @@ in
           ids = [ "*" ];
           settings = {
             main = {
-              capslock = "overload(control, esc)";
+              capslock = "overloadt2(control, esc, 170)";
               esc = "capslock";
             };
             meta = {
