@@ -17,6 +17,8 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          ./hardware-configuration.nix
+          inputs.omenix.nixosModules.default
         ];
         specialArgs = { inherit inputs; };
       };

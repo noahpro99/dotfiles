@@ -8,8 +8,6 @@
   ...
 }:
 let
-  # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-  # sudo nix-channel --update
   stable = import inputs.nixos-stable {
     system = "x86_64-linux";
     config = {
@@ -22,11 +20,6 @@ let
   };
 in
 {
-  imports = [
-    ./hardware-configuration.nix
-    inputs.omenix.nixosModules.default
-  ];
-
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   hardware.graphics = {
