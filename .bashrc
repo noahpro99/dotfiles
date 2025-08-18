@@ -144,7 +144,7 @@ export EDITOR=code
 # github cli because their alias system doesn't support shell expansion
 alias ghprv='gh pr view $(gh pr list | fzf | awk '\''{print $1}'\'')'
 alias ghissuev='gh issue view $(gh issue list | fzf | awk '\''{print $1}'\'')'
-alias ns='nix-shell -p'
+alias ns='NIXPKGS_ALLOW_UNFREE=1 nix-shell -p'
 alias smi='nvidia-smi'
 alias ls='eza --icons --group-directories-first --git --color=always -1'
 wall() { hyprctl hyprpaper reload , "$(realpath "$1")"; }
