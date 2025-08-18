@@ -188,6 +188,9 @@ in
     stow
     fzf
     zoxide
+    ripgrep
+    bat
+    fd
     gcc
     libgcc
     eza
