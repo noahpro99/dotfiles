@@ -210,6 +210,7 @@ in
     sea-orm-cli
     openssl
     pkg-config
+    packet # quick share to android
 
     # hyprland
     hyprpaper # wallpaper manager
@@ -293,8 +294,9 @@ in
   };
 
   networking.firewall.allowedTCPPorts = [
-    25565
+    25565 # minecraft
     3000
+    34835 # quickshare port
   ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
