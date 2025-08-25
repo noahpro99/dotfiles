@@ -269,7 +269,7 @@ in
     blueman.enable = true;
     upower.enable = true;
 
-    power-profiles-daemon.enable = false;
+    power-profiles-daemon.enable = true;
 
     keyd = {
       enable = true;
