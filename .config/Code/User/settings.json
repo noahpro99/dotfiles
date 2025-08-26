@@ -599,7 +599,7 @@
   "cloudcode.autoDependencies": "off",
   "githubIssues.issueBranchTitle": "${user}/issue${issueNumber}-${sanitizedIssueTitle}",
   "arduino.useArduinoCli": true,
-  "python.defaultInterpreterPath": "C:\\Users\\noahp\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+  "python.defaultInterpreterPath": "python",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.cursorSmoothCaretAnimation": "off",
   "zenMode.showTabs": "none",
