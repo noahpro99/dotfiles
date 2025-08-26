@@ -135,6 +135,7 @@ in
       ghostty
       r2modman
       godot
+      openconnect
     ];
   };
 
