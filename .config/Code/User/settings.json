@@ -599,7 +599,7 @@
   "cloudcode.autoDependencies": "off",
   "githubIssues.issueBranchTitle": "${user}/issue${issueNumber}-${sanitizedIssueTitle}",
   "arduino.useArduinoCli": true,
-  "python.defaultInterpreterPath": "/nix/store/2mab9iiwhcqwk75qwvp3zv0bvbiaq6cs-python3-3.13.3/bin/python",
+  "python.defaultInterpreterPath": "/nix/store/rvji3a6ds2pkyrkh1lxbpxb4anyrms8v-python3-3.13.5-env/bin/python3.13",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.cursorSmoothCaretAnimation": "off",
   "zenMode.showTabs": "none",
