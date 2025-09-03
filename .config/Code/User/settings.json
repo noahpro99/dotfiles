@@ -473,7 +473,7 @@
   "outline.showOperators": false,
   "outline.showStrings": false,
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.stickyTabStops": true,
   "hediet.vscode-drawio.resizeImages": null,

@@ -136,6 +136,7 @@ in
       r2modman
       godot
       openconnect
+      eclipses.eclipse-sdk
     ];
   };
 
