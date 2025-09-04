@@ -832,5 +832,6 @@
     "chmod": false,
     "chown": false,
     "/^Remove-Item\\b/i": false
-  }
+  },
+  "git.blame.statusBarItem.enabled": true
 }
