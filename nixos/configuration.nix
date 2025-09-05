@@ -43,21 +43,23 @@ in
       layout = "us";
       variant = "";
     };
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = [
+      "nvidia"
+    ];
   };
 
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
-    powerManagement.finegrained = false;
+    powerManagement.finegrained = true;
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.production;
     dynamicBoost.enable = true;
     prime = {
-      reverseSync.enable = true;
+      reverseSync.enable = false;
       offload = {
-        enable = false;
+        enable = true;
         enableOffloadCmd = true;
       };
       sync.enable = false;
@@ -87,6 +89,7 @@ in
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.powersave = true;
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
