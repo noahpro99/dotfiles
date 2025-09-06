@@ -27,6 +27,7 @@ window#waybar {
 #clock,
 #network,
 #tray,
+#power-profiles-daemon,
 #workspaces {
   background: #4e4643;
   color: #fa824c;
@@ -90,11 +91,15 @@ window#waybar {
   margin-right: 2px;
 }
 
-/* === Connected Group: Backlight + Battery === */
+/* === Connected Group: Backlight + Power Profiles + Battery === */
 #backlight {
   border-radius: 999px 0 0 999px;
   margin-left: 2px;
   margin-right: 0;
+}
+#power-profiles-daemon {
+  border-radius: 0;
+  margin: 0;
 }
 #battery {
   border-radius: 0 999px 999px 0;

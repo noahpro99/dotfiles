@@ -13,6 +13,7 @@
     "pulseaudio#microphone",
     "tray",
     "backlight",
+    "power-profiles-daemon",
     "battery"
   ],
   "hyprland/window": {
@@ -131,7 +132,7 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
+    "format-alt": "{time} {power}W {icon} {capacity}%",
     "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
   "pulseaudio": {
