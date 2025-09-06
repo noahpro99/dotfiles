@@ -788,7 +788,7 @@
   "github.copilot.chat.search.keywordSuggestions": true,
   "gitlens.currentLine.enabled": false,
   "inlineChat.enableV2": true,
-  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.typeCheckingMode": "standard",
   "terminal.integrated.smoothScrolling": true,
   "workbench.layoutControl.enabled": false,
   "chat.commandCenter.enabled": false,
