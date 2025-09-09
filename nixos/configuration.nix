@@ -1,5 +1,5 @@
 # cd ~/dotfiles/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .#nixos --upgrade-all
-# 
+#
 
 {
   pkgs,
@@ -29,7 +29,6 @@
   networking.networkmanager.wifi.powersave = true;
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.rocmSupport = true;
 
   programs = {
     direnv = {
