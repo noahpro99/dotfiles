@@ -1,11 +1,17 @@
-{ pkgs
-, lib
-, kernel ? pkgs.linuxPackages_testing.kernel
+{
+  pkgs,
+  lib,
+  kernel ? pkgs.linuxPackages_testing.kernel,
 }:
 
 pkgs.stdenv.mkDerivation {
   pname = "hp-wmi-module";
-  inherit (kernel) src version postPatch nativeBuildInputs;
+  inherit (kernel)
+    src
+    version
+    postPatch
+    nativeBuildInputs
+    ;
 
   kernel_dev = kernel.dev;
   kernelVersion = kernel.modDirVersion;
