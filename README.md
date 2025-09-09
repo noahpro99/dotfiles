@@ -16,8 +16,8 @@ stow . --no-folding
 ## Nixos
 
 ```bash
-chmod u+x switch.sh
-./switch.sh
+chmod u+x ./nixos/switch.sh
+./nixos/switch.sh
 # for removing old system generations and unused packages
 sudo nix-collect-garbage -d
 ```
