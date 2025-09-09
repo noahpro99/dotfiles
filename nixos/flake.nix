@@ -18,7 +18,7 @@
         modules = [
           ./configuration.nix
           ./user.nix
-          ./hardware-configuration.nix
+          /etc/nixos/hardware-configuration.nix
           ./hosts/omen-16/hp-omen-16.nix
           inputs.omenix.nixosModules.default
         ];
