@@ -1,6 +1,3 @@
-# cd ~/dotfiles/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .#nixos --upgrade-all
-#
-
 {
   pkgs,
   ...
@@ -13,9 +10,6 @@
       layout = "us";
       variant = "";
     };
-    videoDrivers = [
-      "nvidia"
-    ];
   };
 
   boot = {
