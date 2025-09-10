@@ -33,7 +33,6 @@
     hyprland = {
       enable = true;
       xwayland.enable = true;
-      withUWSM = true;
     };
     hyprlock.enable = true;
     waybar.enable = true;
@@ -143,6 +142,17 @@
     upower.enable = true;
 
     power-profiles-daemon.enable = true;
+    displayManager = {
+      ly = {
+        enable = true;
+        settings = {
+          load = true;
+          save = true;
+          animation = "gameoflife";
+          clear_password = true;
+        };
+      };
+    };
 
     keyd = {
       enable = true;
