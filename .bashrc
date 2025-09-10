@@ -147,6 +147,7 @@ alias ghissuev='gh issue view $(gh issue list | fzf | awk '\''{print $1}'\'')'
 alias ns='NIXPKGS_ALLOW_UNFREE=1 nix-shell -p'
 alias smi='nvidia-smi'
 alias ls='eza --icons --group-directories-first --git --color=always -1'
+export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
 wall() { hyprctl hyprpaper reload , "$(realpath "$1")"; }
 t() { mkdir -p "$(dirname "$1")" && touch "$1" && code "$1"; }
 eval "$(starship init bash)"
