@@ -33,6 +33,7 @@
     hyprland = {
       enable = true;
       xwayland.enable = true;
+      withUWSM = true;
     };
     hyprlock.enable = true;
     waybar.enable = true;
@@ -143,6 +144,15 @@
     upower.enable = true;
 
     power-profiles-daemon.enable = true;
+    greetd = {
+      enable = true;
+      settings = rec {
+        initial_session = {
+          command = "Hyprland > /dev/null 2>&1";
+        };
+        default_session = initial_session;
+      };
+    };
 
     keyd = {
       enable = true;
