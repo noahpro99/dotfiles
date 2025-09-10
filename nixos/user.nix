@@ -79,6 +79,8 @@ in
       packet # quick share to android
     ];
   };
+  services.getty.autologinUser = username;
+
   networking.firewall.allowedTCPPorts = [
     25565 # default minecraft server port
     34835 # quick share to android port
