@@ -11,6 +11,7 @@
   smtpUser = noahpro@gmail.com
 [core]
   editor = code --wait
+  pager = bat --style=plain
 [diff]
   tool = vscode
 [difftool "vscode"]

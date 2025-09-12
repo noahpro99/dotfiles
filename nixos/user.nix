@@ -80,6 +80,7 @@ in
     ];
   };
   services.getty.autologinUser = username;
+  virtualisation.waydroid.enable = true;
 
   networking.firewall.allowedTCPPorts = [
     25565 # default minecraft server port
