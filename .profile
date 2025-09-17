@@ -1,1 +1,1 @@
-Hyprland
+[[ "$(tty)" == /dev/tty1 ]] && Hyprland
