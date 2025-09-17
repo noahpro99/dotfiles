@@ -101,7 +101,7 @@
     hyprsunset
     wl-clipboard
     cliphist
-    grimblast # screenshot tool
+    hyprshot # screenshot tool
     playerctl # media keys
     networkmanagerapplet
     dotool # automate typing in wayland for nerd-dictation
