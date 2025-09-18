@@ -833,5 +833,6 @@
     "chown": false,
     "/^Remove-Item\\b/i": false
   },
-  "git.blame.statusBarItem.enabled": true
+  "git.blame.statusBarItem.enabled": true,
+  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true
 }
