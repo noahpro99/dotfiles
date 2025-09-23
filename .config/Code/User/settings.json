@@ -599,7 +599,7 @@
   "cloudcode.autoDependencies": "off",
   "githubIssues.issueBranchTitle": "${user}/issue${issueNumber}-${sanitizedIssueTitle}",
   "arduino.useArduinoCli": true,
-  "python.defaultInterpreterPath": "/etc/profiles/per-user/noahpro/bin/python",
+  "python.defaultInterpreterPath": "python",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.cursorSmoothCaretAnimation": "off",
   "zenMode.showTabs": "none",
