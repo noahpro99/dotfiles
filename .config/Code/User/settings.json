@@ -742,9 +742,6 @@
       "value": "#42b883"
     }
   ],
-  "[mdx]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
-  },
   "window.confirmSaveUntitledWorkspace": false,
   "notebook.inlineValues": "on",
   "github.copilot.chat.codesearch.enabled": true,
