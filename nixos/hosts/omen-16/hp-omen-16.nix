@@ -46,6 +46,13 @@ in
     };
   };
 
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 32 * 1024; # 32GB in MB
+    }
+  ];
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     extraModulePackages = [
