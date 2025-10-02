@@ -19,6 +19,7 @@
     "argmin",
     "asfreq",
     "astype",
+    "atqdm",
     "autograd",
     "automations",
     "backtest",
