@@ -32,7 +32,7 @@ in
     powerManagement.finegrained = true;
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
     dynamicBoost.enable = true;
     prime = {
       reverseSync.enable = false;
