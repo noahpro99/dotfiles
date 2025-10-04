@@ -563,30 +563,6 @@
   "debug.allowBreakpointsEverywhere": true,
   "svelte.enable-ts-plugin": true,
   "git.openRepositoryInParentFolders": "always",
-  "background.enabled": true,
-  "background.fullscreen": {
-    "images": [
-      // "file:///home/noahpro/repos/wallpapers/Final Interior Render.png",
-      // "file:///home/noahpro/repos/wallpapers/Lightbulbs Final (1).jpg",
-      "file:///home/noahpro/repos/wallpapers/NOUNS-saturn.jpg"
-      // "file:///home/noahpro/repos/wallpapers/wp3082255-github-wallpapers.jpg",
-      // "file:///home/noahpro/repos/wallpapers/peakpx (2).jpg",
-      // "file:///home/noahpro/repos/wallpapers/1561220866441.jpg",
-      // "file:///home/noahpro/repos/wallpapers/animated-smoke.gif",
-      // "file:///home/noahpro/repos/wallpapers/deadpool.gif",
-      // "file:///home/noahpro/repos/wallpapers/DALL·E 2023-10-11 18.19.07 - Oil painting of a radiant woman with a pumpkin head, dressed in vintage attire from the 1800s, riding a magnificent black horse through a vast field o.png",
-      // "file:///home/noahpro/repos/wallpapers/DALL·E 2023-10-25 e18.47.00 - Artistic landscape rendering of a curvaceous young woman as the central focus, set against a dark, mysterious forest. She wears a tight white dress th.png",
-      // "file:///home/noahpro/repos/wallpapers/DALL·E 2023-10-25 18.47.10 - Artistic landscape painting of a young woman with slightly exaggerated features in a dark, epic forest. Her figure-hugging white dress complements her.png",
-      // "file:///home/noahpro/repos/wallpapers/DALL·E 2023-10-25 18.47.23 - Landscape oil painting of a youthful woman with brown hair, donning a minimalistic, tight, strapless dress. Her gaze is intense, fixed on the viewer, .png",
-      // "file:///home/noahpro/repos/wallpapers/DALL·E 2023-10-25 18.52.34 - Artistic landscape painting of a curvy young woman with brunette hair, standing prominently in a dark, epic forest. Instead of clothing, perfectly pla.png",
-      // "file:///home/noahpro/repos/wallpapers/hot-animated.gif",
-      // "file:///home/noahpro/repos/wallpapers/hot-girl.jpg",
-    ],
-    "opacity": 0.91,
-    "size": "cover",
-    "position": "center",
-    "interval": 0
-  },
   "vs-kubernetes": {
     "vscode-kubernetes.kubectl-path-linux": "/home/noahpro/.local/state/vs-kubernetes/tools/kubectl/kubectl",
     "vscode-kubernetes.minikube-path-linux": "/home/noahpro/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
