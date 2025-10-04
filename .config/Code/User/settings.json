@@ -22,6 +22,7 @@
     "atqdm",
     "autograd",
     "automations",
+    "Autoregressive",
     "backtest",
     "barplot",
     "Behaviour",
