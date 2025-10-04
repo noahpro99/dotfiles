@@ -79,7 +79,6 @@ in
       packet # quick share to android
     ];
   };
-  services.getty.autologinUser = username;
   virtualisation.waydroid.enable = true;
 
   networking.firewall.allowedTCPPorts = [

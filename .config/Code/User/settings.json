@@ -563,16 +563,6 @@
   "debug.allowBreakpointsEverywhere": true,
   "svelte.enable-ts-plugin": true,
   "git.openRepositoryInParentFolders": "always",
-  "vs-kubernetes": {
-    "vscode-kubernetes.kubectl-path-linux": "/home/noahpro/.local/state/vs-kubernetes/tools/kubectl/kubectl",
-    "vscode-kubernetes.minikube-path-linux": "/home/noahpro/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
-    "vscode-kubernetes.helm-path-linux": "/home/noahpro/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
-    "vs-kubernetes.namespace": "endeavour",
-    "vs-kubernetes.knownKubeconfigs": [
-      "/home/noahpro/repos/kidata-frontend/.kubernetes/kubeconfig.yml"
-    ],
-    "vs-kubernetes.kubeconfig": "/home/noahpro/repos/kidata-frontend/.kubernetes/kubeconfig.yml"
-  },
   "cloudcode.autoDependencies": "off",
   "githubIssues.issueBranchTitle": "${user}/issue${issueNumber}-${sanitizedIssueTitle}",
   "arduino.useArduinoCli": true,
