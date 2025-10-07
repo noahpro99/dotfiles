@@ -65,7 +65,9 @@ in
   programs.omenix.enable = true;
 
   environment.systemPackages = with pkgs; [
-    btop-cuda
+    (writeShellScriptBin "btop-cuda" ''
+      exec ${pkgs.btop-cuda}/bin/btop "$@"
+    '')
   ];
 
   environment.sessionVariables = {

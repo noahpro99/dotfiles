@@ -80,7 +80,7 @@
     starship
     rustup
     htop
-    # setup btop, btop-cuda, or btop-rocm in host specific config
+    btop
     ffmpeg
     uv
     zip

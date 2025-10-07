@@ -124,6 +124,7 @@
     "Hokie",
     "hokiebird",
     "hokies",
+    "homography",
     "horz",
     "hrefs",
     "htmx",
@@ -540,7 +541,6 @@
   "hediet.vscode-drawio.codeLinkActivated": true,
   "liveshare.notebooks.allowGuestExecuteCells": true,
   "diffEditor.experimental.showMoves": true,
-  "obsidianmd.vaultPath": "C://Users//noahp//OneDrive//Documents//noah-vault",
   "foam.files.ignore": [".trash/**/*"],
   "MATLAB.installPath": "C://Program Files//MATLAB//R2023b",
   "[markdown]": {
