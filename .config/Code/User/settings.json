@@ -797,11 +797,27 @@
     "eval": false,
     "chmod": false,
     "chown": false,
-    "/^Remove-Item\\b/i": false
+    "/^Remove-Item\\b/i": false,
+    "cargo check": true,
+    "cargo build": true,
+    "cargo clean": true
   },
   "git.blame.statusBarItem.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  }
+  },
+  "github.copilot.chat.customOAIModels": {
+    "gpt-oss-arc": {
+      "name": "GPT-OSS-ARC",
+      "url": "https://llm-api.arc.vt.edu/api/v1/chat/completions",
+      "toolCalling": true,
+      "vision": false,
+      "thinking": true,
+      "maxInputTokens": 65536,
+      "maxOutputTokens": 32768,
+      "requiresAPIKey": true
+    }
+  },
+  "workbench.statusBar.visible": false
 }
