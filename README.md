@@ -1,5 +1,8 @@
 # Noah's dotfiles
 
+<img width="2561" height="1443" alt="desktop" src="https://github.com/user-attachments/assets/2412edc3-df57-4efd-b11d-3500c75f7dac" />
+
+
 This directory contains the dotfiles for my system
 
 ## Installation
