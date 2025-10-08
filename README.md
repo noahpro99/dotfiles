@@ -17,7 +17,9 @@ stow . --no-folding
 
 ## Nixos
 
-I use nixos which makes the installation of all packages super easy. If you use another distribution you will have to install all packages in the `nixos/configuration.nix` file manually.
+I use nixos which makes the installation of all packages super easy. All you have to do is edit `nixos/user.nix` to set name, timezone, personal packages, etc.
+
+If you use another distribution you will have to install all packages in the `nixos/configuration.nix` file manually.
 
 ```bash
 chmod u+x ./nixos/switch.sh
