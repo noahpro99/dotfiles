@@ -1,3 +1,4 @@
 .vscode
 nixos/hardware-configuration.nix
 .config/hypr/hyprpaper.conf
+nixos/.cache

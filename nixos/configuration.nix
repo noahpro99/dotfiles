@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -98,7 +95,6 @@
     xdg-utils # this is needed to allow links to be opened in the browser
     dunst # notification daemon
     brightnessctl
-    pamixer
     hyprsunset
     wl-clipboard
     cliphist

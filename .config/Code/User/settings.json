@@ -800,7 +800,8 @@
     "/^Remove-Item\\b/i": false,
     "cargo check": true,
     "cargo build": true,
-    "cargo clean": true
+    "cargo clean": true,
+    "uv": true
   },
   "git.blame.statusBarItem.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
