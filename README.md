@@ -17,7 +17,10 @@ stow . --no-folding
 
 ## Nixos
 
-I use nixos which makes the installation of all packages super easy. All you have to do is edit `nixos/user.nix` to set name, timezone, personal packages, etc.
+I use Nixos which makes the installation of all packages super easy. To set this up for yourself you should 
+
+- Edit `nixos/user.nix` to set name, timezone, personal packages, etc.
+- Edit `nixos/flake.nix` to comment out the custom hardware nix module and add your own if you would like.
 
 If you use another distribution you will have to install all packages in the `nixos/configuration.nix` file manually.
 
