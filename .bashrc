@@ -144,6 +144,7 @@ alias ls='eza --icons --group-directories-first --git --color=always -1'
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
 wall() { hyprctl hyprpaper reload , "$(realpath "$1")"; }
 t() { mkdir -p "$(dirname "$1")" && touch "$1" && code "$1"; }
+s() { gh copilot suggest -t shell "$*"; }
 eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

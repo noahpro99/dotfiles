@@ -818,6 +818,5 @@
       "maxOutputTokens": 32768,
       "requiresAPIKey": true
     }
-  },
-  "workbench.statusBar.visible": false
+  }
 }
