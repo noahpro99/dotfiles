@@ -58,6 +58,11 @@ in
         patches = [ ./hp-wmi-omen-16wf-patch1.patch ];
       }))
     ];
+    kernelParams = [
+      "resume_offset=220098560"
+      "mem_sleep_default=deep"
+    ];
+    resumeDevice = "/dev/disk/by-uuid/3578c20b-4858-4d22-8a98-e1620c2e54ad";
   };
 
   programs.omenix.enable = true;
@@ -72,4 +77,15 @@ in
     __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # Force NVIDIA GLX
     __VK_LAYER_NV_optimus = "NVIDIA_only";
   };
+
+  services.logind = {
+    lidSwitch = "suspend-then-hibernate";
+    powerKey = "hibernate";
+    powerKeyLongPress = "poweroff";
+  };
+
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=30m
+    SuspendState=mem
+  '';
 }
