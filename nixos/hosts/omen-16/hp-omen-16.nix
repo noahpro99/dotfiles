@@ -44,12 +44,12 @@ in
     };
   };
 
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 32 * 1024; # 32GB in MB
-    }
-  ];
+  # swapDevices = [
+  #   {
+  #     device = "/var/lib/swapfile";
+  #     size = 32 * 1024; # 32GB in MB
+  #   }
+  # ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -58,11 +58,11 @@ in
         patches = [ ./hp-wmi-omen-16wf-patch1.patch ];
       }))
     ];
-    kernelParams = [
-      "resume_offset=220098560"
-      "mem_sleep_default=deep"
-    ];
-    resumeDevice = "/dev/disk/by-uuid/3578c20b-4858-4d22-8a98-e1620c2e54ad";
+    # kernelParams = [
+    #   "resume_offset=220098560"
+    #   "mem_sleep_default=deep"
+    # ];
+    # resumeDevice = "/dev/disk/by-uuid/3578c20b-4858-4d22-8a98-e1620c2e54ad";
   };
 
   programs.omenix.enable = true;
@@ -78,14 +78,14 @@ in
     __VK_LAYER_NV_optimus = "NVIDIA_only";
   };
 
-  services.logind = {
-    lidSwitch = "suspend-then-hibernate";
-    powerKey = "hibernate";
-    powerKeyLongPress = "poweroff";
-  };
+  # services.logind = {
+  #   lidSwitch = "suspend-then-hibernate";
+  #   powerKey = "hibernate";
+  #   powerKeyLongPress = "poweroff";
+  # };
 
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=30m
-    SuspendState=mem
-  '';
+  # systemd.sleep.extraConfig = ''
+  #   HibernateDelaySec=30m
+  #   SuspendState=mem
+  # '';
 }
