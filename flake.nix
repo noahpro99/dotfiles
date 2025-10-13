@@ -1,4 +1,6 @@
 {
+  description = "Noah's dotfiles and reusable NixOS modules";
+
   inputs = {
     nixos-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -11,15 +13,23 @@
       nixos-stable,
       nixos-unstable,
       omenix,
+      ...
     }@inputs:
     {
+      # Reusable modules for other flakes
+      nixosModules = {
+        default = import ./nixos/configuration.nix;
+        omen-16 = import ./nixos/hosts/omen-16/hp-omen-16.nix;
+      };
+
+      # Personal host (relies on /etc hardware config)
       nixosConfigurations.nixos = nixos-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
-          ./user.nix
+          ./nixos/configuration.nix
+          ./nixos/user.nix
           /etc/nixos/hardware-configuration.nix
-          ./hosts/omen-16/hp-omen-16.nix
+          ./nixos/hosts/omen-16/hp-omen-16.nix
           inputs.omenix.nixosModules.default
         ];
         specialArgs = { inherit inputs; };

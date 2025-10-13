@@ -1,6 +1,8 @@
 ^/README.*
 \.git
 \.gitignore
+^/flake.*
+^/switch.sh
 
 ^/nixos$
 ^/.vscode$
