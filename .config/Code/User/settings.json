@@ -817,4 +817,5 @@
       "requiresAPIKey": true
     }
   },
+  "task.notifyWindowOnTaskCompletion": 0
 }
