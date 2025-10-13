@@ -4,14 +4,12 @@
 
 These are my dotfiles and NixOS configs. You can:
 
-- Stow the shell/editor configs on any Linux distro
-- Install packages
-  - Either reuse the NixOS config as a module inside your own flake
-  - or install all packages manually via your distro's package manager see `nixos/configuration.nix`
+- Stow the shell/editor configs on any Linux distro.
+- Reuse the NixOS modules inside your own flake, or copy the package list for non-Nix setups.
 
 ## Quick start
 
-### Use dotfiles with GNU Stow (any Linux)
+### Dotfiles and packages on any distro
 
 Requires: git, stow
 
@@ -24,9 +22,11 @@ stow . --no-folding
 
 Tip: `--no-folding` avoids symlinking entire folders and links individual files instead.
 
-### Use the shared NixOS module in your own flake (recommended)
+After stowing, install the packages listed in `nixos/configuration.nix` manually or via your distro’s package manager.
 
-2. In your own flake, add this repo as an input and import the module:
+### Reuse the NixOS module (recommended on NixOS)
+
+Add the repo to your flake and import the module:
 
 Example `flake.nix` (in your system repo):
 
@@ -35,28 +35,8 @@ Example `flake.nix` (in your system repo):
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 		noah-dotfiles.url = "github:noahpro99/dotfiles";
-	};
-
-	outputs = { self, nixpkgs, noah-dotfiles, ... }:
-		{
-			nixosConfigurations.my-host = nixpkgs.lib.nixosSystem {
-				system = "x86_64-linux";
-				modules = [
-					noah-dotfiles.nixosModules.default
-					/etc/nixos/hardware-configuration.nix
-					# Optionally include Omen-16 hardware module if you have the same laptop
-					# noah-dotfiles.nixosModules.omen-16
-				];
-			};
-		};
-}
-```
-
-Note: If you enable the optional `omen-16` module, also add the `omenix` input and module to your flake:
-
-```nix
-	inputs = {
-		omenix.url = "github:noahpro99/omenix";
+		# Optional: only needed if you enable the HP Omen module below
+		# omenix.url = "github:noahpro99/omenix";
 	};
 
 	outputs = { self, nixpkgs, noah-dotfiles, omenix, ... }: {
@@ -64,15 +44,13 @@ Note: If you enable the optional `omen-16` module, also add the `omenix` input a
 			system = "x86_64-linux";
 			modules = [
 				noah-dotfiles.nixosModules.default
-				noah-dotfiles.nixosModules.omen-16
-				omenix.nixosModules.default
 				/etc/nixos/hardware-configuration.nix
+
+				# Optional: HP Omen 16 hardware tweaks
+				# noah-dotfiles.nixosModules.omen-16
+				# omenix.nixosModules.default
 			];
 		};
 	};
+}
 ```
-
-## Notes
-
-- If you don’t use NixOS, you can still use the dotfiles via stow and install packages manually or via your distro’s package manager.
-- The `omenix` module and HP WMI patch are specific to my Omen 16; omit those if you’re on different hardware.
