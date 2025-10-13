@@ -94,6 +94,7 @@
     kdePackages.dolphin
     xdg-utils # this is needed to allow links to be opened in the browser
     dunst # notification daemon
+    hyprnotify # allows notify-send to work
     brightnessctl
     hyprsunset
     wl-clipboard

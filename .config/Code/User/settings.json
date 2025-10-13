@@ -805,9 +805,6 @@
   },
   "git.blame.statusBarItem.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
-  "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
   "github.copilot.chat.customOAIModels": {
     "gpt-oss-arc": {
       "name": "GPT-OSS-ARC",
@@ -819,5 +816,5 @@
       "maxOutputTokens": 32768,
       "requiresAPIKey": true
     }
-  }
+  },
 }
