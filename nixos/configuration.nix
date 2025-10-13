@@ -139,6 +139,8 @@
     blueman.enable = true;
     upower.enable = true;
 
+    udisks2.enable = true; # for udiskie
+
     power-profiles-daemon.enable = true;
 
     keyd = {

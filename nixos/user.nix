@@ -53,7 +53,7 @@ in
       rustup
       sea-orm-cli
 
-      # kinda spesific to me
+      # kinda specific to me
       zoom-us
       vlc
       vesktop
