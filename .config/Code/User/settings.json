@@ -817,5 +817,7 @@
       "requiresAPIKey": true
     }
   },
-  "task.notifyWindowOnTaskCompletion": 0
+  "task.notifyWindowOnTaskCompletion": 0,
+  "git.postCommitCommand": "push",
+  "git.rememberPostCommitCommand": true
 }
