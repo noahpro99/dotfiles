@@ -87,6 +87,7 @@
 
     # hyprland
     hyprpaper # wallpaper manager
+    hyprpicker # color picker
     killall
     tofi # app launcher
     hyprpolkitagent # polkit agent

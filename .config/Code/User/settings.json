@@ -801,7 +801,13 @@
     "cargo check": true,
     "cargo build": true,
     "cargo clean": true,
-    "uv": true
+    "uv": true,
+    "awk": true,
+    "print": true,
+    "uniq": true,
+    "rev": true,
+    "sed": true,
+    "s/\"//'": true
   },
   "git.blame.statusBarItem.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
