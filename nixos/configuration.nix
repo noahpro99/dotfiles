@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
+  nixpkgs.overlays = [ inputs.tofi-emoji.overlays.default ];
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.xserver = {
@@ -90,6 +91,7 @@
     hyprpicker # color picker
     killall
     tofi # app launcher
+    tofi-emoji # emoji picker
     hyprpolkitagent # polkit agent
     hypridle
     kdePackages.dolphin
