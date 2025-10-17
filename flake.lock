@@ -95,11 +95,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1760672352,
-        "narHash": "sha256-PK4zGkvt4bUV4amL6Vs3HPDpuS7whD4n7UBke30xUIQ=",
+        "lastModified": 1760692216,
+        "narHash": "sha256-IaMrngXubURjqfNrKv2oHyX4UXUq/1qID3r3tgBuj08=",
         "owner": "noahpro99",
         "repo": "tofi-emoji",
-        "rev": "41d95fc42651b7c192397cab0ca1191a5a66e13d",
+        "rev": "14b530c1e693485d98f16e1bee78985475349481",
         "type": "github"
       },
       "original": {
