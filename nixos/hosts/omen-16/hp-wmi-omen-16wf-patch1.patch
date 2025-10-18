@@ -1,84 +1,13 @@
 diff --git a/drivers/platform/x86/hp/hp-wmi.c b/drivers/platform/x86/hp/hp-wmi.c
-index 8b3533d6b..763e2b3ad 100644
+index 8b3533d6ba09..4bd46ba646b6 100644
 --- a/drivers/platform/x86/hp/hp-wmi.c
 +++ b/drivers/platform/x86/hp/hp-wmi.c
-@@ -92,9 +92,13 @@ static const char * const victus_thermal_profile_boards[] = {
- 	"8A25"
- };
+@@ -94,7 +94,7 @@ static const char * const victus_thermal_profile_boards[] = {
  
--/* DMI Board names of Victus 16-r1000 and Victus 16-s1000 laptops */
-+/* DMI Board names of newer 2024+ laptops that have use different wmi commands */
+ /* DMI Board names of Victus 16-r1000 and Victus 16-s1000 laptops */
  static const char * const victus_s_thermal_profile_boards[] = {
 -	"8C99", "8C9C"
 +	"8C99", "8C9C", "8BAB"
-+};
-+
-+static const char * const omen_2024_thermal_profile_boards[] = {
-+	"8BAB"
  };
  
  enum hp_wmi_radio {
-@@ -246,6 +250,11 @@ enum hp_thermal_profile_victus_s {
- 	HP_VICTUS_S_THERMAL_PROFILE_PERFORMANCE		= 0x01,
- };
- 
-+enum hp_thermal_profile_omen_2024 {
-+	HP_OMEN_2024_THERMAL_PROFILE_DEFAULT	  = 0x48,
-+	HP_OMEN_2024_THERMAL_PROFILE_PERFORMANCE  = 0x31,
-+};
-+
- enum hp_thermal_profile {
- 	HP_THERMAL_PROFILE_PERFORMANCE	= 0x00,
- 	HP_THERMAL_PROFILE_DEFAULT		= 0x01,
-@@ -1584,6 +1593,19 @@ static bool is_victus_s_thermal_profile(void)
- 			    board_name) >= 0;
- }
- 
-+static bool is_omen_2024_thermal_profile(void)
-+{
-+	const char *board_name;
-+
-+	board_name = dmi_get_system_info(DMI_BOARD_NAME);
-+	if (!board_name)
-+		return false;
-+
-+	return match_string(omen_2024_thermal_profile_boards,
-+			    ARRAY_SIZE(omen_2024_thermal_profile_boards),
-+			    board_name) >= 0;
-+}
-+
- static int victus_s_gpu_thermal_profile_get(bool *ctgp_enable,
- 					    bool *ppab_enable,
- 					    u8 *dstate,
-@@ -1670,19 +1692,28 @@ static int platform_profile_victus_s_set_ec(enum platform_profile_option profile
- 
- 	switch (profile) {
- 	case PLATFORM_PROFILE_PERFORMANCE:
--		tp = HP_VICTUS_S_THERMAL_PROFILE_PERFORMANCE;
-+		if (is_omen_2024_thermal_profile())
-+			tp = HP_OMEN_2024_THERMAL_PROFILE_PERFORMANCE;
-+		else
-+			tp = HP_VICTUS_S_THERMAL_PROFILE_PERFORMANCE;
- 		gpu_ctgp_enable = true;
- 		gpu_ppab_enable = true;
- 		gpu_dstate = 1;
- 		break;
- 	case PLATFORM_PROFILE_BALANCED:
--		tp = HP_VICTUS_S_THERMAL_PROFILE_DEFAULT;
-+		if (is_omen_2024_thermal_profile())
-+			tp = HP_OMEN_2024_THERMAL_PROFILE_DEFAULT;
-+		else
-+			tp = HP_VICTUS_S_THERMAL_PROFILE_DEFAULT;
- 		gpu_ctgp_enable = false;
- 		gpu_ppab_enable = true;
- 		gpu_dstate = 1;
- 		break;
- 	case PLATFORM_PROFILE_LOW_POWER:
--		tp = HP_VICTUS_S_THERMAL_PROFILE_DEFAULT;
-+		if (is_omen_2024_thermal_profile())
-+			tp = HP_OMEN_2024_THERMAL_PROFILE_DEFAULT;
-+		else
-+			tp = HP_VICTUS_S_THERMAL_PROFILE_DEFAULT;
- 		gpu_ctgp_enable = false;
- 		gpu_ppab_enable = false;
- 		gpu_dstate = 1;
