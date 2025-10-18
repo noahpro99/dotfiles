@@ -33,14 +33,14 @@ Example `flake.nix` (in your system repo):
 ```nix
 {
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 		noah-dotfiles.url = "github:noahpro99/dotfiles";
 		# Optional: only needed if you enable the HP Omen module below
 		# omenix.url = "github:noahpro99/omenix";
 	};
 
 	outputs = { self, nixpkgs, noah-dotfiles, omenix, ... }: {
-		nixosConfigurations.my-host = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
 				noah-dotfiles.nixosModules.default
