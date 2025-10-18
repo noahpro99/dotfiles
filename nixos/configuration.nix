@@ -108,7 +108,7 @@
     dotool # automate typing in wayland for nerd-dictation
     bibata-cursors # only for xcursors as fallback for hyprcursor on apps like gtk
     udiskie # for mounting drives automatically and gui
-    pavucontrol # gui for pipewire/alsa/pulseaudio
+    pwvucontrol # gui for pipewire
   ];
 
   fonts.packages = with pkgs; [
