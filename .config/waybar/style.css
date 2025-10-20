@@ -91,11 +91,15 @@ window#waybar {
   margin-right: 2px;
 }
 
-/* === Connected Group: Backlight + Power Profiles + Battery === */
+/* === Connected Group: Backlight + Network + Power Profiles + Battery === */
 #backlight {
   border-radius: 999px 0 0 999px;
   margin-left: 2px;
   margin-right: 0;
+}
+#network {
+  border-radius: 0;
+  margin: 0;
 }
 #power-profiles-daemon {
   border-radius: 0;
@@ -110,7 +114,6 @@ window#waybar {
 /* === Standalone Modules === */
 #window,
 #clock,
-#network,
 #tray {
   margin: 0 2px;
 }

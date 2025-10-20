@@ -13,6 +13,7 @@
     "pulseaudio#microphone",
     "tray",
     "backlight",
+    "network",
     "power-profiles-daemon",
     "battery"
   ],
@@ -185,15 +186,18 @@
     "format-icons": ["", "", ""]
   },
   "network": {
+    "interval": 5,
     "tooltip": true,
-    "format-wifi": "  {essid}",
+    "format-wifi": "{icon}",
     "format-ethernet": "󰈀",
-    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-    "format-linked": "󰈀 {ifname} (No IP)",
-    "format-disconnected": "󰖪",
-    "tooltip-format-disconnected": "Disconnected",
-    "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-    "interval": 2
+    "format-linked": "󰈀",
+    "format-disconnected": "󰤭",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip-format-wifi": "<b>{essid}</b>\nSignal: {signalStrength}% ({signaldBm} dBm)\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}\nInterface: {ifname}",
+    "tooltip-format-ethernet": "Ethernet: {ifname}\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}",
+    "tooltip-format-linked": "Link active: {ifname}\nAwaiting IP assignment",
+    "tooltip-format-disconnected": "No active network",
+    "on-click": "ghostty -e nmtui"
   },
   "power-profiles-daemon": {
     "format": "{icon}",
