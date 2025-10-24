@@ -120,7 +120,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 export PATH=$PATH:$HOME/.cargo/bin
@@ -139,6 +138,7 @@ export EDITOR=code
 alias ghprv='gh pr view $(gh pr list | fzf | awk '\''{print $1}'\'')'
 alias ghissuev='gh issue view $(gh issue list | fzf | awk '\''{print $1}'\'')'
 alias ns='NIXPKGS_ALLOW_UNFREE=1 nix-shell -p'
+alias nss='~/.local/bin/nix-search-fzf-shell.sh'
 alias smi='nvidia-smi'
 alias ls='eza --icons --group-directories-first --git --color=always -1'
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"

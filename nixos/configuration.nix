@@ -100,6 +100,7 @@
     unzip
     openssl
     pkg-config
+    jq
 
     # hyprland
     hyprpaper # wallpaper manager
