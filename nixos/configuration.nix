@@ -14,7 +14,22 @@
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+      timeout = 0;
     };
+    plymouth = {
+      enable = true;
+      theme = "spinner";
+    };
+    initrd.verbose = false;
+    consoleLogLevel = 3;
+    kernelParams = [
+      "quiet" # suppress kernel/boot messages unless a failure occurs or you press Esc
+      "splash" # tell plymouth to show the splash screen during boot
+      "boot.shell_on_fail" # drop to an emergency shell if initrd fails
+      "udev.log_priority=3" # limit early udev logging to warnings and errors
+      "rd.systemd.show_status=auto" # hide systemd status output unless boot is slow or fails
+      "plymouth.ignore-serial-consoles" # avoid stalling on absent serial consoles when using plymouth
+    ];
   };
 
   networking.networkmanager.enable = true;
@@ -146,6 +161,22 @@
     udisks2.enable = true; # for udiskie
 
     power-profiles-daemon.enable = true;
+
+    displayManager.ly = {
+      enable = true;
+      settings = {
+        hideusers = false;
+        "session-order" = "hyprland";
+        "show-sessions" = false;
+        "show-users" = true;
+        animation = "colormix";
+        animation_timeout_sec = 0;
+        full_color = true;
+        colormix_col1 = "0x00FA824C"; # accent orange matches Hyprland/Waybar
+        colormix_col2 = "0x00CDD6F4"; # soft foreground tone from the bar
+        colormix_col3 = "0x2011111B"; # translucent dark backdrop like tofi
+      };
+    };
 
     keyd = {
       enable = true;
