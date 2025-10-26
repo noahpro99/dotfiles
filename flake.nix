@@ -24,7 +24,6 @@
         omen-16 = import ./nixos/hosts/omen-16/hp-omen-16.nix;
       };
 
-      # Personal host (relies on /etc hardware config)
       nixosConfigurations.omen-16 = nixos-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -42,7 +41,7 @@
         modules = [
           ./nixos/configuration.nix
           ./nixos/user.nix
-          ./nixos/hosts/envy-15/hardware-configuration.nix
+          ./nixos/hosts/envy-15/configuration.nix
           inputs.omenix.nixosModules.default
         ];
         specialArgs = { inherit inputs; };
