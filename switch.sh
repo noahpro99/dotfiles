@@ -1,4 +1,7 @@
-nixos-generate-config --dir /etc/nixos
-cd ~/dotfiles
+if [ -z "${1:-}" ]; then
+	echo "Usage: $0 <omen-16, envy-15>"
+	exit 1
+fi
+cd ~/dotfiles || exit 1
 sudo nix flake update --extra-experimental-features nix-command --extra-experimental-features flakes
-sudo nixos-rebuild switch --flake .#nixos --upgrade-all --impure
+sudo nixos-rebuild switch --flake .#"$1" --upgrade-all

@@ -25,13 +25,24 @@
       };
 
       # Personal host (relies on /etc hardware config)
-      nixosConfigurations.nixos = nixos-unstable.lib.nixosSystem {
+      nixosConfigurations.omen-16 = nixos-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./nixos/configuration.nix
           ./nixos/user.nix
-          /etc/nixos/hardware-configuration.nix
+          ./nixos/hosts/omen-16/hardware-configuration.nix
           ./nixos/hosts/omen-16/hp-omen-16.nix
+          inputs.omenix.nixosModules.default
+        ];
+        specialArgs = { inherit inputs; };
+      };
+
+      nixosConfigurations.envy-15 = nixos-unstable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/user.nix
+          ./nixos/hosts/envy-15/hardware-configuration.nix
           inputs.omenix.nixosModules.default
         ];
         specialArgs = { inherit inputs; };
