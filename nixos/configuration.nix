@@ -170,12 +170,27 @@
         "session-order" = "hyprland";
         "show-sessions" = false;
         "show-users" = true;
-        animation = "colormix";
-        animation_timeout_sec = 0;
+
         full_color = true;
-        colormix_col1 = "0x00FA824C"; # accent orange matches Hyprland/Waybar
-        colormix_col2 = "0x00CDD6F4"; # soft foreground tone from the bar
-        colormix_col3 = "0x2011111B"; # translucent dark backdrop like tofi
+        bg = "0x20000000"; # background animation base (black)
+        fg = "0x00FAFAFA"; # white text
+        border_fg = "0x004E4643"; # dark gray border (#4e4643)
+        error_fg = "0x00FA824C"; # orange highlight (#fa824c)
+
+        blank_box = true; # solid background inside login box
+        box_bg = "0x00000000"; # pure black
+        hide_borders = false;
+        hide_key_hints = true;
+        hide_version_string = true;
+
+        animation = "colormix";
+        colormix_col1 = "0x004E4643"; # gray
+        colormix_col2 = "0x00FA824C"; # orange
+        colormix_col3 = "0x20000000"; # black base
+
+        asterisk = "0x2022"; # • bullet
+        input_len = 34;
+        save = true;
       };
     };
 
