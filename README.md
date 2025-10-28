@@ -54,3 +54,17 @@ Example `flake.nix` (in your system repo):
 	};
 }
 ```
+
+## Vscode Speech Extension Fix
+
+Vscode speech extension on nixos
+
+```bash
+nix-shell -p patchelf
+cd ~/.vscode/extensions/ms-vscode.vscode-speech-0.16.0-linux-x64/node_modules/\@vscode/node-speech/build/Release/
+sudo chmod u+w ./*
+for f in libMicrosoft.CognitiveServices.Speech.*.so speechapi.node; do patchelf "$f" --add-rpath "$NIX_LD_LIBRARY_PATH"; done
+sudo chmod u-w ./*
+```
+
+This works because vscode loads dynamic libraries from it's node modules folder in the /build/Release/ folder. The libraries are compiled with the rpath set to the $LD_LIBRARY_PATH and others by default. But since we are using nix-ld we need it to look in $NIX_LD_LIBRARY_PATH which is where alsa-lib and other ones that it needs are located.
