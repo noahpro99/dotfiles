@@ -48,7 +48,6 @@
       xwayland.enable = true;
     };
     hyprlock.enable = true;
-    waybar.enable = true;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
@@ -120,6 +119,7 @@
     cliphist
     hyprshot # screenshot tool
     playerctl # media keys
+    waybar
     networkmanagerapplet
     dotool # automate typing in wayland for nerd-dictation
     bibata-cursors # only for xcursors as fallback for hyprcursor on apps like gtk
