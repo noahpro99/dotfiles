@@ -778,7 +778,7 @@
   "inlineChat.notebookAgent": true,
   "githubPullRequests.codingAgent.uiIntegration": true,
   "chat.agentSessionsViewLocation": "view",
-  "workbench.secondarySideBar.defaultVisibility": "visible",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
   "containers.images.sortBy": "CreatedTime",
   "containers.volumes.sortBy": "CreatedTime",
   "chat.tools.terminal.autoApprove": {
@@ -807,7 +807,11 @@
     "uniq": true,
     "rev": true,
     "sed": true,
-    "s/\"//'": true
+    "s/\"//'": true,
+    "docker logs": true,
+    "docker ps": true,
+    "docker-compose": true,
+    "docker compose": true
   },
   "git.blame.statusBarItem.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
