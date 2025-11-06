@@ -18,6 +18,7 @@ sudo apt install git stow # or your distro equivalent
 git clone https://github.com/noahpro99/dotfiles.git
 cd dotfiles
 stow . --no-folding
+chmod +x ~/.local/bin/
 ```
 
 Tip: `--no-folding` avoids symlinking entire folders and links individual files instead.

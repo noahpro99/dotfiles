@@ -1,3 +1,5 @@
+@import "../omarchy/current/theme/waybar.css";
+
 * {
   border: none;
   border-radius: 0;
@@ -29,8 +31,8 @@ window#waybar {
 #tray,
 #power-profiles-daemon,
 #workspaces {
-  background: #4e4643;
-  color: #fa824c;
+  background: @background;
+  color: @foreground;
   padding: 0px 6px;
   border-radius: 999px;
 }
@@ -44,7 +46,7 @@ window#waybar {
   transition: background 0.3s ease, color 0.3s ease;
 }
 #workspaces button.active {
-  color: #fa824c;
+  color: @foreground;
 }
 #workspaces button.focused {
   background: #eba0ac;
