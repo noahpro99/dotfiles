@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   ...
 }:
@@ -9,14 +8,6 @@ let
   userDescription = "Noah Provenzano";
   timeZone = "America/New_York";
   locale = "en_US.UTF-8";
-
-  stable = import inputs.nixos-stable {
-    system = "x86_64-linux";
-    config = {
-      allowUnfree = true;
-    };
-    overlays = [ ];
-  };
 in
 {
   networking.hostName = hostname;
@@ -58,7 +49,7 @@ in
       vlc
       vesktop
       discord
-      stable.lunar-client
+      lunar-client
       obs-studio
       heroic # epic games
       steam

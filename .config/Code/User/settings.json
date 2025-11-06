@@ -20,6 +20,7 @@
     "asfreq",
     "astype",
     "atqdm",
+    "autoencoders",
     "autograd",
     "automations",
     "Autoregressive",
