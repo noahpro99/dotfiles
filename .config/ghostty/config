@@ -5,3 +5,4 @@ keybind = ctrl+v=paste_from_clipboard
 keybind = ctrl+backspace=text:\x1b\x7f
 background-opacity = 0.85
 cursor-style-blink = false
+confirm-close-surface = false
