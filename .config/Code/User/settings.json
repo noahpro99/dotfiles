@@ -351,6 +351,7 @@
     "Valgrind",
     "Vandermonde",
     "vectorize",
+    "VENCORD",
     "venv",
     "VITE",
     "wavefunction",
@@ -639,7 +640,7 @@
     "/tmp/**": true,
     "/tmp/git-blob**": true
   },
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "Aether",
   "rust-analyzer.cargo.buildScripts.enable": true,
   "rust-analyzer.procMacro.enable": true,
   "rust-analyzer.lru.capacity": 1024,

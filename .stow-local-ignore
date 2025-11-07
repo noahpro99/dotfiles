@@ -6,3 +6,4 @@
 
 ^/nixos$
 ^/.vscode$
+\.config/starship.toml

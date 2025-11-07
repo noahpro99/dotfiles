@@ -35,5 +35,31 @@ if background_path:
 subprocess.run(["pkill", "waybar"])
 subprocess.run(["hyprctl", "dispatch", "exec", "waybar"])
 
+# restart hyprland
+subprocess.run(["hyprctl", "reload"])
+
 # refresh btop
+BTOP_THEME_PATH = CURRENT_THEME_DIR / "btop.theme"
+BTOP_CONFIG_PATH = Path.home() / ".config" / "btop" / "themes" / "btop.theme"
+if BTOP_CONFIG_PATH.exists() or BTOP_CONFIG_PATH.is_symlink():
+    BTOP_CONFIG_PATH.unlink()
+BTOP_CONFIG_PATH.symlink_to(BTOP_THEME_PATH)
 subprocess.run(["pkill", "-SIGUSR2", "btop"])
+
+# vesktop symlink
+# ~/.config/omarchy/themes/aether/vencord.theme.css
+VENCORD_THEME_PATH = CURRENT_THEME_DIR / "vencord.theme.css"
+VESKTOP_CONFIG_PATH = (
+    Path.home() / ".config" / "vesktop" / "themes" / "vencord.theme.css"
+)
+VESKTOP_CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
+if VESKTOP_CONFIG_PATH.exists() or VESKTOP_CONFIG_PATH.is_symlink():
+    VESKTOP_CONFIG_PATH.unlink()
+VESKTOP_CONFIG_PATH.symlink_to(VENCORD_THEME_PATH)
+
+# symlink starship.toml
+STARSHIP_THEME_PATH = CURRENT_THEME_DIR / "starship.toml"
+STARSHIP_CONFIG_PATH = Path.home() / ".config" / "starship.toml"
+if STARSHIP_CONFIG_PATH.exists() or STARSHIP_CONFIG_PATH.is_symlink():
+    STARSHIP_CONFIG_PATH.unlink()
+STARSHIP_CONFIG_PATH.symlink_to(STARSHIP_THEME_PATH)

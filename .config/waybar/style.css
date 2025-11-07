@@ -32,7 +32,7 @@ window#waybar {
 #power-profiles-daemon,
 #workspaces {
   background: @background;
-  color: @foreground;
+  color: @color4;
   padding: 0px 6px;
   border-radius: 999px;
 }
@@ -46,7 +46,7 @@ window#waybar {
   transition: background 0.3s ease, color 0.3s ease;
 }
 #workspaces button.active {
-  color: @foreground;
+  color: @color4;
 }
 #workspaces button.focused {
   background: #eba0ac;
