@@ -63,3 +63,16 @@ STARSHIP_CONFIG_PATH = Path.home() / ".config" / "starship.toml"
 if STARSHIP_CONFIG_PATH.exists() or STARSHIP_CONFIG_PATH.is_symlink():
     STARSHIP_CONFIG_PATH.unlink()
 STARSHIP_CONFIG_PATH.symlink_to(STARSHIP_THEME_PATH)
+
+# tofi dir symlinks
+TOFIA_DIR_PATH = CURRENT_THEME_DIR / "tofiA"
+TOFIA_CONFIG_DIR = Path.home() / ".config" / "tofi" / "configA"
+TOFIV_DIR_PATH = CURRENT_THEME_DIR / "tofiV"
+TOFIV_CONFIG_DIR = Path.home() / ".config" / "tofi" / "configV"
+TOFIA_CONFIG_DIR.parent.mkdir(parents=True, exist_ok=True)
+if TOFIA_CONFIG_DIR.exists() or TOFIA_CONFIG_DIR.is_symlink():
+    TOFIA_CONFIG_DIR.unlink()
+if TOFIV_CONFIG_DIR.exists() or TOFIV_CONFIG_DIR.is_symlink():
+    TOFIV_CONFIG_DIR.unlink()
+TOFIA_CONFIG_DIR.symlink_to(TOFIA_DIR_PATH)
+TOFIV_CONFIG_DIR.symlink_to(TOFIV_DIR_PATH)

@@ -7,3 +7,4 @@
 ^/nixos$
 ^/.vscode$
 \.config/starship.toml
+\.config/tofi
