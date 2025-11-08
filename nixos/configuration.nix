@@ -113,7 +113,8 @@
       tofi # app launcher
       hyprpolkitagent # polkit agent
       hypridle
-      kdePackages.dolphin
+      nautilus # file manager
+      overskride # bluetooth
       xdg-utils # this is needed to allow links to be opened in the browser
       dunst # notification daemon
       libnotify
@@ -124,7 +125,6 @@
       hyprshot # screenshot tool
       playerctl # media keys
       waybar
-      networkmanagerapplet
       dotool # automate typing in wayland for nerd-dictation
       bibata-cursors # only for xcursors as fallback for hyprcursor on apps like gtk
       udiskie # for mounting drives automatically and gui
@@ -165,7 +165,6 @@
       wireplumber.enable = true;
     };
     pcscd.enable = true;
-    blueman.enable = true;
     upower.enable = true;
 
     udisks2.enable = true; # for udiskie
