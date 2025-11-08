@@ -1,6 +1,9 @@
-{ pkgs, inputs, ... }:
 {
-  nixpkgs.overlays = [ inputs.tofi-emoji.overlays.default ];
+  pkgs,
+  inputs,
+  ...
+}:
+{
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.xserver = {
@@ -73,59 +76,65 @@
   security.polkit.enable = true;
   security.rtkit.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    git
-    pass
-    stow
-    fzf
-    zoxide
-    ripgrep
-    bat
-    fd
-    gcc
-    libgcc
-    eza
-    gh
-    bun
-    nixd
-    nixfmt
-    starship
-    rustup
-    htop
-    btop
-    ffmpeg
-    uv
-    zip
-    unzip
-    openssl
-    pkg-config
-    jq
+  environment.systemPackages = (
+    with pkgs;
+    [
+      git
+      pass
+      stow
+      fzf
+      zoxide
+      ripgrep
+      bat
+      fd
+      gcc
+      libgcc
+      eza
+      gh
+      bun
+      nixd
+      nixfmt
+      starship
+      rustup
+      htop
+      btop
+      ffmpeg
+      uv
+      zip
+      unzip
+      openssl
+      pkg-config
+      jq
 
-    # hyprland
-    hyprpaper # wallpaper manager
-    hyprpicker # color picker
-    killall
-    tofi # app launcher
-    tofi-emoji # emoji picker
-    hyprpolkitagent # polkit agent
-    hypridle
-    kdePackages.dolphin
-    xdg-utils # this is needed to allow links to be opened in the browser
-    dunst # notification daemon
-    libnotify
-    brightnessctl
-    hyprsunset
-    wl-clipboard
-    cliphist
-    hyprshot # screenshot tool
-    playerctl # media keys
-    waybar
-    networkmanagerapplet
-    dotool # automate typing in wayland for nerd-dictation
-    bibata-cursors # only for xcursors as fallback for hyprcursor on apps like gtk
-    udiskie # for mounting drives automatically and gui
-    pwvucontrol # gui for pipewire
-  ];
+      # hyprland
+      hyprpaper # wallpaper manager
+      hyprpicker # color picker
+      killall
+      tofi # app launcher
+      hyprpolkitagent # polkit agent
+      hypridle
+      kdePackages.dolphin
+      xdg-utils # this is needed to allow links to be opened in the browser
+      dunst # notification daemon
+      libnotify
+      brightnessctl
+      hyprsunset
+      wl-clipboard
+      cliphist
+      hyprshot # screenshot tool
+      playerctl # media keys
+      waybar
+      networkmanagerapplet
+      dotool # automate typing in wayland for nerd-dictation
+      bibata-cursors # only for xcursors as fallback for hyprcursor on apps like gtk
+      udiskie # for mounting drives automatically and gui
+      pwvucontrol # gui for pipewire
+    ]
+    ++ [
+      inputs.tofi-emoji.packages."${pkgs.system}".tofi-emoji
+      inputs.aether.packages."${pkgs.system}".default
+    ]
+  );
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
