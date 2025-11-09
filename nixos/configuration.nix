@@ -129,10 +129,12 @@
       bibata-cursors # only for xcursors as fallback for hyprcursor on apps like gtk
       udiskie # for mounting drives automatically and gui
       pwvucontrol # gui for pipewire
+      terminaltexteffects # tte for screensaver
+      ghostty
     ]
     ++ [
-      inputs.tofi-emoji.packages."${pkgs.system}".tofi-emoji
-      inputs.aether.packages."${pkgs.system}".default
+      inputs.tofi-emoji.packages."${pkgs.stdenv.hostPlatform.system}".tofi-emoji
+      inputs.aether.packages."${pkgs.stdenv.hostPlatform.system}".default
     ]
   );
 

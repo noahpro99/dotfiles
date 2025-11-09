@@ -62,7 +62,6 @@ in
       gnupg
       pinentry-tty # for gpg
       protobuf
-      ghostty
       r2modman
       godot
       openconnect
