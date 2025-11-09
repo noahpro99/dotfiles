@@ -4,6 +4,7 @@ import os
 import shutil
 import subprocess
 import sys
+import time
 
 SCREENSAVER_CONFIG = os.path.expanduser("~/.config/ghostty/screensaver")
 SCREENSAVER_SCRIPT = os.path.expanduser("~/.local/bin/screensaver.py")
@@ -49,10 +50,24 @@ def get_focused_monitor() -> str:
     return "HDMI-A-1"
 
 
+def all_monitors() -> list[str]:
+    result = subprocess.run(
+        ["hyprctl", "monitors", "-j"],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        print("Failed to get monitors from hyprctl.", file=sys.stderr)
+        exit(1)
+
+    monitors = json.loads(result.stdout)
+    return [monitor.get("name", "HDMI-A-1") for monitor in monitors]
+
+
 focused_monitor = get_focused_monitor()
 
 
-for m in [focused_monitor]:
+for m in all_monitors():
     subprocess.run(["hyprctl", "dispatch", "focusmonitor", m])
 
     subprocess.run(
@@ -70,5 +85,7 @@ for m in [focused_monitor]:
             SCREENSAVER_SCRIPT,
         ]
     )
+    time.sleep(1)
+    subprocess.run(["hyprctl", "dispatch", "fullscreen"])
 
 subprocess.run(["hyprctl", "dispatch", "focusmonitor", focused_monitor])

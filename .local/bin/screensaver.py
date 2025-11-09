@@ -10,23 +10,13 @@ import sys
 import termios
 import tty
 
-subprocess.run(
-    [
-        "hyprctl",
-        "dispatch",
-        "fullscreen",
-    ],
-    stdout=subprocess.DEVNULL,
-    stderr=subprocess.DEVNULL,
-)
-
 SCREENSAVER_TEXT = os.path.expanduser("~/.config/screensaver.txt")
 
 if not os.path.exists(SCREENSAVER_TEXT):
     with open(SCREENSAVER_TEXT, "w") as f:
         f.write("NixOS is the best!\n")
         f.write("customize ~/.config/screensaver.txt to change this text.\n")
-        f.write("https://textpaint.com/ is great for generating utf8 art!\n")
+        f.write("https://textpaint.com is great for generating utf8 art!\n")
 
 
 def screensaver_in_focus() -> bool:
