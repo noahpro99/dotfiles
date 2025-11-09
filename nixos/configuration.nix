@@ -178,7 +178,6 @@
       settings = {
         hideusers = false;
         "session-order" = "hyprland";
-        "show-sessions" = false;
         "show-users" = true;
 
         full_color = true;
@@ -192,11 +191,6 @@
         hide_borders = false;
         hide_key_hints = true;
         hide_version_string = true;
-
-        animation = "colormix";
-        colormix_col1 = "0x004E4643"; # gray
-        colormix_col2 = "0x00FA824C"; # orange
-        colormix_col3 = "0x20000000"; # black base
 
         asterisk = "0x2022"; # • bullet
         input_len = 34;
