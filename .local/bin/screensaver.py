@@ -8,6 +8,7 @@ import signal
 import subprocess
 import sys
 import termios
+import time
 import tty
 
 SCREENSAVER_TEXT = os.path.expanduser("~/.config/screensaver.txt")
@@ -94,6 +95,8 @@ def get_random_effect() -> str:
         text=True,
     ).stdout.strip()
 
+
+time.sleep(1)
 
 while True:
     effect = get_random_effect()
