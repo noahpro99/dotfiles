@@ -813,7 +813,8 @@
     "docker logs": true,
     "docker ps": true,
     "docker-compose": true,
-    "docker compose": true
+    "docker compose": true,
+    "nix": true
   },
   "git.blame.statusBarItem.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
