@@ -1,4 +1,8 @@
 {
+  nixConfig.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   description = "Noah's dotfiles and reusable NixOS modules";
 
   inputs = {
