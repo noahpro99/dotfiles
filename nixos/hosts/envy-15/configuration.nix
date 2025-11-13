@@ -14,5 +14,6 @@
     (writeShellScriptBin "btop-rocm" ''
       exec ${pkgs.btop-rocm}/bin/btop "$@"
     '')
+    rocmPackages.rocm-smi
   ];
 }

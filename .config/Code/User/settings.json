@@ -382,7 +382,8 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.bracketPairColorization.enabled": true,
   "workbench.editorAssociations": {
-    "*.html": "default"
+    "*.html": "default",
+    "git-rebase-todo": "default"
   },
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
