@@ -15,5 +15,6 @@
       exec ${pkgs.btop-rocm}/bin/btop "$@"
     '')
     rocmPackages.rocm-smi
+    rocmPackages.rocminfo
   ];
 }
