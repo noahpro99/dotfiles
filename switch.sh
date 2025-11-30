@@ -1,5 +1,5 @@
 if [ -z "${1:-}" ]; then
-	echo "Usage: $0 <omen-16, envy-15>"
+	echo "Usage: $0 <nixos-configuration-name>"
 	exit 1
 fi
 cd ~/dotfiles || exit 1
