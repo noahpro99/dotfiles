@@ -1,4 +1,7 @@
-{ config, lib, pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -20,20 +23,22 @@
     hibernateKey = "ignore";
   };
 
-  # also disable all timed suspends
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
 
-
   services.xserver.enable = true;
 
   users.users.noahpro = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "docker"
+      "networkmanager"
+    ];
     packages = with pkgs; [
-	
+      btop
     ];
   };
   environment.systemPackages = with pkgs; [
