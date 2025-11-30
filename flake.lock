@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1763698124,
-        "narHash": "sha256-++sLWwN/z30udW+aBqIx5/Ajdpo4yeuapXKPuDyA8zY=",
+        "lastModified": 1764478644,
+        "narHash": "sha256-y6PS7LK1cATZRB124K/GShVwG3/msQXh/yc9wsTBMaI=",
         "owner": "noahpro99",
         "repo": "aether",
-        "rev": "55541512e7b4ecd4b192aa3d9289a09f073f8657",
+        "rev": "ac5ec9718c39f63fe14a3fbe5ad819f8091abd3c",
         "type": "github"
       },
       "original": {
