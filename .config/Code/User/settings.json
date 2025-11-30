@@ -815,7 +815,8 @@
     "docker ps": true,
     "docker-compose": true,
     "docker compose": true,
-    "nix": true
+    "nix": true,
+    "lspci": true
   },
   "git.blame.statusBarItem.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
