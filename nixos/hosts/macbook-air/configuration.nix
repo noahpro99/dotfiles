@@ -1,8 +1,19 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
 
   imports = [ ./hardware-configuration.nix ];
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works well)
+      libvdpau-va-gl
+    ];
+  };
+
+  services.xserver.videoDrivers = [ "modesetting" ];
 
   boot.extraModulePackages = [
     (config.boot.kernelPackages.callPackage ../../pkgs/hid-apple-patched.nix { })
