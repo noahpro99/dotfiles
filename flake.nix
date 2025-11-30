@@ -52,5 +52,15 @@
         ];
         specialArgs = { inherit inputs; };
       };
+
+      nixosConfigurations.macbook-air = nixos-unstable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/user.nix
+          ./nixos/hosts/macbook-air/configuration.nix
+        ];
+        specialArgs = { inherit inputs; };
+      };
     };
 }
