@@ -37,6 +37,10 @@
     ];
     packages = with pkgs; [
       btop
+      eza
+      starship
+      zoxide
+      fzf
     ];
   };
   environment.systemPackages = with pkgs; [
