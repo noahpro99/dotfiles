@@ -15,12 +15,18 @@
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.logind = {
-    settings.Login.lidSwitch = "ignore";
-    settings.Login.lidSwitchDocked = "ignore";
-    settings.Login.powerKey = "ignore";
-    settings.Login.suspendKey = "ignore";
-    settings.Login.hibernateKey = "ignore";
+  boot.kernelParams = [
+    "consoleblank=60"
+    "button.lid_init_state=open"
+  ];
+
+  services.logind.settings = {
+    Login = {
+      HandleLidSwitch = "ignore";
+      HandleLidSwitchDocked = "ignore";
+      HandleLidSwitchExternalPower = "ignore";
+      IdleAction = "ignore";
+    };
   };
 
   systemd.targets.sleep.enable = false;
