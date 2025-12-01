@@ -16,19 +16,17 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchDocked = "ignore";
-    powerKey = "ignore";
-    suspendKey = "ignore";
-    hibernateKey = "ignore";
+    settings.Login.lidSwitch = "ignore";
+    settings.Login.lidSwitchDocked = "ignore";
+    settings.Login.powerKey = "ignore";
+    settings.Login.suspendKey = "ignore";
+    settings.Login.hibernateKey = "ignore";
   };
 
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
-
-  services.xserver.enable = true;
 
   users.users.noahpro = {
     isNormalUser = true;
