@@ -430,7 +430,7 @@
     }
   ],
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": true,
     "markdown": true,
     "scminput": false,
