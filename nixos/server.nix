@@ -52,6 +52,12 @@
     openFirewall = true;
   };
 
+  services.tailscale.enable = true;
+  networking.firewall = {
+    trustedInterfaces = [ "tailscale0" ];
+    checkReversePath = "loose";
+  };
+
   virtualisation.docker.enable = true;
 
   system.stateVersion = "25.05"; # Did you read the comment?
