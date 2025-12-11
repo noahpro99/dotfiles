@@ -24,7 +24,7 @@
     options hid_apple fnmode=2 swap_fn_leftctrl=1 swap_opt_cmd=1
   '';
 
-  permittedInsecurePackages = [
+  nixpkgs.config.permittedInsecurePackages = [
     "broadcom-sta-6.30.223.271-59-6.12.61"
   ];
 }
