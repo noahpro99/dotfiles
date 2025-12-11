@@ -56,21 +56,24 @@
       nixosConfigurations.macbook-air-a = nixos-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./nixos/configuration.nix
-          ./nixos/user.nix
-          ./nixos/hosts/macbook-air-a/configuration.nix
+          ./nixos/server.nix
+          ./nixos/hosts/macbook/configuration.nix
+          ./nixos/hosts/macbook/server.nix
           ./nixos/hosts/macbook-air-a/hardware-configuration.nix
         ];
+        networking.hostName = "macbook-air-a";
         specialArgs = { inherit inputs; };
       };
 
       nixosConfigurations.macbook-air-b = nixos-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./nixos/hosts/macbook-air-a/configuration.nix
-          ./nixos/hosts/macbook-air-b/configuration.nix
+          ./nixos/server.nix
+          ./nixos/hosts/macbook/configuration.nix
+          ./nixos/hosts/macbook/server.nix
           ./nixos/hosts/macbook-air-b/hardware-configuration.nix
         ];
+        networking.hostName = "macbook-air-b";
         specialArgs = { inherit inputs; };
       };
     };
