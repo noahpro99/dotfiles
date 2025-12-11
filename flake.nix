@@ -59,7 +59,7 @@
           ./nixos/server.nix
           ./nixos/hosts/macbook/configuration.nix
           ./nixos/hosts/macbook/server.nix
-          ./nixos/hosts/macbook-air-a/hardware-configuration.nix
+          ./nixos/hosts/macbook/macbook-air-a/hardware-configuration.nix
           { networking.hostName = "macbook-air-a"; }
         ];
         specialArgs = { inherit inputs; };
@@ -71,7 +71,7 @@
           ./nixos/server.nix
           ./nixos/hosts/macbook/configuration.nix
           ./nixos/hosts/macbook/server.nix
-          ./nixos/hosts/macbook-air-b/hardware-configuration.nix
+          ./nixos/hosts/macbook/macbook-air-b/hardware-configuration.nix
           { networking.hostName = "macbook-air-b"; }
         ];
         specialArgs = { inherit inputs; };
