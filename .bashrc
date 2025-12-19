@@ -146,6 +146,34 @@ wall() { hyprctl hyprpaper reload , "$(realpath "$1")"; }
 t() { mkdir -p "$(dirname "$1")" && touch "$1" && code "$1"; }
 s() { gh copilot suggest -t shell "$*"; }
 copypath() { echo -n "$(realpath "$1" | tr -d '\n' | wl-copy)"; }
+vt-vpn() {
+  local url="${1:-vpn.vt.edu/VT-Traffic}"
+  shift || true
+  local tmp
+  tmp="$(mktemp)"
+  trap 'rm -f "$tmp"' RETURN
+  openconnect --protocol=anyconnect --authenticate "$url" >"$tmp"
+  local COOKIE FINGERPRINT CONNECT_URL RESOLVE
+  COOKIE="$(sed -n "s/^COOKIE='\(.*\)'/\1/p" "$tmp")"
+  FINGERPRINT="$(sed -n "s/^FINGERPRINT='\(.*\)'/\1/p" "$tmp")"
+  CONNECT_URL="$(sed -n "s/^CONNECT_URL='\(.*\)'/\1/p" "$tmp")"
+  RESOLVE="$(sed -n "s/^RESOLVE='\(.*\)'/\1/p" "$tmp")"
+  if [ -n "$RESOLVE" ]; then
+    printf '%s\n' "$COOKIE" | sudo openconnect \
+      --protocol=anyconnect \
+      --cookie-on-stdin \
+      --servercert "$FINGERPRINT" \
+      --resolve "$RESOLVE" \
+      "$url" "$@"
+  else
+    printf '%s\n' "$COOKIE" | sudo openconnect \
+      --protocol=anyconnect \
+      --cookie-on-stdin \
+      --servercert "$FINGERPRINT" \
+      "$url" "$@"
+  fi
+}
+
 eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
