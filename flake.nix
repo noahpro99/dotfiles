@@ -48,7 +48,6 @@
           ./nixos/configuration.nix
           ./nixos/user.nix
           ./nixos/hosts/envy-15/configuration.nix
-          inputs.omenix.nixosModules.default
         ];
         specialArgs = { inherit inputs; };
       };
