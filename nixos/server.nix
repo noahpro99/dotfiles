@@ -57,6 +57,9 @@
     trustedInterfaces = [ "tailscale0" ];
     checkReversePath = "loose";
   };
+  networking.firewall.allowedTCPPorts = [
+    25565 # default minecraft server port
+  ];
 
   virtualisation.docker.enable = true;
 
