@@ -14,7 +14,6 @@
     (writeShellScriptBin "btop-rocm" ''
       exec ${pkgs.btop-rocm}/bin/btop "$@"
     '')
-    rocmPackages.amdsmi
     rocmPackages.rocminfo
     amdgpu_top
   ];
