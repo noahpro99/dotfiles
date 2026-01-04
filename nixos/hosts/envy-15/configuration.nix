@@ -4,6 +4,15 @@
 }:
 {
   imports = [ ./hardware-configuration.nix ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [
+    "usbcore.autosuspend=-1"
+  ];
+
+  services.udev.extraRules = ''
+    # Keep USB devices powered; avoid runtime suspend.
+    ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="on"
+  '';
 
   hardware.graphics = {
     enable = true;
