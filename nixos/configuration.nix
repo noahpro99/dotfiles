@@ -205,7 +205,7 @@
           ids = [ "*" ];
           settings = {
             main = {
-              capslock = "overloadt2(control, esc, 170)";
+              capslock = "esc";
               esc = "capslock";
             };
             meta = {
