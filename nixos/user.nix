@@ -65,8 +65,11 @@ in
       r2modman
       godot
       openconnect
+      ocproxy
       eclipses.eclipse-sdk
       packet # quick share to android
+      opencode
+      codex
     ];
   };
   virtualisation.waydroid.enable = true;

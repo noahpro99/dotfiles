@@ -161,6 +161,8 @@ vt-vpn() {
   if [ -n "$RESOLVE" ]; then
     printf '%s\n' "$COOKIE" | sudo openconnect \
       --protocol=anyconnect \
+      --script-tun \
+      --script "ocproxy -D 9000" \
       --cookie-on-stdin \
       --servercert "$FINGERPRINT" \
       --resolve "$RESOLVE" \
@@ -168,6 +170,8 @@ vt-vpn() {
   else
     printf '%s\n' "$COOKIE" | sudo openconnect \
       --protocol=anyconnect \
+      --script-tun \
+      --script "ocproxy -D 9000" \
       --cookie-on-stdin \
       --servercert "$FINGERPRINT" \
       "$url" "$@"
