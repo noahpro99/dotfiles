@@ -7,6 +7,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [
     "usbcore.autosuspend=-1"
+    "iommu=soft"
   ];
 
   services.udev.extraRules = ''
