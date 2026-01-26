@@ -38,6 +38,7 @@
     bat
     fd
     openssl
+    bun
   ];
 
   programs.gnupg.agent = {
