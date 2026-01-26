@@ -44,6 +44,7 @@
     opencode
     monero-cli
     p2pool
+    xmrig
   ];
 
   programs.gnupg.agent = {
