@@ -11,6 +11,7 @@
     omenix.url = "github:noahpro99/omenix";
     tofi-emoji.url = "github:noahpro99/tofi-emoji";
     aether.url = "github:noahpro99/aether/nixos";
+    hyprland-preview-share-picker.url = "github:noahpro99/hyprland-preview-share-picker/fix-window-close";
   };
 
   outputs =
@@ -21,6 +22,7 @@
       omenix,
       tofi-emoji,
       aether,
+      hyprland-preview-share-picker,
       ...
     }@inputs:
     {

@@ -131,6 +131,7 @@
       pwvucontrol # gui for pipewire
       terminaltexteffects # tte for screensaver
       ghostty
+      inputs.hyprland-preview-share-picker.packages."${pkgs.stdenv.hostPlatform.system}".default
     ]
     ++ [
       inputs.tofi-emoji.packages."${pkgs.stdenv.hostPlatform.system}".tofi-emoji
