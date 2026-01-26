@@ -39,6 +39,10 @@
     fd
     openssl
     bun
+    nodejs_25
+    ripgrep
+    opencode
+    p2pool
   ];
 
   programs.gnupg.agent = {

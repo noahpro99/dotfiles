@@ -122,6 +122,8 @@ fi
 
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+# user-local executables
+export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/root/.local/bin
 
