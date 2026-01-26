@@ -69,6 +69,7 @@ in
       eclipses.eclipse-sdk
       packet # quick share to android
       opencode
+      bluetui
       codex
     ];
   };

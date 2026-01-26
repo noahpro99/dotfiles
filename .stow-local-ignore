@@ -8,3 +8,4 @@
 ^/.vscode$
 \.config/starship.toml
 \.config/tofi
+^/result-.*
