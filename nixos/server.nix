@@ -42,6 +42,12 @@
     nodejs_25
     ripgrep
     opencode
+
+    # VPN + headless/browser auth helpers
+    openconnect
+    ocproxy
+    chromium
+
     monero-cli
     p2pool
     xmrig
