@@ -71,6 +71,7 @@ in
       opencode
       bluetui
       codex
+      libusb1
     ];
   };
   virtualisation.waydroid.enable = true;

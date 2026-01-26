@@ -11,6 +11,7 @@
     omenix.url = "github:noahpro99/omenix";
     tofi-emoji.url = "github:noahpro99/tofi-emoji";
     aether.url = "github:noahpro99/aether/nixos";
+    usb-driver.url = "path:/home/noahpro/repos/usb-driver";
   };
 
   outputs =

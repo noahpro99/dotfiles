@@ -56,11 +56,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1768886240,
-        "narHash": "sha256-C2TjvwYZ2VDxYWeqvvJ5XPPp6U7H66zeJlRaErJKoEM=",
+        "lastModified": 1769018530,
+        "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "80e4adbcf8992d3fd27ad4964fbb84907f9478b0",
+        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
         "type": "github"
       },
       "original": {
@@ -118,6 +118,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1768886240,
+        "narHash": "sha256-C2TjvwYZ2VDxYWeqvvJ5XPPp6U7H66zeJlRaErJKoEM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "80e4adbcf8992d3fd27ad4964fbb84907f9478b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "omenix": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -142,7 +158,8 @@
         "nixos-stable": "nixos-stable",
         "nixos-unstable": "nixos-unstable",
         "omenix": "omenix",
-        "tofi-emoji": "tofi-emoji"
+        "tofi-emoji": "tofi-emoji",
+        "usb-driver": "usb-driver"
       }
     },
     "systems": {
@@ -176,6 +193,21 @@
         "owner": "noahpro99",
         "repo": "tofi-emoji",
         "type": "github"
+      }
+    },
+    "usb-driver": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1769167045,
+        "narHash": "sha256-dCyLGqLPNQRxRUw/CWEbHhJ98skgdW2bNgEQEitCx7Q=",
+        "path": "/home/noahpro/repos/usb-driver",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/noahpro/repos/usb-driver",
+        "type": "path"
       }
     }
   },
