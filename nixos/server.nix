@@ -42,6 +42,7 @@
     nodejs_25
     ripgrep
     opencode
+    monero-cli
     p2pool
   ];
 
