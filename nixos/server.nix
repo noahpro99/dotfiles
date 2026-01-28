@@ -42,6 +42,7 @@
     nodejs_25
     ripgrep
     opencode
+    jq
 
     # VPN + headless/browser auth helpers
     openconnect
