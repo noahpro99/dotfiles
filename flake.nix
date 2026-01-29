@@ -74,6 +74,7 @@
           ./nixos/hosts/macbook/server.nix
           ./nixos/hosts/macbook/macbook-air-b/hardware-configuration.nix
           { networking.hostName = "macbook-air-b"; }
+          { swapDevices = [ { device = "/swapfile"; size = 8192; } ]; }
         ];
         specialArgs = { inherit inputs; };
       };
