@@ -50,6 +50,7 @@ in
       vesktop
       discord
       lunar-client
+      prismlauncher
       obs-studio
       heroic # epic games
       steam
@@ -71,6 +72,7 @@ in
       opencode
       bluetui
       codex
+      github-cli
     ];
   };
   virtualisation.waydroid.enable = true;
