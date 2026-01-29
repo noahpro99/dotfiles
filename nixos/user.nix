@@ -72,7 +72,7 @@ in
       opencode
       bluetui
       codex
-      github-cli
+      github-copilot-cli
     ];
   };
   virtualisation.waydroid.enable = true;
