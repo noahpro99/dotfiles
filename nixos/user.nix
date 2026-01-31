@@ -73,6 +73,8 @@ in
       bluetui
       codex
       github-copilot-cli
+      simplex-chat-desktop
+      tor-browser
     ];
   };
   virtualisation.waydroid.enable = true;

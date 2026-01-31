@@ -27,7 +27,7 @@ background_path = next((CURRENT_THEME_DIR / "backgrounds").glob("*.jpg"), None)
 print(f"Background path: {background_path}")
 if background_path:
     subprocess.run(
-        ["hyprctl", "hyprpaper", "wallpaper", f",{background_path},cover"],
+        ["hyprctl", "hyprpaper", "wallpaper", f", {background_path}, cover"],
         check=False,
     )
     if CURRENT_BG_PATH.exists() or CURRENT_BG_PATH.is_symlink():

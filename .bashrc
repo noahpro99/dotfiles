@@ -144,7 +144,7 @@ alias nss='~/.local/bin/nix-search-fzf-shell.sh'
 alias smi='nvidia-smi'
 alias ls='eza --icons --group-directories-first --git --color=always -1'
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
-wall() { hyprctl hyprpaper wallpaper ",$(realpath "$1"),cover"; }
+wall() { hyprctl hyprpaper wallpaper ", $(realpath "$1"), cover"; }
 t() { mkdir -p "$(dirname "$1")" && touch "$1" && code "$1"; }
 s() { gh copilot suggest -t shell "$*"; }
 copypath() { echo -n "$(realpath "$1" | tr -d '\n' | wl-copy)"; }
