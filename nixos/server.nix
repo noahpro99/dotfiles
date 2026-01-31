@@ -81,6 +81,11 @@
     37889 # P2Pool peer discovery
   ];
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   virtualisation.docker.enable = true;
 
   system.stateVersion = "25.05"; # Did you read the comment?

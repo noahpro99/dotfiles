@@ -84,6 +84,11 @@ in
     checkReversePath = "loose";
   };
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   networking.firewall.allowedTCPPorts = [
     25565 # default minecraft server port
     34835 # quick share to android port
