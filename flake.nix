@@ -12,6 +12,9 @@
     tofi-emoji.url = "github:noahpro99/tofi-emoji";
     aether.url = "github:noahpro99/aether/nixos";
     hyprland-preview-share-picker.url = "git+https://github.com/WhySoBad/hyprland-preview-share-picker?submodules=1";
+
+    # SimpleX Chat (terminal CLI) — upstream flake
+    simplex-chat.url = "github:simplex-chat/simplex-chat/stable";
   };
 
   outputs =
@@ -23,6 +26,7 @@
       tofi-emoji,
       aether,
       hyprland-preview-share-picker,
+      simplex-chat,
       ...
     }@inputs:
     {

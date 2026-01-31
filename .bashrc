@@ -195,3 +195,7 @@ export PATH=$PATH:~/go/bin
 
 # zoxide
 eval "$(zoxide init --cmd cd bash)"
+
+# user-local bin
+export PATH="$PATH:$HOME/.local/bin"
+
