@@ -77,7 +77,12 @@ in
       tor-browser
     ];
   };
-  virtualisation.waydroid.enable = true;
+
+  services.tailscale.enable = true;
+  networking.firewall = {
+    trustedInterfaces = [ "tailscale0" ];
+    checkReversePath = "loose";
+  };
 
   networking.firewall.allowedTCPPorts = [
     25565 # default minecraft server port

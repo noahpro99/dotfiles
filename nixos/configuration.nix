@@ -109,7 +109,6 @@
       # hyprland
       hyprpaper # wallpaper manager
       hyprpicker # color picker
-      hyprland-guiutils # recommended for Hyprland 0.53+ safe mode / welcome tooling
       killall
       tofi # app launcher
       hyprpolkitagent # polkit agent
