@@ -132,9 +132,6 @@
       terminaltexteffects # tte for screensaver
       ghostty
       inputs.hyprland-preview-share-picker.packages.${pkgs.stdenv.hostPlatform.system}.default
-
-      # SimpleX terminal client (from upstream flake)
-      inputs.simplex-chat.packages.${pkgs.stdenv.hostPlatform.system}."exe:simplex-chat"
     ]
     ++ [
       inputs.tofi-emoji.packages."${pkgs.stdenv.hostPlatform.system}".tofi-emoji
