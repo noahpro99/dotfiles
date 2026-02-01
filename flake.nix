@@ -66,6 +66,11 @@
           ./nixos/hosts/macbook/server.nix
           ./nixos/hosts/macbook/macbook-air-a/hardware-configuration.nix
           { networking.hostName = "macbook-air-a"; }
+          ({ pkgs, ... }: {
+            environment.systemPackages = [
+              (pkgs.callPackage ./nixos/pkgs/simplex-chat.nix { })
+            ];
+          })
         ];
         specialArgs = { inherit inputs; };
       };

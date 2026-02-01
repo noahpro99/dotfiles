@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   ...
 }:
@@ -30,7 +31,6 @@
     ];
   };
   environment.systemPackages = with pkgs; [
-    inputs.simplex-chat.packages."${pkgs.stdenv.hostPlatform.system}"."exe:simplex-chat"
     wget
     pass
     stow
