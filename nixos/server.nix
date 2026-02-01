@@ -49,6 +49,7 @@
     openconnect
     ocproxy
     chromium
+    twurl
 
     monero-cli
     p2pool
