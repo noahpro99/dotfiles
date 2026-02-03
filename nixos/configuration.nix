@@ -111,6 +111,7 @@
       hyprpicker # color picker
       killall
       tofi # app launcher
+      hyprlauncher
       hyprpolkitagent # polkit agent
       hypridle
       nautilus # file manager

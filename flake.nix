@@ -12,9 +12,6 @@
     tofi-emoji.url = "github:noahpro99/tofi-emoji";
     aether.url = "github:noahpro99/aether/nixos";
     hyprland-preview-share-picker.url = "git+https://github.com/WhySoBad/hyprland-preview-share-picker?submodules=1";
-
-    # SimpleX Chat (terminal CLI) — upstream flake
-    simplex-chat.url = "github:simplex-chat/simplex-chat/stable";
   };
 
   outputs =
@@ -26,7 +23,6 @@
       tofi-emoji,
       aether,
       hyprland-preview-share-picker,
-      simplex-chat,
       ...
     }@inputs:
     {
@@ -34,6 +30,12 @@
       nixosModules = {
         default = import ./nixos/configuration.nix;
         omen-16 = import ./nixos/hosts/omen-16/hp-omen-16.nix;
+      };
+
+      packages.x86_64-linux = {
+        simplex-chat = import ./nixos/pkgs/simplex-chat.nix {
+          pkgs = nixos-unstable.legacyPackages.x86_64-linux;
+        };
       };
 
       nixosConfigurations.omen-16 = nixos-unstable.lib.nixosSystem {
@@ -66,11 +68,14 @@
           ./nixos/hosts/macbook/server.nix
           ./nixos/hosts/macbook/macbook-air-a/hardware-configuration.nix
           { networking.hostName = "macbook-air-a"; }
-          ({ pkgs, ... }: {
-            environment.systemPackages = [
-              (pkgs.callPackage ./nixos/pkgs/simplex-chat.nix { })
-            ];
-          })
+          (
+            { pkgs, ... }:
+            {
+              environment.systemPackages = [
+                inputs.self.packages.${pkgs.system}.simplex-chat
+              ];
+            }
+          )
         ];
         specialArgs = { inherit inputs; };
       };
@@ -83,7 +88,14 @@
           ./nixos/hosts/macbook/server.nix
           ./nixos/hosts/macbook/macbook-air-b/hardware-configuration.nix
           { networking.hostName = "macbook-air-b"; }
-          { swapDevices = [ { device = "/swapfile"; size = 8192; } ]; }
+          {
+            swapDevices = [
+              {
+                device = "/swapfile";
+                size = 8192;
+              }
+            ];
+          }
         ];
         specialArgs = { inherit inputs; };
       };

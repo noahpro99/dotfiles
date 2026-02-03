@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -75,6 +76,7 @@ in
       github-copilot-cli
       simplex-chat-desktop
       tor-browser
+      inputs.self.packages.${pkgs.system}.simplex-chat
     ];
   };
 
