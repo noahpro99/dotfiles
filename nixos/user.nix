@@ -76,9 +76,11 @@ in
       github-copilot-cli
       simplex-chat-desktop
       tor-browser
-      inputs.self.packages.${pkgs.system}.simplex-chat
+      inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.simplex-chat
     ];
   };
+
+  programs.browserpass.enable = true;
 
   services.tailscale.enable = true;
   networking.firewall = {
