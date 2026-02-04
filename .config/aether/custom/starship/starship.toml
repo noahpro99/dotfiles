@@ -1,0 +1,65 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](fg:{color3})\
+$directory\
+[](fg:{color3} bg:{color8})\
+$git_branch\
+$git_status\
+[](fg:{color8} bg:{color4})\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$bun\
+$python\
+$nim\
+$rust\
+$scala\
+$nix_shell\
+[](fg:{color4} bg:{color6})\
+$docker_context\
+[ ](fg:{color6})\
+\n$character"""
+
+add_newline = true
+
+[character]
+success_symbol = "[❯](fg:{foreground})"
+
+[username]
+show_always = true
+style_user = "fg:{foreground} bg:{color8}"
+style_root = "fg:{foreground} bg:{color8}"
+format = '[$user ]($style)'
+disabled = false
+
+[directory]
+style = "fg:{background} bg:{color3}"
+format = "[$path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[c]
+symbol = " "
+style = "fg:{foreground} bg:{color4}"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "fg:{foreground} bg:{color6}"
+format = '[ $symbol $context ]($style)'
+
+[git_branch]
+symbol = ""
+style = "fg:{foreground} bg:{color8}"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:{foreground} bg:{color8}"
+format = '[$all_status$ahead_behind ]($style)'

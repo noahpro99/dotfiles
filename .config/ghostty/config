@@ -1,4 +1,4 @@
-config-file = ~/.config/aether/theme/ghostty.conf
+config-file = ~/.config/ghostty/theme.conf
 
 keybind = performable:ctrl+c=copy_to_clipboard
 keybind = ctrl+v=paste_from_clipboard
