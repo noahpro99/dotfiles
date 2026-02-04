@@ -1,4 +1,4 @@
-config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
+config-file = ~/.config/aether/theme/ghostty.conf
 
 keybind = performable:ctrl+c=copy_to_clipboard
 keybind = ctrl+v=paste_from_clipboard

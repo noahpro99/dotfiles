@@ -79,3 +79,25 @@ if TOFIV_CONFIG_DIR.exists() or TOFIV_CONFIG_DIR.is_symlink():
     TOFIV_CONFIG_DIR.unlink()
 TOFIA_CONFIG_DIR.symlink_to(TOFIA_DIR_PATH)
 TOFIV_CONFIG_DIR.symlink_to(TOFIV_DIR_PATH)
+
+# hyprtheme symlink
+HYPRTHEME_PATH = CURRENT_THEME_DIR / "hyprtheme.conf"
+HYPRTHEME_CONFIG_PATH = Path.home() / ".config" / "hypr" / "theme.conf"
+if HYPRTHEME_CONFIG_PATH.exists() or HYPRTHEME_CONFIG_PATH.is_symlink():
+    HYPRTHEME_CONFIG_PATH.unlink()
+if HYPRTHEME_PATH.exists():
+    HYPRTHEME_CONFIG_PATH.symlink_to(HYPRTHEME_PATH)
+
+# hyprtoolkit symlink
+HYPRTOOLKIT_PATH = CURRENT_THEME_DIR / "hyprtoolkit.conf"
+HYPRTOOLKIT_CONFIG_PATH = Path.home() / ".config" / "hypr" / "hyprtoolkit.conf"
+if HYPRTOOLKIT_CONFIG_PATH.exists() or HYPRTOOLKIT_CONFIG_PATH.is_symlink():
+    HYPRTOOLKIT_CONFIG_PATH.unlink()
+if HYPRTOOLKIT_PATH.exists():
+    HYPRTOOLKIT_CONFIG_PATH.symlink_to(HYPRTOOLKIT_PATH)
+
+# restart hyprlauncher daemon to pick up new toolkit config
+subprocess.run(["pkill", "-x", "hyprlauncher"], check=False)
+subprocess.Popen(
+    ["hyprlauncher", "-d"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+)
