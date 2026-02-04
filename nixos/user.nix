@@ -39,6 +39,7 @@ in
     packages = with pkgs; [
       # main
       google-chrome
+      chromium
       vscode
 
       # noah dev

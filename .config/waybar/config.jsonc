@@ -15,21 +15,21 @@
     "backlight",
     "network",
     "power-profiles-daemon",
-    "battery"
+    "battery",
   ],
   "hyprland/window": {
-    "format": " {}"
+    "format": " {}",
   },
   "mpris": {
     "format": "DEFAULT: {player_icon} {dynamic}",
     "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
     "player-icons": {
       "default": "▶",
-      "mpv": "🎵"
+      "mpv": "🎵",
     },
     "status-icons": {
-      "paused": "⏸"
-    }
+      "paused": "⏸",
+    },
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -41,15 +41,17 @@
       "ghostty": "󰊠",
       "code": "󰨞",
       "vesktop": "",
-      "chrome": ""
+      "discord": "",
+      "chrome": "",
+      "chromium": "",
     },
     "format-icons": {
       "1": "",
       "2": "󰨞",
       "3": "",
       "10": "",
-      "default": ""
-    }
+      "default": "",
+    },
   },
   "privacy": {
     "icon-spacing": 4,
@@ -59,19 +61,19 @@
       {
         "type": "screenshare",
         "tooltip": true,
-        "tooltip-icon-size": 24
+        "tooltip-icon-size": 24,
       },
       {
         "type": "audio-out",
         "tooltip": true,
-        "tooltip-icon-size": 24
+        "tooltip-icon-size": 24,
       },
       {
         "type": "audio-in",
         "tooltip": true,
-        "tooltip-icon-size": 24
-      }
-    ]
+        "tooltip-icon-size": 24,
+      },
+    ],
   },
   "cava": {
     //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
@@ -91,12 +93,12 @@
     "input_delay": 2,
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "actions": {
-      "on-click-right": "mode"
-    }
+      "on-click-right": "mode",
+    },
   },
   "tray": {
     "icon-size": 13,
-    "spacing": 10
+    "spacing": 10,
   },
   "clock": {
     "format": "{:%a %Y-%m-%d %I:%M}",
@@ -112,9 +114,9 @@
         "months": "<span color='#a6adc8'><b>{}</b></span>",
         "weekdays": "<span color='#a6adc8'><b>{}</b></span>",
         "today": "<span color='#a6adc8'><b>{}</b></span>",
-        "days": "<span color='#555869'><b>{}</b></span>"
-      }
-    }
+        "days": "<span color='#555869'><b>{}</b></span>",
+      },
+    },
   },
   "backlight": {
     "device": "intel_backlight",
@@ -122,19 +124,19 @@
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-up": "brightnessctl set 5%+",
     "on-scroll-down": "brightnessctl set 5%-",
-    "min-length": 6
+    "min-length": 6,
   },
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 20
+      "critical": 20,
     },
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {power}W {icon} {capacity}%",
-    "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -145,8 +147,8 @@
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
     "scroll-step": 5,
     "format-icons": {
-      "default": ["", "", "", ""]
-    }
+      "default": ["", "", "", ""],
+    },
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
@@ -155,13 +157,13 @@
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
-    "scroll-step": 5
+    "scroll-step": 5,
   },
   "memory": {
     "states": {
       "c": 90, // critical
       "h": 60, // high
-      "m": 30 // medium
+      "m": 30, // medium
     },
     "interval": 10,
     "format": "󰾆 {used:0.1f}GB",
@@ -172,20 +174,20 @@
     "max-length": 10,
     "tooltip": true,
     "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB",
-    "on-click": "ghostty -e btop"
+    "on-click": "ghostty -e btop",
   },
   "cpu": {
     "interval": 10,
     "format": "󰍛 {usage}%",
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "ghostty -e btop"
+    "on-click": "ghostty -e btop",
   },
   "temperature": {
     "thermal-zone": 5,
     "critical-threshold": 90,
     "format": "{icon} {temperatureC}°C",
-    "format-icons": ["", "", ""]
+    "format-icons": ["", "", ""],
   },
   "network": {
     "interval": 5,
@@ -199,7 +201,7 @@
     "tooltip-format-ethernet": "Ethernet: {ifname}\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}",
     "tooltip-format-linked": "Link active: {ifname}\nAwaiting IP assignment",
     "tooltip-format-disconnected": "No active network",
-    "on-click": "ghostty -e nmtui"
+    "on-click": "ghostty -e nmtui",
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -209,7 +211,7 @@
       "default": "",
       "performance": "",
       "balanced": "",
-      "power-saver": ""
-    }
-  }
+      "power-saver": "",
+    },
+  },
 }
