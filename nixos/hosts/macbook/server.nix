@@ -3,7 +3,6 @@
 {
 
   boot.kernelParams = [
-    "hugepages=1280"
     "consoleblank=60"
     "button.lid_init_state=open"
   ];

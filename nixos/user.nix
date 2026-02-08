@@ -76,6 +76,7 @@ in
       codex
       github-copilot-cli
       simplex-chat-desktop
+      fresh-editor
       tor-browser
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.simplex-chat
     ];

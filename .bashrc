@@ -134,7 +134,7 @@ export NVM_DIR="$HOME/.nvm"
 # for wsl
 # export BROWSER=wslview
 
-export EDITOR=code
+export EDITOR=fresh
 
 # github cli because their alias system doesn't support shell expansion
 alias ghprv='gh pr view $(gh pr list | fzf | awk '\''{print $1}'\'')'

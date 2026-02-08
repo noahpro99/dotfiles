@@ -56,22 +56,6 @@
     xmrig
   ];
 
-  systemd.services.xmrig = {
-    description = "XMRig Monero Miner";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.xmrig}/bin/xmrig -o ${
-        if config.networking.hostName == "macbook-air-b" then "127.0.0.1" else "100.99.222.43"
-      }:3333 -u 44Zby4fvfieUgu1JpvR7ajfCnh5beestVg7QF6oMPH215U7DpvtByaKhUAVhEmuDmoFj56oU1Aj1jFWZpNBbt7uuNbHKd8Y --rig-id ${config.networking.hostName} --keepalive";
-      Restart = "always";
-      Nice = 10;
-      CapabilityBoundingSet = "CAP_SYS_RAWIO";
-      AmbientCapabilities = "CAP_SYS_RAWIO";
-      User = "root";
-    };
-  };
-
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;

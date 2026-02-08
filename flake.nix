@@ -67,6 +67,7 @@
           ./nixos/hosts/macbook/configuration.nix
           ./nixos/hosts/macbook/server.nix
           ./nixos/hosts/macbook/macbook-air-a/hardware-configuration.nix
+          ./nixos/hosts/macbook/macbook-air-a/configuration.nix
           { networking.hostName = "macbook-air-a"; }
           (
             { pkgs, ... }:
@@ -87,6 +88,7 @@
           ./nixos/hosts/macbook/configuration.nix
           ./nixos/hosts/macbook/server.nix
           ./nixos/hosts/macbook/macbook-air-b/hardware-configuration.nix
+          ./nixos/hosts/macbook/macbook-air-b/configuration.nix
           { networking.hostName = "macbook-air-b"; }
           {
             swapDevices = [
