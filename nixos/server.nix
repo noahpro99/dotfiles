@@ -36,6 +36,7 @@
     stow
     git
     gh
+    fresh-editor
     bat
     fd
     openssl
