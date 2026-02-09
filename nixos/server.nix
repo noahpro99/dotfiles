@@ -48,7 +48,6 @@
     # VPN + headless/browser auth helpers
     openconnect
     ocproxy
-    chromium
     twurl
 
     monero-cli
