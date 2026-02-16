@@ -72,6 +72,7 @@ in
       eclipses.eclipse-sdk
       packet # quick share to android
       opencode
+      claude-code
       bluetui
       codex
       github-copilot-cli
