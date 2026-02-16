@@ -25,6 +25,6 @@
   '';
 
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.12.68"
+    "broadcom-sta-6.30.223.271-59-6.18.10"
   ];
 }
