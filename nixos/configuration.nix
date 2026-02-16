@@ -40,23 +40,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      ly = prev.ly.overrideAttrs (old: {
-        # Fix for ly 1.3.1 build error on nixpkgs-unstable
-        # See: https://github.com/NixOS/nixpkgs/pull/380726 (likely fix)
-        postPatch = ''
-          export ZIG_GLOBAL_CACHE_DIR=$TMPDIR/zig-cache
-          mkdir -p "$ZIG_GLOBAL_CACHE_DIR"
-        ''
-        + old.postPatch;
-        preBuild = ''
-          export ZIG_GLOBAL_CACHE_DIR=$TMPDIR/zig-cache
-        '';
-      });
-    })
-  ];
-
   programs = {
     direnv = {
       enable = true;
@@ -166,6 +149,13 @@
     "nix-command"
     "flakes"
   ];
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+  nix.optimise.automatic = true;
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Enable Wayland for Hyprland
   };
