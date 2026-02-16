@@ -8,7 +8,7 @@
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
-      ExecStart = "${pkgs.monero-cli}/bin/monerod --prune-blockchain --zmq-pub tcp://127.0.0.1:18083 --rpc-bind-ip 0.0.0.0 --rpc-bind-port 18081 --confirm-external-bind --restricted-rpc --disable-dns-checkpoints --add-priority-node p2pmd.xmrvsbeast.com:18080 --add-priority-node nodes.hashvault.pro:18080";
+      ExecStart = "${pkgs.monero-cli}/bin/monerod --prune-blockchain --zmq-pub tcp://127.0.0.1:18083 --rpc-bind-ip 0.0.0.0 --rpc-bind-port 18081 --confirm-external-bind --restricted-rpc --disable-dns-checkpoints --add-priority-node p2pmd.xmrvsbeast.com:18080 --add-priority-node nodes.hashvault.pro:18080 --non-interactive";
       User = "noahpro";
       Group = "users";
       Restart = "always";
