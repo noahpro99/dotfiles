@@ -51,6 +51,8 @@ in
       vlc
       vesktop
       discord
+
+      # games
       lunar-client
       prismlauncher
       obs-studio
@@ -58,26 +60,23 @@ in
       steam
       protonup-qt # adds proton-ge to fix some games
       protontricks
-      prisma-engines
-      python310
+      r2modman
+
       texliveTeTeX
       pandoc
       gnupg
       pinentry-tty # for gpg
-      protobuf
-      r2modman
-      godot
       openconnect
       ocproxy
-      eclipses.eclipse-sdk
-      packet # quick share to android
       opencode
       claude-code
-      bluetui
       codex
+      monero-cli
+      monero-gui
       github-copilot-cli
       simplex-chat-desktop
       fresh-editor
+      gitui
       tor-browser
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.simplex-chat
     ];

@@ -15,9 +15,9 @@
 
   boot = {
     loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-      timeout = 0;
+      systemd-boot.enable = pkgs.lib.mkDefault true;
+      efi.canTouchEfiVariables = pkgs.lib.mkDefault true;
+      timeout = pkgs.lib.mkDefault 0;
     };
     plymouth = {
       enable = true;
@@ -115,7 +115,7 @@
       hyprpolkitagent # polkit agent
       hypridle
       nautilus # file manager
-      overskride # bluetooth
+      bluetui # bluetooth
       xdg-utils # this is needed to allow links to be opened in the browser
       dunst # notification daemon
       libnotify
@@ -126,11 +126,9 @@
       hyprshot # screenshot tool
       playerctl # media keys
       waybar
-      dotool # automate typing in wayland for nerd-dictation
       bibata-cursors # only for xcursors as fallback for hyprcursor on apps like gtk
       udiskie # for mounting drives automatically and gui
       pwvucontrol # gui for pipewire
-      terminaltexteffects # tte for screensaver
       ghostty
       inputs.hyprland-preview-share-picker.packages.${pkgs.stdenv.hostPlatform.system}.default
     ]

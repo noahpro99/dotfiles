@@ -2,4 +2,5 @@
 nixos/hardware-configuration.nix
 nixos/.cache
 .ssh
-result-*
+result*
+*.iso
