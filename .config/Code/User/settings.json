@@ -24,6 +24,7 @@
     "autograd",
     "automations",
     "Autoregressive",
+    "backpropagation",
     "backtest",
     "barplot",
     "Behaviour",
@@ -379,7 +380,7 @@
     "yscale",
     "yticks",
     "zlabel",
-    "zlim"
+    "zlim",
   ],
   "editor.guides.bracketPairs": true,
   "editor.guides.bracketPairsHorizontal": true,
@@ -387,16 +388,16 @@
   "editor.bracketPairColorization.enabled": true,
   "workbench.editorAssociations": {
     "*.html": "default",
-    "git-rebase-todo": "default"
+    "git-rebase-todo": "default",
   },
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features",
-    "editor.indentSize": 2
+    "editor.indentSize": 2,
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "githubPullRequests.fileListLayout": "tree",
   "[dart]": {
@@ -407,7 +408,7 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": "off"
+    "editor.wordBasedSuggestions": "off",
   },
   "dart.openDevTools": "flutter",
   "jupyter.askForKernelRestart": false,
@@ -421,16 +422,16 @@
   "githubIssues.queries": [
     {
       "label": "My Issues",
-      "query": "assignee:${user} state:open repo:${owner}/${repository} sort:updated-desc"
+      "query": "assignee:${user} state:open repo:${owner}/${repository} sort:updated-desc",
     },
     {
       "label": "Created Issues",
-      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc",
     },
     {
       "label": "Recent Issues",
-      "query": "state:open repo:${owner}/${repository} sort:updated-desc"
-    }
+      "query": "state:open repo:${owner}/${repository} sort:updated-desc",
+    },
   ],
   "github.copilot.enable": {
     "*": true,
@@ -440,7 +441,7 @@
     "yaml": true,
     "dockerfile": true,
     "java": true,
-    "go": true
+    "go": true,
   },
   "notebook.output.textLineLimit": 25,
   "python.analysis.completeFunctionParens": true,
@@ -451,18 +452,18 @@
     "*.pl": "prolog",
     "*.rmd": "markdown",
     ".env*": "dotenv",
-    ".stow-local-ignore": "plaintext"
+    ".stow-local-ignore": "plaintext",
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "vscode.typescript-language-features",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.accessibilitySupport": "off",
   "editor.minimap.renderCharacters": false,
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "outline.showVariables": false,
   "outline.showTypeParameters": false,
@@ -485,47 +486,47 @@
   "outline.showOperators": false,
   "outline.showStrings": false,
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.stickyTabStops": true,
   "hediet.vscode-drawio.resizeImages": null,
   "[python]": {
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
-      "source.organizeImports": "explicit"
+      "source.organizeImports": "explicit",
     },
-    "editor.defaultFormatter": "charliermarsh.ruff"
+    "editor.defaultFormatter": "charliermarsh.ruff",
   },
   "notebook.formatOnSave.enabled": true,
   "notebook.codeActionsOnSave": {
     "notebook.source.fixAll": "explicit",
-    "notebook.source.organizeImports": "explicit"
+    "notebook.source.organizeImports": "explicit",
   },
   "editor.stickyScroll.enabled": true,
   "editor.formatOnSaveMode": "file",
   "files.watcherExclude": {
     "**/.bloop": true,
     "**/.metals": true,
-    "**/.ammonite": true
+    "**/.ammonite": true,
   },
   "terminal.integrated.env.windows": {},
   "[typescriptreact]": {
     // default tab size 2
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "cmake.configureOnOpen": true,
   "[dockercompose]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "errorLens.enabledDiagnosticLevels": ["error", "warning", "hint", "info"],
   "errorLens.excludeBySource": [
     "ts(6133)",
     "cSpell",
-    "rustc(unused_variables)"
+    "rustc(unused_variables)",
   ],
   "workbench.colorCustomizations": {
     "window.activeBorder": "#ff0000",
@@ -534,7 +535,7 @@
     // for notebooks
     "notebook.focusedCellBorder": "#42b883",
     "notebook.focusedEditorBorder": "#42b883",
-    "notebookEditorOverviewRuler.runningCellForeground": "#42b883"
+    "notebookEditorOverviewRuler.runningCellForeground": "#42b883",
   },
   "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
   "gitlens.views.branches.showBranchComparison": false,
@@ -559,12 +560,12 @@
     "editor.quickSuggestions": {
       "comments": "off",
       "strings": "off",
-      "other": "off"
+      "other": "off",
     },
     "cSpell.fixSpellingWithRenameProvider": true,
     "cSpell.advanced.feature.useReferenceProviderWithRename": true,
     "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+//s/",
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.unicodeHighlight.invisibleCharacters": false,
   "diffEditor.hideUnchangedRegions.enabled": true,
@@ -586,29 +587,29 @@
       {
         "scope": "keyword.other.dotenv",
         "settings": {
-          "foreground": "#FF000000"
-        }
+          "foreground": "#FF000000",
+        },
       },
       {
         "scope": "keyword.other.dotenv",
         "settings": {
-          "foreground": "#FF000000"
-        }
+          "foreground": "#FF000000",
+        },
       },
       {
         "name": "envKeys",
         "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
         "settings": {
-          "foreground": "#19354900"
-        }
-      }
-    ]
+          "foreground": "#19354900",
+        },
+      },
+    ],
   },
   "terminal.integrated.scrollback": 1000,
   "redhat.telemetry.enabled": true,
   // let cntrl + b toggle the sidebar visibility even in the terminal
   "terminal.integrated.commandsToSkipShell": [
-    "workbench.action.toggleSidebarVisibility"
+    "workbench.action.toggleSidebarVisibility",
   ],
   "workbench.editor.enablePreview": false,
   "editor.cursorSurroundingLines": 20,
@@ -616,22 +617,22 @@
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
       "source": "PowerShell",
-      "icon": "terminal-powershell"
+      "icon": "terminal-powershell",
     },
     "Command Prompt": {
       "path": [
         "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
+        "${env:windir}\\System32\\cmd.exe",
       ],
       "args": [],
-      "icon": "terminal-cmd"
+      "icon": "terminal-cmd",
     },
     "Git Bash": {
-      "source": "Git Bash"
+      "source": "Git Bash",
     },
     "Windows PowerShell": {
-      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-    }
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    },
   },
   "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
   "gitlens.graph.layout": "editor",
@@ -643,7 +644,7 @@
   "prisma.showPrismaDataPlatformNotification": false,
   "files.exclude": {
     "/tmp/**": true,
-    "/tmp/git-blob**": true
+    "/tmp/git-blob**": true,
   },
   "workbench.colorTheme": "One Dark Pro Darker",
   "rust-analyzer.cargo.buildScripts.enable": true,
@@ -655,7 +656,7 @@
   "rust-analyzer.checkOnSave": true,
   "nix.enableLanguageServer": true,
   "[nix]": {
-    "editor.defaultFormatter": "jnoortheen.nix-ide"
+    "editor.defaultFormatter": "jnoortheen.nix-ide",
   },
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
@@ -669,7 +670,7 @@
     "*.sqlite3": "${capture}.${extname}-*",
     "*.db3": "${capture}.${extname}-*",
     "*.sdb": "${capture}.${extname}-*",
-    "*.s3db": "${capture}.${extname}-*"
+    "*.s3db": "${capture}.${extname}-*",
   },
   "notebook.multiCursor.enabled": true,
   "workbench.panel.showLabels": false,
@@ -677,46 +678,46 @@
   "workbench.activityBar.location": "top",
   "notebook.cellToolbarLocation": {
     "default": "right",
-    "jupyter-notebook": "left"
+    "jupyter-notebook": "left",
   },
   "terminal.integrated.copyOnSelection": true,
   "peacock.favoriteColors": [
     {
       "name": "Angular Red",
-      "value": "#dd0531"
+      "value": "#dd0531",
     },
     {
       "name": "Azure Blue",
-      "value": "#007fff"
+      "value": "#007fff",
     },
     {
       "name": "JavaScript Yellow",
-      "value": "#f9e64f"
+      "value": "#f9e64f",
     },
     {
       "name": "Mandalorian Blue",
-      "value": "#1857a4"
+      "value": "#1857a4",
     },
     {
       "name": "Node Green",
-      "value": "#215732"
+      "value": "#215732",
     },
     {
       "name": "React Blue",
-      "value": "#61dafb"
+      "value": "#61dafb",
     },
     {
       "name": "Something Different",
-      "value": "#832561"
+      "value": "#832561",
     },
     {
       "name": "Svelte Orange",
-      "value": "#ff3d00"
+      "value": "#ff3d00",
     },
     {
       "name": "Vue Green",
-      "value": "#42b883"
-    }
+      "value": "#42b883",
+    },
   ],
   "window.confirmSaveUntitledWorkspace": false,
   "notebook.inlineValues": "on",
@@ -724,7 +725,7 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.selectedCompletionModel": "",
   "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "chat.renderRelatedFiles": true,
   "notebook.diff.experimental.toggleInline": true,
@@ -736,8 +737,8 @@
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Use conventional commit message format with an emoji that is hyper spesfic and perfectly represents the change. ex: 'build: 🏗️ added rust to nix flake build'"
-    }
+      "text": "Use conventional commit message format with an emoji that is hyper spesfic and perfectly represents the change. ex: 'build: 🏗️ added rust to nix flake build'",
+    },
   ],
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4o",
@@ -755,7 +756,7 @@
     "contributors": true,
     "repositories": false,
     "searchAndCompare": true,
-    "launchpad": false
+    "launchpad": false,
   },
   "excalidraw.theme": "dark",
   "github.copilot.chat.search.keywordSuggestions": true,
@@ -821,7 +822,7 @@
     "docker compose": true,
     "nix": true,
     "lspci": true,
-    "bun": true
+    "bun": true,
   },
   "git.blame.statusBarItem.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
@@ -834,10 +835,10 @@
       "thinking": true,
       "maxInputTokens": 65536,
       "maxOutputTokens": 32768,
-      "requiresAPIKey": true
-    }
+      "requiresAPIKey": true,
+    },
   },
   "task.notifyWindowOnTaskCompletion": 0,
   "git.postCommitCommand": "push",
-  "git.rememberPostCommitCommand": true
+  "git.rememberPostCommitCommand": true,
 }
