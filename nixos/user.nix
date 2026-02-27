@@ -45,7 +45,6 @@ in
       vlc
       vesktop
       discord
-      rquickshare
 
       # noah dev
       rustup
