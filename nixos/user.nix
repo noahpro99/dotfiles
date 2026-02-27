@@ -41,16 +41,22 @@ in
       google-chrome
       chromium
       vscode
-
-      # noah dev
-      rustup
-      sea-orm-cli
-
-      # kinda specific to me
       zoom-us
       vlc
       vesktop
       discord
+      rquickshare
+
+      # noah dev
+      rustup
+      sea-orm-cli
+      opencode
+      claude-code
+      codex
+      fresh-editor
+      gitui
+      github-copilot-cli
+      gemini-cli
 
       # games
       lunar-client
@@ -68,15 +74,9 @@ in
       pinentry-tty # for gpg
       openconnect
       ocproxy
-      opencode
-      claude-code
-      codex
       monero-cli
       monero-gui
-      github-copilot-cli
       simplex-chat-desktop
-      fresh-editor
-      gitui
       tor-browser
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.simplex-chat
     ];
