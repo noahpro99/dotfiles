@@ -45,6 +45,7 @@ in
       vlc
       vesktop
       discord
+      localsend
 
       # noah dev
       rustup
