@@ -98,5 +98,6 @@ in
   networking.firewall.allowedTCPPorts = [
     25565 # default minecraft server port
     34835 # quick share to android port
+    53317 # localsend default
   ];
 }
