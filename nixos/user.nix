@@ -34,6 +34,7 @@ in
       "wheel"
       "docker"
       "input"
+      "libvirtd"
     ];
     # for user only packages
     packages = with pkgs; [

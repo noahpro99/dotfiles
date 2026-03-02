@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1770230981,
-        "narHash": "sha256-OXlnlBVmBlxrzcevr/3skGYH8Pr32kzKKHeYPjiSxlo=",
+        "lastModified": 1772044027,
+        "narHash": "sha256-+kyataYrEw8FAiuK1wl4DqpmDc/j4UKvJdysE5vLAAQ=",
         "owner": "noahpro99",
         "repo": "aether",
-        "rev": "44cafbe2d9aab22205295c797d7adc328227e06d",
+        "rev": "915f803e41cdd8d366bec0f3e21338a9fe4cfff1",
         "type": "github"
       },
       "original": {
@@ -57,11 +57,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1771008912,
-        "narHash": "sha256-gf2AmWVTs8lEq7z/3ZAsgnZDhWIckkb+ZnAo5RzSxJg=",
+        "lastModified": 1772433332,
+        "narHash": "sha256-izhTDFKsg6KeVBxJS9EblGeQ8y+O8eCa6RcW874vxEc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a82ccc39b39b621151d6732718e3e250109076fa",
+        "rev": "cf59864ef8aa2e178cccedbe2c178185b0365705",
         "type": "github"
       },
       "original": {

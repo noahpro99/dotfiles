@@ -158,7 +158,11 @@
     NIXOS_OZONE_WL = "1"; # Enable Wayland for Hyprland
   };
   environment.stub-ld.enable = true;
-  virtualisation.docker.enable = true;
+
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
 
   powerManagement = {
     enable = true;
