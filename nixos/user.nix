@@ -35,6 +35,7 @@ in
       "docker"
       "input"
       "libvirtd"
+      "kvm"
     ];
     # for user only packages
     packages = with pkgs; [
