@@ -30,10 +30,14 @@
       nixosModules = {
         default = import ./nixos/configuration.nix;
         omen-16 = import ./nixos/hosts/omen-16/hp-omen-16.nix;
+        msi = import ./nixos/hosts/msi/msi.nix;
       };
 
       packages.x86_64-linux = {
         simplex-chat = import ./nixos/pkgs/simplex-chat.nix {
+          pkgs = nixos-unstable.legacyPackages.x86_64-linux;
+        };
+        mcontrolcenter = import ./nixos/pkgs/mcontrolcenter.nix {
           pkgs = nixos-unstable.legacyPackages.x86_64-linux;
         };
       };
@@ -98,6 +102,25 @@
               }
             ];
           }
+        ];
+        specialArgs = { inherit inputs; };
+      };
+
+      nixosConfigurations.msi = nixos-unstable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/user.nix
+          ./nixos/hosts/msi/hardware-configuration.nix
+          ./nixos/hosts/msi/msi.nix
+          (
+            { pkgs, ... }:
+            {
+              environment.systemPackages = [
+                inputs.self.packages.${pkgs.system}.mcontrolcenter
+              ];
+            }
+          )
         ];
         specialArgs = { inherit inputs; };
       };
