@@ -37,9 +37,6 @@
         simplex-chat = import ./nixos/pkgs/simplex-chat.nix {
           pkgs = nixos-unstable.legacyPackages.x86_64-linux;
         };
-        mcontrolcenter = import ./nixos/pkgs/mcontrolcenter.nix {
-          pkgs = nixos-unstable.legacyPackages.x86_64-linux;
-        };
       };
 
       nixosConfigurations.omen-16 = nixos-unstable.lib.nixosSystem {
@@ -113,14 +110,6 @@
           ./nixos/user.nix
           ./nixos/hosts/msi/hardware-configuration.nix
           ./nixos/hosts/msi/msi.nix
-          (
-            { pkgs, ... }:
-            {
-              environment.systemPackages = [
-                inputs.self.packages.${pkgs.system}.mcontrolcenter
-              ];
-            }
-          )
         ];
         specialArgs = { inherit inputs; };
       };
