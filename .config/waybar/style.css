@@ -1,4 +1,4 @@
-@import "../omarchy/current/theme/waybar.css";
+@import "../../.config/aether/theme/waybar.css";
 
 * {
   border: none;
