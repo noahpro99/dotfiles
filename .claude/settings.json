@@ -1,7 +1,7 @@
 {
-  "skipDangerousModePermissionPrompt": true,
   "attribution": {
     "commit": "",
     "pr": ""
-  }
+  },
+  "skipDangerousModePermissionPrompt": true
 }
