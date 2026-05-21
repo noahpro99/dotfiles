@@ -3,5 +3,7 @@
     "commit": "",
     "pr": ""
   },
-  "skipDangerousModePermissionPrompt": true
+  "fastMode": true,
+  "skipDangerousModePermissionPrompt": true,
+  "model": "sonnet"
 }
