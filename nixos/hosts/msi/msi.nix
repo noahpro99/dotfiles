@@ -18,7 +18,7 @@
   };
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
@@ -68,4 +68,7 @@
     { domain = "noahpro"; type = "-"; item = "nice"; value = "-20"; }
     { domain = "noahpro"; type = "-"; item = "rtprio"; value = "99"; }
   ];
+
+  zramSwap.enable = true;
+  services.earlyoom.enable = true;
 }

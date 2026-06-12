@@ -4,6 +4,6 @@ if [ -z "${1:-}" ]; then
 fi
 cd ~/dotfiles || exit 1
 sudo nix flake update
-sudo nixos-rebuild switch --flake .#"$1" --upgrade-all
+sudo nixos-rebuild switch --flake .#"$1"
 sudo chmod +x ~/.local/bin/*
 stow . --no-folding

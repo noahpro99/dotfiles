@@ -3,7 +3,11 @@
     "commit": "",
     "pr": ""
   },
-  "fastMode": true,
+  "model": "sonnet",
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
-  "model": "sonnet"
+  "agentPushNotifEnabled": true,
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  }
 }
