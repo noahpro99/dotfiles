@@ -3,11 +3,12 @@
     "commit": "",
     "pr": ""
   },
-  "model": "sonnet",
+  "model": "claude-opus-4-7",
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  },
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
   "agentPushNotifEnabled": true,
-  "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true
-  }
+  "tui": "fullscreen"
 }

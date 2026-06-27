@@ -86,6 +86,14 @@ in
 
   programs.browserpass.enable = true;
 
+  xdg.mime.defaultApplications = {
+    "text/html" = "chromium-browser.desktop";
+    "x-scheme-handler/http" = "chromium-browser.desktop";
+    "x-scheme-handler/https" = "chromium-browser.desktop";
+    "x-scheme-handler/about" = "chromium-browser.desktop";
+    "x-scheme-handler/unknown" = "chromium-browser.desktop";
+  };
+
   services.tailscale.enable = true;
   networking.firewall = {
     trustedInterfaces = [ "tailscale0" ];
