@@ -48,6 +48,7 @@ in
       vesktop
       discord
       localsend
+      keepassxc
 
       # noah dev
       rustup

@@ -154,7 +154,7 @@ vt-vpn() {
   local tmp
   tmp="$(mktemp)"
   trap 'rm -f "$tmp"' RETURN
-  openconnect --protocol=anyconnect --external-browser=google-chrome-stable --authenticate "$url" >"$tmp"
+  openconnect --protocol=anyconnect --authenticate "$url" >"$tmp"
   local COOKIE FINGERPRINT CONNECT_URL RESOLVE
   COOKIE="$(sed -n "s/^COOKIE='\(.*\)'/\1/p" "$tmp")"
   FINGERPRINT="$(sed -n "s/^FINGERPRINT='\(.*\)'/\1/p" "$tmp")"
