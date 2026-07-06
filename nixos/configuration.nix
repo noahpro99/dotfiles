@@ -39,6 +39,9 @@
   networking.networkmanager.wifi.powersave = true;
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "pnpm-10.29.2"
+  ];
 
   programs = {
     direnv = {

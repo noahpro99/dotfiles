@@ -24,11 +24,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1772618757,
-        "narHash": "sha256-dreIL3+GfrTxzN5ZoQvLvEc8qFlTs/qwQZjPFJS1eJQ=",
+        "lastModified": 1782052593,
+        "narHash": "sha256-XE6RD/4Mhw/ZRBj0v94kLOERElat5V+e/X0L9eUGf7M=",
         "ref": "refs/heads/master",
-        "rev": "344394a8669fb82ff2744d2780327dd402ffb76a",
-        "revCount": 52,
+        "rev": "e2f30ff85486e557018523da45ccbc846e3a499c",
+        "revCount": 55,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/WhySoBad/hyprland-preview-share-picker"
@@ -57,11 +57,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1781074563,
-        "narHash": "sha256-md8WlXOlfnIeHeOScMTTHFyf2d6iaTwPl2apR5EQ3P4=",
+        "lastModified": 1782723713,
+        "narHash": "sha256-oPXCU/SSUokcGaJREHibG1CBX3+s/W7orDWQOZDsEeQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9ae611a455b90cf061d8f332b977e387bda8e1ca",
+        "rev": "b5aa0fbd538984f6e3d201be0005b4463d8b09f8",
         "type": "github"
       },
       "original": {
