@@ -47,6 +47,7 @@ in
       vlc
       vesktop
       discord
+      arrpc # standalone Discord RPC server (better Linux game detection than Vesktop's built-in)
       localsend
 
       # noah dev
@@ -85,6 +86,18 @@ in
   };
 
   programs.browserpass.enable = true;
+
+  # Run standalone arrpc so Vesktop (built-in arRPC disabled) picks up game
+  # activity over localhost. Better Linux/Steam detection than the bundled one.
+  systemd.user.services.arrpc = {
+    description = "arRPC - Discord Rich Presence server";
+    wantedBy = [ "default.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.arrpc}/bin/arrpc";
+      Restart = "on-failure";
+      RestartSec = 5;
+    };
+  };
 
   xdg.mime.defaultApplications = {
     "text/html" = "chromium-browser.desktop";
