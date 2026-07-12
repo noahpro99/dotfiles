@@ -99,6 +99,67 @@ in
     };
   };
 
+  # "Coding in Ghostty" Discord presence while Ghostty is open. Pushes to
+  # arrpc's IPC socket only when a ghostty process exists; clears on exit.
+  # Requires a Discord Application named "Ghostty" with an art asset keyed
+  # "ghostty" -- paste its Application ID into CLIENT_ID below.
+  systemd.user.services.ghostty-presence =
+    let
+      ghostty-presence = pkgs.writers.writePython3Bin "ghostty-presence"
+        {
+          libraries = [ pkgs.python3Packages.pypresence ];
+          flakeIgnore = [ "E501" "E722" ];
+        } ''
+        import os, time
+        from pypresence import Presence
+
+        CLIENT_ID = "PASTE_YOUR_DISCORD_APPLICATION_ID_HERE"
+
+        def ghostty_running():
+            for pid in os.listdir("/proc"):
+                if not pid.isdigit():
+                    continue
+                try:
+                    with open("/proc/%s/comm" % pid) as f:
+                        if "ghostty" in f.read():
+                            return True
+                except OSError:
+                    continue
+            return False
+
+        rpc = None
+        start = None
+        while True:
+            try:
+                if ghostty_running():
+                    if rpc is None:
+                        rpc = Presence(CLIENT_ID)
+                        rpc.connect()
+                        start = int(time.time())
+                    rpc.update(details="Coding", large_image="ghostty",
+                               large_text="Ghostty", start=start)
+                elif rpc is not None:
+                    rpc.clear()
+                    rpc.close()
+                    rpc = None
+                    start = None
+            except Exception:
+                rpc = None
+                start = None
+            time.sleep(15)
+      '';
+    in
+    {
+      description = "Discord Rich Presence: Coding in Ghostty";
+      wantedBy = [ "default.target" ];
+      after = [ "arrpc.service" ];
+      serviceConfig = {
+        ExecStart = "${ghostty-presence}/bin/ghostty-presence";
+        Restart = "on-failure";
+        RestartSec = 10;
+      };
+    };
+
   xdg.mime.defaultApplications = {
     "text/html" = "chromium-browser.desktop";
     "x-scheme-handler/http" = "chromium-browser.desktop";

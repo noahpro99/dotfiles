@@ -825,6 +825,7 @@
     "nix": true,
     "lspci": true,
     "bun": true,
+    "git ls-remote": true,
   },
   "git.blame.statusBarItem.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,

@@ -3,12 +3,11 @@
     "commit": "",
     "pr": ""
   },
-  "model": "claude-opus-4-7",
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true
   },
   "effortLevel": "high",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "agentPushNotifEnabled": true,
-  "tui": "fullscreen"
+  "agentPushNotifEnabled": true
 }
