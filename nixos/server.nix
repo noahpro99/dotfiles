@@ -40,7 +40,7 @@
     fd
     openssl
     bun
-    nodejs_25
+    nodejs_24
     ripgrep
     opencode
     jq

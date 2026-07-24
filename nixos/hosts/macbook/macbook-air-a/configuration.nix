@@ -3,6 +3,10 @@
 {
   boot.kernelParams = [ "hugepages=1280" ];
 
+  # Home Assistant (Docker) web UI — allow access from the local network.
+  # (tailscale0 is already trusted in server.nix, which is why the tailnet URL works.)
+  networking.firewall.allowedTCPPorts = [ 8123 ];
+
   systemd.services.xmrig = {
     description = "XMRig Monero Miner";
     after = [ "network.target" ];
