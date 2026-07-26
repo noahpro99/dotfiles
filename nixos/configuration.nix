@@ -38,6 +38,26 @@
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.powersave = true;
 
+  # Printing. CUPS is what Chromium/GTK enumerate printers through; without it
+  # network printers only show up on phones (Mopria/IPP) but not on the desktop.
+  services.printing.enable = true;
+  # cups-browsed auto-creates implicitclass:// queues that hang on this network
+  # ("No suitable destination host found"). Disable it; add printers manually (below).
+  services.printing.browsed.enable = false;
+  # mDNS/DNS-SD so .local printer hostnames resolve on the LAN.
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+  # Printers are added manually per-machine (not declared here). For a driverless
+  # IPP-Everywhere printer, discover it and add a direct queue (avoids cups-browsed):
+  #   avahi-browse -rt _ipps._tcp          # find the printer's .local host
+  #   sudo lpadmin -p Canon_TR8600 -E -m everywhere \
+  #     -v ipp://<host>.local:631/ipp/print -D "Canon TR8600 series"
+  #   sudo lpadmin -d Canon_TR8600         # make it the default
+  # Use plain ipp:// (ipps has a bad TLS cert); the .local host survives DHCP changes.
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "pnpm-10.29.2"
