@@ -20,6 +20,14 @@
     enable32Bit = true;
   };
 
+  # Game streaming host for Moonlight.
+  # openFirewall: TCP 47984/47989/47990/48010, UDP 47998-48000/48002/48010
+  services.sunshine = {
+    enable = true;
+    openFirewall = true;
+    capSysAdmin = true; # needed for DRM/KMS capture on Wayland
+  };
+
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "btop-rocm" ''
       exec ${pkgs.btop-rocm}/bin/btop "$@"
