@@ -9,5 +9,17 @@
   "effortLevel": "high",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send -a 'Claude Code' -u normal 'Claude Code' 'Finished — waiting for your input' 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
 }
