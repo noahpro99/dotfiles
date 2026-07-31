@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "input=$(cat); tp=$(printf '%s' \"$input\" | jq -r '.transcript_path // empty'); name=$(jq -rc 'select(.aiTitle) | .aiTitle' \"$tp\" 2>/dev/null | tail -1); [ -z \"$name\" ] && name=$(basename \"$(printf '%s' \"$input\" | jq -r '.cwd // \"Claude Code\"')\"); notify-send -a 'Claude Code' -u normal \"$name\" 'Finished — waiting for your input' 2>/dev/null || true"
+            "command": "input=$(cat); tp=$(printf '%s' \"$input\" | jq -r '.transcript_path // empty'); name=$(jq -rc 'select(.aiTitle) | .aiTitle' \"$tp\" 2>/dev/null | tail -1); [ -z \"$name\" ] && name=$(basename \"$(printf '%s' \"$input\" | jq -r '.cwd // \"Claude Code\"')\"); notify-send -a 'Claude Code' -u normal \"$name\" 'done' 2>/dev/null || true"
           }
         ]
       }
