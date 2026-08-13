@@ -1,0 +1,15 @@
+# Pulls in graphical-session.target for a Hyprland session.
+#
+# graphical-session.target sets RefuseManualStart=yes, so it can only be
+# activated via a dependency. Without this target nothing activates it, and
+# xdg-desktop-portal.service (Requisite=graphical-session.target) fails
+# instantly with 'dependency' -- which breaks screen sharing.
+#
+# Started from hyprland.lua on hyprland.start.
+
+[Unit]
+Description=Hyprland compositor session
+Documentation=man:systemd.special(7)
+BindsTo=graphical-session.target
+Wants=graphical-session-pre.target
+After=graphical-session-pre.target
