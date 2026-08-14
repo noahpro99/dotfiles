@@ -854,4 +854,5 @@
     "https://schemastore.azurewebsites.net/": true,
     "https://www.schemastore.org/": true,
   },
+  "js/ts.experimental.useTsgo": true,
 }
