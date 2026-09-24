@@ -7,3 +7,5 @@ background-opacity = 0.85
 cursor-style-blink = false
 confirm-close-surface = false
 term = xterm-256color
+# flyline (https://github.com/HalFrgrd/flyline) sends bad mouse events when this is on
+cursor-click-to-move = false
