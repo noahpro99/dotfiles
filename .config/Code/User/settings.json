@@ -742,8 +742,6 @@
       "text": "Use conventional commit message format with an emoji that is hyper spesfic and perfectly represents the change. ex: 'build: 🏗️ added rust to nix flake build'",
     },
   ],
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4o",
   "terminal.integrated.shellIntegration.enabled": false,
   "editor.pasteAs.preferences": [],
   "editor.minimap.enabled": false,
