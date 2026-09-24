@@ -195,3 +195,22 @@ export PATH=$PATH:~/go/bin
 
 # zoxide
 eval "$(zoxide init --cmd cd bash)"
+# Flyline - enhanced Bash experience
+enable flyline 2>/dev/null || enable -f "/home/noahpro/.local/lib/libflyline.so" flyline
+
+# Flyline keybindings: Tab accepts, Ctrl+R acts like readline's reverse-i-search
+if [[ $(type -t flyline) == builtin ]]; then
+  # Tab finishes the greyed-out inline suggestion; Esc dismisses it so Tab can
+  # fall back to normal completion
+  flyline key bind Tab inlineSuggestionAvailable+cursorAtEnd=inlineSuggestionAccept
+  flyline key bind Esc inlineSuggestionAvailable+cursorAtEnd=inlineSuggestionDismiss
+  # Tab accepts the highlighted completion instead of stepping to the next one
+  # (bound after the inline one, so a highlighted entry wins; arrows / Shift+Tab
+  # still move through the list)
+  flyline key bind Tab tabCompletionEntrySelected=tabCompletionAcceptEntry
+  # Ctrl+R walks to the next (older) match instead of closing the search
+  flyline key bind Ctrl+r fuzzyHistorySearch=fuzzyHistorySelectNext
+  # Enter runs the selected history entry straight away; Tab puts it on the line to edit
+  flyline key bind Enter fuzzyHistorySearchNormalCommands=fuzzyHistoryAcceptAndRun
+  flyline key bind Tab fuzzyHistorySearch=fuzzyHistoryAcceptAndEdit
+fi

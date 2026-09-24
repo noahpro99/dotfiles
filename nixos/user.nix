@@ -45,6 +45,7 @@ in
       vscode
       zoom-us
       vlc
+      easyeffects # pipewire audio effects / EQ
       vesktop
       discord
       arrpc # standalone Discord RPC server (better Linux game detection than Vesktop's built-in)
