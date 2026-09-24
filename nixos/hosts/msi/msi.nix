@@ -31,10 +31,16 @@
   };
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    # NOTE: pinned to LTS 6.12 while debugging wifi throughput on thematrix.
+    # Revert to pkgs.linuxPackages_latest if this does not help.
+    kernelPackages = pkgs.linuxPackages_6_12;
     # MSI embedded controller kernel module for fan control and other features
     extraModulePackages = [ config.boot.kernelPackages.msi-ec ];
     kernelModules = [ "msi-ec" ];
+
+    # Wifi regulatory domain was unset (country 00), capping txpower and
+    # forcing passive scan on all bands.
+    extraModprobeConfig = "options cfg80211 ieee80211_regdom=US";
   };
 
   # MSI Center replacement for Linux
