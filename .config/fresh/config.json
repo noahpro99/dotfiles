@@ -1,0 +1,20 @@
+{
+  "theme": "builtin://dark",
+  "keybindings": [
+    {
+      "comment": "Ghostty rewrites ctrl+backspace to ESC DEL (alt+backspace); bind it too",
+      "key": "Backspace",
+      "modifiers": ["alt"],
+      "action": "delete_word_backward",
+      "args": {},
+      "when": "normal"
+    },
+    {
+      "key": "Backspace",
+      "modifiers": ["alt"],
+      "action": "prompt_delete_word_backward",
+      "args": {},
+      "when": "prompt"
+    }
+  ]
+}
