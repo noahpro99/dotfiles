@@ -19,16 +19,36 @@
         "type": "github"
       }
     },
+    "flyline": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791109607,
+        "narHash": "sha256-BM5bJg/UtqiEAP3FM7f4n1m40kg1tJ08rKpdgzoRLE4=",
+        "owner": "HalFrgrd",
+        "repo": "flyline",
+        "rev": "d70891d86751baae592d196a7d1eb34477616e9d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HalFrgrd",
+        "repo": "flyline",
+        "type": "github"
+      }
+    },
     "hyprland-preview-share-picker": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1782052593,
-        "narHash": "sha256-XE6RD/4Mhw/ZRBj0v94kLOERElat5V+e/X0L9eUGf7M=",
+        "lastModified": 1787585898,
+        "narHash": "sha256-KKLkZEYzCGrSZa03hb8I6XPAOkXfUh+lb88OSrV1A/s=",
         "ref": "refs/heads/master",
-        "rev": "e2f30ff85486e557018523da45ccbc846e3a499c",
-        "revCount": 55,
+        "rev": "0ef9b302aee716f36ea19e33ff3cc457d8c075a8",
+        "revCount": 62,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/WhySoBad/hyprland-preview-share-picker"
@@ -57,11 +77,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1787001381,
-        "narHash": "sha256-Ue1Yo8gfHdD4TMtNewhA4tkSYeFqXThju0nCyJc3ALo=",
+        "lastModified": 1791048980,
+        "narHash": "sha256-KgItSKML8Xvte0B7/uGnBDsYzSnnKHcOaiUbgWBXLXw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ec2d622de0773551768cf98f3fc50cbcc003b9c5",
+        "rev": "a7868a727837f3c09cee2ce0ca671c76b1589fed",
         "type": "github"
       },
       "original": {
@@ -153,6 +173,7 @@
     "root": {
       "inputs": {
         "aether": "aether",
+        "flyline": "flyline",
         "hyprland-preview-share-picker": "hyprland-preview-share-picker",
         "nixos-stable": "nixos-stable",
         "nixos-unstable": "nixos-unstable",

@@ -4,6 +4,8 @@
   ...
 }:
 {
+  imports = [ inputs.flyline.nixosModules.default ];
+
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.xserver = {
@@ -74,6 +76,7 @@
       xwayland.enable = true;
     };
     hyprlock.enable = true;
+    flyline.enable = true; # bash line editor, loaded from /etc/bashrc
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;

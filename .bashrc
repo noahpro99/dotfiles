@@ -195,8 +195,8 @@ export PATH=$PATH:~/go/bin
 
 # zoxide
 eval "$(zoxide init --cmd cd bash)"
-# Flyline - enhanced Bash experience
-enable flyline 2>/dev/null || enable -f "/home/noahpro/.local/lib/libflyline.so" flyline
+# Flyline - enhanced Bash experience; loaded from /etc/bashrc by the
+# programs.flyline NixOS module (nixos/configuration.nix)
 
 # Flyline keybindings: Tab accepts, Ctrl+R acts like readline's reverse-i-search
 if [[ $(type -t flyline) == builtin ]]; then

@@ -12,6 +12,8 @@
     tofi-emoji.url = "github:noahpro99/tofi-emoji";
     aether.url = "github:noahpro99/aether/flake-v2";
     hyprland-preview-share-picker.url = "git+https://github.com/WhySoBad/hyprland-preview-share-picker?submodules=1";
+    flyline.url = "github:HalFrgrd/flyline";
+    flyline.inputs.nixpkgs.follows = "nixos-unstable";
   };
 
   outputs =
