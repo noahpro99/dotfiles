@@ -39,6 +39,9 @@
         simplex-chat = import ./nixos/pkgs/simplex-chat.nix {
           pkgs = nixos-unstable.legacyPackages.x86_64-linux;
         };
+        vectorcraft = import ./nixos/pkgs/vectorcraft.nix {
+          pkgs = nixos-unstable.legacyPackages.x86_64-linux;
+        };
       };
 
       nixosConfigurations.omen-16 = nixos-unstable.lib.nixosSystem {

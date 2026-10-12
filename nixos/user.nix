@@ -45,6 +45,7 @@ in
       vscode
       zoom-us
       vlc
+      inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.vectorcraft # vector illustration
       easyeffects # pipewire audio effects / EQ
       vesktop
       discord
