@@ -25,7 +25,6 @@
       enable = true;
       theme = "spinner";
     };
-    initrd.verbose = false;
     consoleLogLevel = 3;
     kernelParams = [
       "quiet" # suppress kernel/boot messages unless a failure occurs or you press Esc
@@ -102,6 +101,17 @@
   security.polkit.enable = true;
   security.rtkit.enable = true;
 
+  # oo7-portal only declares UseIn=gnome, so route the Secret portal (used by
+  # flatpaks) to it explicitly. This file shadows hyprland's own
+  # hyprland-portals.conf, hence repeating its default.
+  xdg.portal.config.hyprland = {
+    default = [
+      "hyprland"
+      "gtk"
+    ];
+    "org.freedesktop.impl.portal.Secret" = [ "oo7-portal" ];
+  };
+
   environment.systemPackages = (
     with pkgs;
     [
@@ -164,6 +174,13 @@
     ]
   );
 
+  # tofi-drun only rebuilds its app cache when an applications dir has a newer
+  # mtime, and nix store dirs are always epoch, so newly installed apps never
+  # showed up in the launcher. Drop the cache on every switch instead.
+  system.userActivationScripts.tofiDrunCache = ''
+    rm -f "''${XDG_CACHE_HOME:-$HOME/.cache}/tofi-drun"
+  '';
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     nerd-fonts.caskaydia-mono
@@ -202,11 +219,23 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       wireplumber.enable = true;
+      # apps (webrtc auto-gain etc.) keep moving the mic volume through the
+      # pulse api; ignore all of them. wpctl/pwvucontrol are native, so they still work
+      extraConfig.pipewire-pulse."10-block-source-volume"."pulse.rules" = [
+        {
+          matches = [ { "client.api" = "pipewire-pulse"; } ];
+          actions.quirks = [ "block-source-volume" ];
+        }
+      ];
     };
     pcscd.enable = true;
     upower.enable = true;
 
     udisks2.enable = true; # for udiskie
+
+    # secret service (org.freedesktop.secrets); unlocked by the ly login
+    # password since /etc/pam.d/ly includes login
+    oo7.enable = true;
 
     power-profiles-daemon.enable = true;
 

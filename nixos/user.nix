@@ -45,7 +45,10 @@ in
       vscode
       zoom-us
       vlc
+      libreoffice # writer, calc, impress, draw, base, math
+      kdePackages.kdenlive # video editor
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.vectorcraft # vector illustration
+      inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.photocraft # photo / psd editor
       easyeffects # pipewire audio effects / EQ
       vesktop
       discord
@@ -55,13 +58,12 @@ in
       # noah dev
       rustup
       sea-orm-cli
-      opencode
       claude-code
       codex
       fresh-editor
       gitui
       github-copilot-cli
-      gemini-cli
+      antigravity-ide
 
       # games
       lunar-client
