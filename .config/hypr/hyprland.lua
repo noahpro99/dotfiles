@@ -202,11 +202,16 @@ hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
-hl.device({
-    name          = "razer-razer-viper-mini",
-    sensitivity   = -0.2,
-    accel_profile = "flat",
-})
+-- The mouse exposes three devices all called "Razer Razer Viper Mini" (pointer +
+-- two keyboard interfaces). Hyprland suffixes duplicates in arrival order, so
+-- after a replug the pointer can end up as -1 or -2.
+for _, suffix in ipairs({ "", "-1", "-2" }) do
+    hl.device({
+        name          = "razer-razer-viper-mini" .. suffix,
+        sensitivity   = -0.2,
+        accel_profile = "flat",
+    })
+end
 
 --####################
 --### KEYBINDINGSS ###
