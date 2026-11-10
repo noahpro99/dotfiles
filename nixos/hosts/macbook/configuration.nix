@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   hardware.graphics = {
@@ -24,7 +29,7 @@
     options hid_apple fnmode=2 swap_fn_leftctrl=1 swap_opt_cmd=1
   '';
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.18.38"
-  ];
+  # Match by name: the full name carries the kernel version, so a pinned
+  # string stopped matching on every kernel bump.
+  nixpkgs.config.allowInsecurePredicate = pkg: lib.getName pkg == "broadcom-sta";
 }

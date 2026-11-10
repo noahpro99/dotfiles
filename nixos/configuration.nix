@@ -75,6 +75,18 @@
       xwayland.enable = true;
     };
     hyprlock.enable = true;
+    # system-wide dconf defaults (users can still override in their own db)
+    dconf = {
+      enable = true;
+      profiles.user.databases = [
+        {
+          settings."org/gnome/nautilus/preferences" = {
+            default-sort-order = "mtime";
+            default-sort-in-reverse-order = true; # newest first
+          };
+        }
+      ];
+    };
     flyline.enable = true; # bash line editor, loaded from /etc/bashrc
     gnupg.agent = {
       enable = true;
@@ -171,6 +183,7 @@
     ++ [
       inputs.tofi-emoji.packages."${pkgs.stdenv.hostPlatform.system}".tofi-emoji
       inputs.aether.packages."${pkgs.stdenv.hostPlatform.system}".default
+      inputs.morpheus.packages."${pkgs.stdenv.hostPlatform.system}".default
     ]
   );
 

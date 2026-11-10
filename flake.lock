@@ -59,6 +59,27 @@
         "url": "https://github.com/WhySoBad/hyprland-preview-share-picker"
       }
     },
+    "morpheus": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos-unstable"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1794329001,
+        "narHash": "sha256-Ls8hY+/mORd5EObtcNSCldEUvJAbH8sw5Lsui5CqAbI=",
+        "owner": "noahpro99",
+        "repo": "morpheus",
+        "rev": "591d94e099e3ec6fb0a970b850269fe53e9c0ef1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noahpro99",
+        "repo": "morpheus",
+        "type": "github"
+      }
+    },
     "nixos-stable": {
       "locked": {
         "lastModified": 1767313136,
@@ -175,10 +196,32 @@
         "aether": "aether",
         "flyline": "flyline",
         "hyprland-preview-share-picker": "hyprland-preview-share-picker",
+        "morpheus": "morpheus",
         "nixos-stable": "nixos-stable",
         "nixos-unstable": "nixos-unstable",
         "omenix": "omenix",
         "tofi-emoji": "tofi-emoji"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "morpheus",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791013993,
+        "narHash": "sha256-BiFPwFsbFnZH5GfWbQFKYuQNg+67aNQCoRSRNTeJFQc=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "7470661ba2b51156048af08464b82020223dc942",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "tofi-emoji": {

@@ -49,10 +49,6 @@
     openconnect
     ocproxy
     twurl
-
-    monero-cli
-    p2pool
-    xmrig
   ];
 
   programs.gnupg.agent = {
@@ -74,14 +70,6 @@
   };
   networking.firewall.allowedTCPPorts = [
     25565 # default minecraft server port
-
-    # Monero node and P2Pool ports for remote mining
-    18080 # Monero P2P port
-    18081 # Monero RPC port
-    18083 # Monero ZMQ port
-    3333 # P2Pool mining port
-    37889 # P2Pool (mini) peer discovery
-    37890 # P2Pool (nano) peer discovery
   ];
 
   nix.settings.experimental-features = [
