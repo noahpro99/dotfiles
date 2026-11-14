@@ -183,7 +183,6 @@
     ++ [
       inputs.tofi-emoji.packages."${pkgs.stdenv.hostPlatform.system}".tofi-emoji
       inputs.aether.packages."${pkgs.stdenv.hostPlatform.system}".default
-      inputs.morpheus.packages."${pkgs.stdenv.hostPlatform.system}".default
     ]
   );
 

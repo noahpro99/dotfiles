@@ -64,6 +64,8 @@ in
       gitui
       github-copilot-cli
       antigravity-ide
+      antigravity-cli # provides `agy` CLI
+      inputs.claude-desktop.packages.${pkgs.stdenv.hostPlatform.system}.claude-desktop
 
       # games
       lunar-client

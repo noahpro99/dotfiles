@@ -14,8 +14,8 @@
     hyprland-preview-share-picker.url = "git+https://github.com/WhySoBad/hyprland-preview-share-picker?submodules=1";
     flyline.url = "github:HalFrgrd/flyline";
     flyline.inputs.nixpkgs.follows = "nixos-unstable";
-    morpheus.url = "github:noahpro99/morpheus";
-    morpheus.inputs.nixpkgs.follows = "nixos-unstable";
+    claude-desktop.url = "github:poeck/claude-desktop-nix-flake";
+    claude-desktop.inputs.nixpkgs.follows = "nixos-unstable";
   };
 
   outputs =

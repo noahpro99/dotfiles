@@ -3,13 +3,6 @@
     "commit": "",
     "pr": ""
   },
-  "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true
-  },
-  "effortLevel": "high",
-  "tui": "fullscreen",
-  "skipDangerousModePermissionPrompt": true,
-  "agentPushNotifEnabled": true,
   "hooks": {
     "Stop": [
       {
@@ -21,5 +14,12 @@
         ]
       }
     ]
-  }
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "agentPushNotifEnabled": true
 }

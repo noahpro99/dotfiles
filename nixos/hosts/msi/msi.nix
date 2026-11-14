@@ -73,9 +73,24 @@
     opencomposite # translates SteamVR/OpenVR games to OpenXR
   ];
 
+  # Hyprland picks the Intel iGPU (card1, wired to the eDP panel) as its
+  # primary DRM device, so the compositor advertises Intel as the main dmabuf
+  # device. The two GLX/Vulkan vars below only cover X11 (Xwayland) and Vulkan
+  # apps; native-Wayland EGL apps (Minecraft 26.x via SDL, GTK4, Qt, ...) go
+  # through libglvnd, where NVIDIA's EGL refuses to eglInitialize on a
+  # non-NVIDIA compositor unless PRIME render offload is requested, and glvnd
+  # then silently falls through to Mesa on the iGPU.
+  #
+  # __EGL_EXTERNAL_PLATFORM_CONFIG_DIRS is for FHS-sandboxed apps
+  # (lunar-client's appimage/bwrap env): the sandbox mounts a tmpfs /etc
+  # without /etc/egl, so NVIDIA's EGL cannot find its Wayland external
+  # platform (libnvidia-egl-wayland) and again falls back to Mesa. Pointing it
+  # at /run/opengl-driver (which is bind-mounted into the sandbox) fixes that.
   environment.sessionVariables = {
     __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # Force NVIDIA GLX
     __VK_LAYER_NV_optimus = "NVIDIA_only";
+    __NV_PRIME_RENDER_OFFLOAD = "1"; # Force NVIDIA EGL on native Wayland
+    __EGL_EXTERNAL_PLATFORM_CONFIG_DIRS = "/run/opengl-driver/share/egl/egl_external_platform.d";
   };
 
   # Quest USB — allow user access for ADB

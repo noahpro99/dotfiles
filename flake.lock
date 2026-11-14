@@ -19,6 +19,26 @@
         "type": "github"
       }
     },
+    "claude-desktop": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790632875,
+        "narHash": "sha256-ovY0ssXI4mfcLMa/bS5azndpke3qa0QOOxJgmj7sAXw=",
+        "owner": "poeck",
+        "repo": "claude-desktop-nix-flake",
+        "rev": "55ba585546fe222bf18f391a98c1ee60f79684d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "poeck",
+        "repo": "claude-desktop-nix-flake",
+        "type": "github"
+      }
+    },
     "flyline": {
       "inputs": {
         "nixpkgs": [
@@ -26,11 +46,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793384138,
-        "narHash": "sha256-8x5x1o9o8kcFPG6j4DYkVLtGJo9C7kIKs63hT3OlN8E=",
+        "lastModified": 1794143077,
+        "narHash": "sha256-Q6z4FCC2trmtcW/qXadmWlrLKhz3BHi3xsxv///Yfmc=",
         "owner": "HalFrgrd",
         "repo": "flyline",
-        "rev": "8c13abe2b39b2d122fba3d44e8a942bc77cb40cb",
+        "rev": "f5d6869fcd99c117e05da5814e7b772b8ca7ec31",
         "type": "github"
       },
       "original": {
@@ -44,11 +64,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1792659872,
-        "narHash": "sha256-0yn7YG18SC6+h3vkJNDUda/esmBl6U1tu1LHIIXSknc=",
+        "lastModified": 1794481722,
+        "narHash": "sha256-0uGEqmQJsB4qjL4XqCXCZhV7uMhrV9roSG4J6LlTtlU=",
         "ref": "refs/heads/master",
-        "rev": "07602efe7a65dcef5399e22c162edf9fc331c46d",
-        "revCount": 70,
+        "rev": "0a3119bce10a9b7f389e9d99f9230430ae60c1de",
+        "revCount": 71,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/WhySoBad/hyprland-preview-share-picker"
@@ -57,27 +77,6 @@
         "submodules": true,
         "type": "git",
         "url": "https://github.com/WhySoBad/hyprland-preview-share-picker"
-      }
-    },
-    "morpheus": {
-      "inputs": {
-        "nixpkgs": [
-          "nixos-unstable"
-        ],
-        "rust-overlay": "rust-overlay"
-      },
-      "locked": {
-        "lastModified": 1794329001,
-        "narHash": "sha256-Ls8hY+/mORd5EObtcNSCldEUvJAbH8sw5Lsui5CqAbI=",
-        "owner": "noahpro99",
-        "repo": "morpheus",
-        "rev": "591d94e099e3ec6fb0a970b850269fe53e9c0ef1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "noahpro99",
-        "repo": "morpheus",
-        "type": "github"
       }
     },
     "nixos-stable": {
@@ -98,11 +97,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1793726008,
-        "narHash": "sha256-jQp1wKvbwWdLBASTXkSi/VYmDJ5AbBi1WvcMt9HWJC8=",
+        "lastModified": 1794386569,
+        "narHash": "sha256-x9sADJvoVG0L6RejZB+/BB4YiGZFBZrfTlhF4uBq1tQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
+        "rev": "d4f25a3e562008648d45bcf2d70bcc7422cad84e",
         "type": "github"
       },
       "original": {
@@ -194,34 +193,13 @@
     "root": {
       "inputs": {
         "aether": "aether",
+        "claude-desktop": "claude-desktop",
         "flyline": "flyline",
         "hyprland-preview-share-picker": "hyprland-preview-share-picker",
-        "morpheus": "morpheus",
         "nixos-stable": "nixos-stable",
         "nixos-unstable": "nixos-unstable",
         "omenix": "omenix",
         "tofi-emoji": "tofi-emoji"
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "morpheus",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1791013993,
-        "narHash": "sha256-BiFPwFsbFnZH5GfWbQFKYuQNg+67aNQCoRSRNTeJFQc=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "7470661ba2b51156048af08464b82020223dc942",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
       }
     },
     "tofi-emoji": {

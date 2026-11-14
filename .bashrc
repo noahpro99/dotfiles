@@ -160,25 +160,28 @@ vt-vpn() {
   FINGERPRINT="$(sed -n "s/^FINGERPRINT='\(.*\)'/\1/p" "$tmp")"
   CONNECT_URL="$(sed -n "s/^CONNECT_URL='\(.*\)'/\1/p" "$tmp")"
   RESOLVE="$(sed -n "s/^RESOLVE='\(.*\)'/\1/p" "$tmp")"
-  if [ -n "$RESOLVE" ]; then
-    printf '%s\n' "$COOKIE" | sudo openconnect \
-      --protocol=anyconnect \
-      --script-tun \
-      --script "ocproxy -D 9000" \
-      --cookie-on-stdin \
-      --servercert "$FINGERPRINT" \
-      --resolve "$RESOLVE" \
-      "$url" "$@"
+  local args=(
+    --protocol=anyconnect
+    --script-tun
+    --script "ocproxy -D 9000"
+    --cookie-on-stdin
+    --servercert "$FINGERPRINT"
+    --background
+    --syslog
+    --pid-file=/run/vt-vpn.pid
+  )
+  [ -n "$RESOLVE" ] && args+=(--resolve "$RESOLVE")
+  printf '%s\n' "$COOKIE" | sudo openconnect "${args[@]}" "$url" "$@" &&
+    echo "vt-vpn up (SOCKS on localhost:9000). Stop with: vt-vpn-off"
+}
+vt-vpn-off() {
+  if [ -f /run/vt-vpn.pid ]; then
+    sudo kill -INT "$(cat /run/vt-vpn.pid)"
   else
-    printf '%s\n' "$COOKIE" | sudo openconnect \
-      --protocol=anyconnect \
-      --script-tun \
-      --script "ocproxy -D 9000" \
-      --cookie-on-stdin \
-      --servercert "$FINGERPRINT" \
-      "$url" "$@"
+    sudo pkill -INT openconnect
   fi
 }
+vt-vpn-status() { pgrep -a openconnect || echo "vt-vpn not running"; }
 
 eval "$(starship init bash)"
 
