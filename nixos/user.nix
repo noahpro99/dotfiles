@@ -1,29 +1,28 @@
 {
   pkgs,
+  lib,
   inputs,
+  settings ? import ./settings.nix,
   ...
 }:
 let
-  hostname = "noah-laptop";
-  username = "noahpro";
-  userDescription = "Noah Provenzano";
-  timeZone = "America/New_York";
-  locale = "en_US.UTF-8";
+  username = settings.username;
+  userDescription = settings.name;
 in
 {
-  networking.hostName = hostname;
-  time.timeZone = timeZone;
-  i18n.defaultLocale = locale;
+  networking.hostName = lib.mkDefault settings.defaultHostname;
+  time.timeZone = lib.mkDefault settings.timeZone;
+  i18n.defaultLocale = settings.locale;
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = locale;
-    LC_IDENTIFICATION = locale;
-    LC_MEASUREMENT = locale;
-    LC_MONETARY = locale;
-    LC_NAME = locale;
-    LC_NUMERIC = locale;
-    LC_PAPER = locale;
-    LC_TELEPHONE = locale;
-    LC_TIME = locale;
+    LC_ADDRESS = settings.locale;
+    LC_IDENTIFICATION = settings.locale;
+    LC_MEASUREMENT = settings.locale;
+    LC_MONETARY = settings.locale;
+    LC_NAME = settings.locale;
+    LC_NUMERIC = settings.locale;
+    LC_PAPER = settings.locale;
+    LC_TELEPHONE = settings.locale;
+    LC_TIME = settings.locale;
   };
 
   users.users.${username} = {

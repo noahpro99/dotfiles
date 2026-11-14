@@ -1,6 +1,8 @@
 {
   pkgs,
+  lib,
   inputs,
+  settings ? import ./settings.nix,
   ...
 }:
 {
@@ -206,7 +208,7 @@
   ];
   programs.nh = {
     enable = true;
-    flake = "/home/noahpro/dotfiles";
+    flake = "/home/${settings.username}/dotfiles";
     clean = {
       enable = true;
       dates = "weekly";
@@ -214,6 +216,15 @@
     };
   };
   nix.optimise.automatic = true;
+
+  # Automatically update timezone based on Wi-Fi / geolocation when traveling,
+  # falling back to settings.timeZone if unconfigured.
+  services.automatic-timezoned.enable = settings.autoTimeZone;
+  system.activationScripts.defaultTimezone = lib.mkIf settings.autoTimeZone ''
+    if [ ! -e /etc/localtime ]; then
+      ln -sfn ${pkgs.tzdata}/share/zoneinfo/${settings.timeZone} /etc/localtime
+    fi
+  '';
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Enable Wayland for Hyprland

@@ -1,5 +1,7 @@
 {
   pkgs,
+  lib,
+  settings ? import ./settings.nix,
   ...
 }:
 
@@ -11,10 +13,10 @@
 
   networking.networkmanager.enable = true;
 
-  time.timeZone = "America/New_York";
-  i18n.defaultLocale = "en_US.UTF-8";
+  time.timeZone = lib.mkDefault settings.timeZone;
+  i18n.defaultLocale = settings.locale;
 
-  users.users.noahpro = {
+  users.users.${settings.username} = {
     isNormalUser = true;
     extraGroups = [
       "wheel"

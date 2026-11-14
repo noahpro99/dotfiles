@@ -32,12 +32,14 @@
       ...
     }@inputs:
     let
+      settings = import ./nixos/settings.nix;
+
       # Reusable builder for desktop / laptop hosts
       mkHost =
         extraModules:
         nixos-unstable.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs settings; };
           modules = [
             ./nixos/configuration.nix
             ./nixos/user.nix
@@ -50,7 +52,7 @@
         hostName: extraModules:
         nixos-unstable.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs settings; };
           modules = [
             ./nixos/server.nix
             ./nixos/hosts/macbook/configuration.nix
