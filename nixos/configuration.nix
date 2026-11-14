@@ -142,6 +142,8 @@
       bun
       nixd
       nixfmt
+      nix-output-monitor
+      nvd
       starship
       rustup
       htop
@@ -202,10 +204,14 @@
     "nix-command"
     "flakes"
   ];
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+  programs.nh = {
+    enable = true;
+    flake = "/home/noahpro/dotfiles";
+    clean = {
+      enable = true;
+      dates = "weekly";
+      extraArgs = "--keep 5 --keep-since 7d";
+    };
   };
   nix.optimise.automatic = true;
 
