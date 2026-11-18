@@ -853,4 +853,8 @@
     "https://www.schemastore.org/": true,
   },
   "js/ts.experimental.useTsgo": true,
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.hideOnboarding": true,
+  "kotlin.languageServer.enabled": false,
+  "kotlin.debugAdapter.enabled": false,
 }

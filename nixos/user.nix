@@ -53,7 +53,12 @@ in
       discord
       inputs.morpheus.packages.${pkgs.system}.default
       arrpc # standalone Discord RPC server (better Linux game detection than Vesktop's built-in)
-      localsend
+      # nixpkgs bug (1.18.0): binary needs libz.so.1 but zlib is missing from its RUNPATH
+      (localsend.overrideAttrs (old: {
+        postFixup = (old.postFixup or "") + ''
+          patchelf --add-rpath ${lib.makeLibraryPath [ zlib ]} $out/app/localsend/localsend_app
+        '';
+      }))
 
       # noah dev
       rustup
