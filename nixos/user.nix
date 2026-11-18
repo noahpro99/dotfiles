@@ -51,7 +51,7 @@ in
       easyeffects # pipewire audio effects / EQ
       vesktop
       discord
-      inputs.morpheus.packages.${pkgs.system}.default
+      inputs.morpheus.packages.${pkgs.stdenv.hostPlatform.system}.default
       arrpc # standalone Discord RPC server (better Linux game detection than Vesktop's built-in)
       # nixpkgs bug (1.18.0): binary needs libz.so.1 but zlib is missing from its RUNPATH
       (localsend.overrideAttrs (old: {
