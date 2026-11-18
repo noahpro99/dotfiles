@@ -51,6 +51,7 @@ in
       easyeffects # pipewire audio effects / EQ
       vesktop
       discord
+      inputs.morpheus.packages.${pkgs.system}.default
       arrpc # standalone Discord RPC server (better Linux game detection than Vesktop's built-in)
       localsend
 

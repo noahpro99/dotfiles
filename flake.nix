@@ -19,6 +19,8 @@
     flyline.inputs.nixpkgs.follows = "nixos-unstable";
     claude-desktop.url = "github:poeck/claude-desktop-nix-flake";
     claude-desktop.inputs.nixpkgs.follows = "nixos-unstable";
+    morpheus.url = "github:noahpro99/morpheus";
+    morpheus.inputs.nixpkgs.follows = "nixos-unstable";
   };
 
   outputs =
@@ -29,6 +31,7 @@
       tofi-emoji,
       aether,
       hyprland-preview-share-picker,
+      morpheus,
       ...
     }@inputs:
     let
