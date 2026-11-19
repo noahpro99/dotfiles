@@ -182,8 +182,49 @@
       udiskie # for mounting drives automatically and gui
       pwvucontrol # gui for pipewire
       ghostty
-      inputs.hyprland-preview-share-picker.packages.${pkgs.stdenv.hostPlatform.system}.default
     ]
+    ++ (
+      let
+        # patched to honor PREVIEW_PICKER_MONITOR, so the overlay opens on a chosen output
+        previewPicker =
+          inputs.hyprland-preview-share-picker.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs
+            (old: {
+              patches = (old.patches or [ ]) ++ [ ./pkgs/hyprland-preview-share-picker-monitor.patch ];
+            });
+      in
+      [
+        previewPicker
+        # custom_picker_binary in .config/hypr/xdph.conf. Packaged here rather than
+        # ~/.local/bin because the xdph systemd service doesn't have that on PATH.
+        (writeShellApplication {
+          name = "safe-share-picker";
+          runtimeInputs = [ jq ];
+          text = ''
+            unset LD_LIBRARY_PATH
+
+            # Open on the monitor (and so the workspace) the share was triggered from.
+            PREVIEW_PICKER_MONITOR="$(hyprctl monitors -j 2>/dev/null | jq -r '.[] | select(.focused) | .name' || true)"
+            export PREVIEW_PICKER_MONITOR
+
+            # The preview picker panics on headless/virtual monitors (e.g. Morpheus).
+            if hyprctl monitors -j 2>/dev/null | jq -e 'any(.[]; .physicalWidth == 0 or .backend == "headless")' >/dev/null; then
+              exec hyprland-share-picker "$@"
+            fi
+
+            status=0
+            output="$(${previewPicker}/bin/hyprland-preview-share-picker "$@")" || status=$?
+
+            # Crashed (signal / linker error): fall back to the stock picker.
+            if [ "$status" -ge 126 ]; then
+              exec hyprland-share-picker "$@"
+            fi
+
+            printf '%s\n' "$output"
+            exit "$status"
+          '';
+        })
+      ]
+    )
     ++ [
       inputs.tofi-emoji.packages."${pkgs.stdenv.hostPlatform.system}".tofi-emoji
       inputs.aether.packages."${pkgs.stdenv.hostPlatform.system}".default

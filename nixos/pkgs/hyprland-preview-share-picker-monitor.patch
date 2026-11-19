@@ -1,0 +1,27 @@
+--- a/src/app.rs
++++ b/src/app.rs
+@@ -207,6 +207,24 @@
+     window.set_keyboard_mode(KeyboardMode::OnDemand);
+     window.set_exclusive_zone(-1);
+ 
++    // Pin the overlay to the monitor the share was triggered from. Without an
++    // explicit output the compositor picks one, which is often the wrong screen.
++    if let Ok(name) = std::env::var("PREVIEW_PICKER_MONITOR") {
++        use gtk4::prelude::{Cast, DisplayExt, ListModelExt, MonitorExt};
++        if let Some(display) = Display::default() {
++            let monitors = display.monitors();
++            for i in 0..monitors.n_items() {
++                let Some(monitor) = monitors.item(i).and_then(|o| o.downcast::<gtk4::gdk::Monitor>().ok()) else {
++                    continue;
++                };
++                if monitor.connector().as_deref() == Some(name.as_str()) {
++                    window.set_monitor(&monitor);
++                    break;
++                }
++            }
++        }
++    }
++
+     window
+ }
+ 
