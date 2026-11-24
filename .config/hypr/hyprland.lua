@@ -62,11 +62,10 @@ hl.on("hyprland.start", function()
 end)
 
 -- Top-level calls re-run on every config reload, like the old `exec`.
--- dark theme
-hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'")
-hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'default'")
-hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
-hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'")
+-- GTK's gtk-theme and color-scheme follow the aether palette: they are written
+-- by .config/aether/custom/gtk/post-apply.sh on every theme apply.
+-- dconf, not gsettings: gsettings is not on PATH here, so it silently did nothing.
+hl.exec_cmd("dconf write /org/gnome/desktop/interface/cursor-theme \"'Bibata-Modern-Classic'\"")
 
 --#############################
 --### ENVIRONMENT VARIABLES ###

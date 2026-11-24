@@ -179,6 +179,7 @@
       playerctl # media keys
       waybar
       bibata-cursors # only for xcursors as fallback for hyprcursor on apps like gtk
+      adw-gtk3 # gtk3 theme that reads the colours aether renders into gtk.css
       udiskie # for mounting drives automatically and gui
       pwvucontrol # gui for pipewire
       ghostty

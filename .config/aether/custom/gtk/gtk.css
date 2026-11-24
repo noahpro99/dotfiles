@@ -1,0 +1,55 @@
+/* GTK colours from the aether palette.
+ *
+ * Aether template: rendered to ~/.config/gtk-4.0/gtk.css, and post-apply.sh
+ * links ~/.config/gtk-3.0/gtk.css to the same file. Upstream aether dropped its
+ * own GTK support, so this custom app replaces it.
+ *
+ * Only named colours, no widget rules: libadwaita (GTK4) and the adw-gtk3
+ * theme (GTK3 and plain GTK4) build their whole look from these, and a user
+ * gtk.css outranks every app's own stylesheet, so rules here would leak into
+ * apps that style themselves. Uses GTK3-era mix()/alpha() so both toolkits can
+ * parse the one file. */
+
+@define-color accent_bg_color {accent};
+@define-color accent_fg_color {background};
+@define-color accent_color {accent};
+
+@define-color destructive_bg_color {color1};
+@define-color destructive_fg_color {background};
+@define-color destructive_color {color1};
+@define-color error_bg_color {color1};
+@define-color error_fg_color {background};
+@define-color error_color {color1};
+@define-color success_bg_color {color2};
+@define-color success_fg_color {background};
+@define-color success_color {color2};
+@define-color warning_bg_color {color3};
+@define-color warning_fg_color {background};
+@define-color warning_color {color3};
+
+@define-color window_bg_color {background};
+@define-color window_fg_color {foreground};
+@define-color view_bg_color {background};
+@define-color view_fg_color {foreground};
+
+@define-color headerbar_bg_color {background};
+@define-color headerbar_fg_color {foreground};
+@define-color headerbar_border_color {foreground};
+@define-color headerbar_backdrop_color {background};
+
+@define-color sidebar_bg_color mix({background}, {foreground}, 0.04);
+@define-color sidebar_fg_color {foreground};
+@define-color sidebar_backdrop_color mix({background}, {foreground}, 0.02);
+@define-color secondary_sidebar_bg_color mix({background}, {foreground}, 0.02);
+@define-color secondary_sidebar_fg_color {foreground};
+@define-color secondary_sidebar_backdrop_color {background};
+
+@define-color card_bg_color alpha({foreground}, 0.06);
+@define-color card_fg_color {foreground};
+@define-color thumbnail_bg_color mix({background}, {foreground}, 0.1);
+@define-color thumbnail_fg_color {foreground};
+
+@define-color dialog_bg_color mix({background}, {foreground}, 0.08);
+@define-color dialog_fg_color {foreground};
+@define-color popover_bg_color mix({background}, {foreground}, 0.08);
+@define-color popover_fg_color {foreground};

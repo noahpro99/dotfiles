@@ -1,0 +1,17 @@
+# hyprland-preview-share-picker — read on every launch, no portal restart needed.
+# Unset fields keep their defaults (see the project README for the full list).
+
+# open on the monitors tab instead of windows
+default_page: outputs
+
+# single click selects, instead of the default double click
+windows:
+  clicks: 1
+outputs:
+  # upstream currently reads windows.clicks for outputs too; set both so this
+  # keeps working if that gets fixed
+  clicks: 1
+
+# rendered by aether from .config/aether/custom/share-picker/style.css
+stylesheets:
+  - style.css

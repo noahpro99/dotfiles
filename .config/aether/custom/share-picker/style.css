@@ -1,0 +1,138 @@
+/* Screen share picker (hyprland-preview-share-picker).
+ *
+ * Aether template: edit this file, not the rendered style.css next to the
+ * picker's config.yaml. It is one self-contained sheet on purpose - the picker
+ * only applies the last entry of `stylesheets` and cannot resolve relative
+ * @imports. Read on every launch, so no post-apply hook is needed. */
+
+@define-color bg {background};
+@define-color fg {foreground};
+@define-color accent {accent};
+@define-color muted {color8};
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+/* same border and rounding as hyprland windows */
+.window {
+  background-color: @bg;
+  color: @fg;
+  border: 1px solid @accent;
+  border-radius: 15px;
+}
+
+/* === Tabs: pills, like the waybar modules === */
+notebook,
+notebook > header,
+notebook > stack {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+notebook > header {
+  padding: 10px 12px 4px;
+}
+notebook > header > tabs > tab {
+  min-height: 0;
+  margin: 0 3px;
+  padding: 4px 14px;
+  border: none;
+  border-radius: 999px;
+  box-shadow: none;
+  background: none;
+  color: @muted;
+  font-weight: bold;
+}
+notebook > header > tabs > tab:hover {
+  background: alpha(@fg, 0.08);
+  color: @fg;
+}
+notebook > header > tabs > tab:checked {
+  background: @accent;
+  color: @bg;
+}
+
+/* === Window and monitor cards === */
+scrolledwindow.page {
+  padding: 10px 12px;
+}
+flowboxchild,
+scrolledwindow.page button {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  box-shadow: none;
+  outline: none;
+  background: none;
+}
+.card {
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background-color: alpha(@fg, 0.06);
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+flowboxchild:hover .card,
+flowboxchild:selected .card,
+flowboxchild:focus-visible .card,
+scrolledwindow.page button:hover .card,
+scrolledwindow.page button:focus-visible .card {
+  border-color: @accent;
+  background-color: alpha(@accent, 0.18);
+}
+.card-loading {
+  opacity: 0.5;
+}
+.image {
+  border-radius: 6px;
+}
+.image-label {
+  margin-top: 6px;
+  color: @fg;
+  font-size: 12px;
+}
+
+/* === Region tab === */
+.region-button {
+  padding: 8px 22px;
+  border: none;
+  border-radius: 999px;
+  box-shadow: none;
+  background: @accent;
+  color: @bg;
+  font-weight: bold;
+}
+.region-button:hover {
+  background: mix(@accent, @fg, 0.3);
+}
+
+/* === "Allow a restore token" === */
+.restore-button {
+  padding: 6px 16px 12px;
+  color: @muted;
+}
+.restore-button:hover {
+  color: @fg;
+}
+.restore-button check {
+  border: 1px solid @muted;
+  border-radius: 4px;
+  box-shadow: none;
+  background: none;
+  color: @bg;
+}
+.restore-button check:checked {
+  border-color: @accent;
+  background: @accent;
+}
+
+scrollbar {
+  border: none;
+  background: none;
+}
+scrollbar slider {
+  background: alpha(@fg, 0.25);
+}
