@@ -41,7 +41,6 @@ in
       # main
       google-chrome
       chromium
-      vscode
       zoom-us
       vlc
       libreoffice # writer, calc, impress, draw, base, math
@@ -61,6 +60,8 @@ in
       }))
 
       # noah dev
+      vscode
+      zed-editor
       rustup
       sea-orm-cli
       claude-code
