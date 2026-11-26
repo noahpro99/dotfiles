@@ -144,6 +144,11 @@ hl.animation({ leaf = "windows",    enabled = true,  speed = 3,   bezier = "defa
 -- hl.animation({ leaf = "borderangle", enabled = true, speed = 30, bezier = "liner", style = "loop" })
 hl.animation({ leaf = "fade",       enabled = true,  speed = 5,   bezier = "default" })
 hl.animation({ leaf = "workspaces", enabled = false })
+-- Overlays (share picker, launcher, notifications) appearing. Unset, these
+-- inherit 800ms from global and 500ms from fade. Hyprland has no per-layer
+-- speed, so this applies to every layer surface.
+hl.animation({ leaf = "layersIn",     enabled = true, speed = 1.5, bezier = "default" })
+hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.5, bezier = "default" })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
