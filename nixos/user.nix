@@ -65,6 +65,7 @@ in
       rustup
       sea-orm-cli
       claude-code
+      opencode
       codex
       fresh-editor
       gitui

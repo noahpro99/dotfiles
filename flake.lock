@@ -91,11 +91,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1795481851,
-        "narHash": "sha256-6l3TZnzebCQEDf+MuGT5DZjwVCCYNnpdqxUg5pCimuo=",
+        "lastModified": 1795635582,
+        "narHash": "sha256-uSqQMaC8O7bN7mISZ4n5vFbSjiZnlOuxOcih2yaOgXo=",
         "owner": "noahpro99",
         "repo": "morpheus",
-        "rev": "495577e5f069f48ba7b7a95bd3c6e2e9231a2018",
+        "rev": "5f69392772c0f270655f13326f0bb738200bbd64",
         "type": "github"
       },
       "original": {
